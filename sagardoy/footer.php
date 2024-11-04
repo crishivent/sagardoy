@@ -50,28 +50,35 @@
               <div class="row">
                 <div class="col-12 col-sm-12 col-lg-6 border-top pt-3">
                   <h2 class="title">SAGARDOY</h2>
-                  <ul class="btns-list">
-                    <li><a href="nosotros.html">Nosotros</a></li>
-                    <li><a href="servicios.html">Servicios</a></li>
-                    <li><a href="equipo.html" class="activo">Equipo</a></li>
-                    <li><a href="unete-al-equipo.html">Únete al equipo</a></li>
-                    <li><a href="sagardoy-school.html">Sagardoy School</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="noticias.html">Noticias</a></li>
-                    <li><a href="publicaciones.html">Publicaciones</a></li>
-                  </ul>
+                  <?php 
+                 $menu_name = 'sagardoy';
+                    if ($menu_name) {
+                        $menu_items = wp_get_nav_menu_items($menu_name);
+                        echo '<ul class="btns-list">';
+                        foreach ($menu_items as $item) {
+                            echo '<li><a href="' . esc_url($item->url) . '">' . esc_html($item->title) . '</a></li>';
+                        }
+                        echo '</ul>';
+                    } else {
+                        echo 'No se ha encontrado un menú en esta ubicación.';
+                    }
+                    ?>
                 </div>
                 <div class="col-12 col-sm-12 col-lg-6 border-top pt-3">
                   <h2 class="title">SEDES</h2>
-                  <ul class="btns-list">
-                    <li><a href="contacto.html">Madrid</a></li>
-                    <li><a href="contacto.html">Barcelona</a></li>
-                    <li><a href="contacto.html">Málaga</a></li>
-                    <li><a href="contacto.html">Sevilla</a></li>
-                    <li><a href="contacto.html">Bilbao</a></li>
-                    <li><a href="contacto.html">Las Palmas</a></li>
-                    <li><a href="contacto.html">Internacional</a></li>
-                  </ul>
+                 <?php 
+                 $menu_name = 'sedes';
+                    if ($menu_name) {
+                        $menu_items = wp_get_nav_menu_items($menu_name);
+                        echo '<ul class="btns-list">';
+                        foreach ($menu_items as $item) {
+                            echo '<li><a href="' . esc_url($item->url) . '">' . esc_html($item->title) . '</a></li>';
+                        }
+                        echo '</ul>';
+                    } else {
+                        echo 'No se ha encontrado un menú en esta ubicación.';
+                    }
+                    ?>
                 </div>
               </div>
             </div>
@@ -88,9 +95,7 @@
             <div class="row">
               <div class="col-12 col-sm-12 col-lg-9">
                   <?php
-                    $menu_location = 'footer-politicas';
-                    $menu_name = wp_get_nav_menu_name($menu_location);
-
+                    $menu_name = 'footer-politicas';
                     if ($menu_name) {
                         $menu_items = wp_get_nav_menu_items($menu_name);
                         echo '<ul class="btns-list">';
