@@ -89,9 +89,9 @@
               <div class="col-12 col-sm-12 col-lg-9">
                   <?php
                     wp_nav_menu(array(
-                        'theme_location' => 'footer_politicas',
+                        'theme_location' => 'footer-politicas',
                         'container' => false,
-                        'items_wrap' => '<ul class="btns-list">%3$s</ul>',
+                        'menu_class' => 'btns-list',
                         'depth' => 1
                     ));
                     ?>
