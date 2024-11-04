@@ -81,7 +81,7 @@
       <div class="container-bottom">
         <div class="row">
           <div class="col-12 col-sm-12 col-lg-4">
-            <a href="#" class="logo-footer"><img src="images/logo-footer.svg" alt="" /></a>
+            <a href="#" class="logo-footer"><img src="https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/logo-footer.svg" alt="" /></a>
           </div>
           <div class="col-12 col-sm-12 col-lg-1"></div>
           <div class="col-12 col-sm-12 col-lg-7">
