@@ -1,0 +1,64 @@
+<?php 
+add_action('wp_enqueue_scripts', 'mis_enqueue_custom');
+function mis_enqueue_custom() {
+  wp_enqueue_script('custom', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js',array('jquery'), false, true);
+  wp_enqueue_script('scripts', get_template_directory_uri().'/assets/js/scripts.js',array('jquery'), false, true);
+  wp_enqueue_style ('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+  wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css', array(), '6.0.0');
+  wp_enqueue_style('sagardoycss', get_template_directory_uri().'/style.css', array(), '1.0.0');
+  //wp_enqueue_script('menujs', get_template_directory_uri().'/assets/js/menu.js',array('jquery'), false, true);
+
+
+}
+/*
+if ( ! file_exists( get_template_directory() . '/clases/class-wp-bootstrap.php' ) ) {
+    return new WP_Error( 'class-wp-bootstrap-navwalker-missing', __( 'It appears the class-wp-bootstrap-navwalker.php file may be missing.', 'wp-bootstrap-navwalker' ) );
+} else {
+    require_once get_template_directory() . '/clases/class-wp-bootstrap.php';
+}
+
+*/
+
+//Crear página de opciones con ACF
+if( function_exists('acf_add_options_page') ) {
+acf_add_options_page(array(
+'page_title' => 'Opciones Sagardoy',
+'menu_title' => 'Opciones Sagardoy',
+'menu_slug' => 'opciones-sagardoy',
+'capability' => 'edit_posts',
+'redirect' => false,
+'position'    => '80',
+'icon_url'    => 'dashicons-info',
+'update_button' => __('Guardar', 'acf'),
+'updated_message' => __("Guardado correctamente", 'acf'),
+));
+}
+
+
+/* Menú */
+function location_menu() {
+  register_nav_menu('main',__( 'main' ));
+}
+add_action( 'init', 'location_menu' );
+
+
+//sidebar
+function mi_sidebars(){
+    register_sidebar(array(
+        "name" => "Sidebar Categoria",
+        "id" => "sidebar-categorias",
+        "descripcion" => "Contenido que aparece en el sidebar de categorias",
+        "class" => "category-sidebar",
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        "before_title" => '<span class="widget-title">',
+        "after_title" => "</span>"
+    ));
+}
+add_action('widgets_init','mi_sidebars');
+
+
+
+
+
+?>
