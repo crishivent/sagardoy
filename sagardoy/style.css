@@ -9,8 +9,8 @@ Version: 0.0.1
 /* STYLES ======================================= */
 /* SELECT ======================================= */
 /* ============================================= */
-/*@import "../css/normalize.css";
-@import "../css/bootstrap.min.css";*/
+@import "assets/css/normalize.css";
+/*@import "../css/bootstrap.min.css";*/
 html,
 body {
   position: relative !important;
@@ -41,7 +41,7 @@ body.loading:before {
   height: 100vh;
   background-color: #023a19;
   z-index: 9999;
-  background-image: url("../images/logo-blanco.svg");
+  background-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/logo.svg");
   background-size: auto 124px;
   background-repeat: no-repeat;
   background-position: center center;
@@ -412,7 +412,9 @@ button:focus {
 @slick-next-character: "../images/ico-slider-arrow-right.svg";*/
 /* Slider */
 .slick-loading .slick-list {
-  background: #ffffff url("../images/ajax-loader.gif") center center no-repeat;
+  background: #ffffff
+    url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/ajax-loader.gif")
+    center center no-repeat;
 }
 /* Arrows */
 .slick-prev,
