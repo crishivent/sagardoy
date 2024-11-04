@@ -88,12 +88,19 @@
             <div class="row">
               <div class="col-12 col-sm-12 col-lg-9">
                   <?php
-                    wp_nav_menu(array(
-                        'theme_location' => 'footer-politicas',
-                        'container' => false,
-                        'menu_class' => 'btns-list',
-                        'depth' => 1
-                    ));
+                    $menu_location = 'footer-politicas';
+                    $menu_name = wp_get_nav_menu_name($menu_location);
+
+                    if ($menu_name) {
+                        $menu_items = wp_get_nav_menu_items($menu_name);
+                        echo '<ul class="btns-list">';
+                        foreach ($menu_items as $item) {
+                            echo '<li><a href="' . esc_url($item->url) . '">' . esc_html($item->title) . '</a></li>';
+                        }
+                        echo '</ul>';
+                    } else {
+                        echo 'No se ha encontrado un menú en esta ubicación.';
+                    }
                     ?>
               </div>
               <div class="col-12 col-sm-12 col-lg-3 text-end">

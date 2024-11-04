@@ -56,6 +56,7 @@ function my_acf_op_init() {
 /* Menú */
 function location_menu() {
   register_nav_menu('main',__( 'main' ));
+  register_nav_menu('footer-politicas',__( 'Footer Politicas' ));
 }
 add_action( 'init', 'location_menu' );
 
@@ -83,6 +84,9 @@ function add_file_types_to_uploads($file_types){
     return $file_types;
 }
 add_filter('upload_mimes', 'add_file_types_to_uploads');
+
+//Desactivar zona widgets por bloques
+add_filter( 'use_widgets_block_editor', '__return_false' );
 
 
 
