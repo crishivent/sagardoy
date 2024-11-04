@@ -87,11 +87,14 @@
           <div class="col-12 col-sm-12 col-lg-7">
             <div class="row">
               <div class="col-12 col-sm-12 col-lg-9">
-                <ul class="btns-list">
-                  <li><a href="terminos-y-condiciones.html">Términos y Condiciones</a></li>
-                  <li><a href="politica-de-cookies.html">Política de Cookies</a></li>
-                  <li><a href="politica-de-privacidad.html">Política de Privacidad</a></li>
-                </ul>
+                  <?php
+                    wp_nav_menu(array(
+                        'theme_location' => 'footer_politicas',
+                        'container' => false,
+                        'items_wrap' => '<ul class="btns-list">%3$s</ul>',
+                        'depth' => 1
+                    ));
+                    ?>
               </div>
               <div class="col-12 col-sm-12 col-lg-3 text-end">
                 <div class="copy">© 2024 Sagardoy <a href="#" class="logo-footer-alt"><img src="https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/logo-footer.svg" alt="" /></a></div>
