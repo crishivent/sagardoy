@@ -1,1 +1,12 @@
-Prueba 4 cristo
+<?php 
+get_header();
+
+?>
+
+
+
+
+<?php 
+get_footer();
+
+?>
