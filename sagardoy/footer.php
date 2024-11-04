@@ -1,16 +1,23 @@
+  <?php 
+   $logofooter = get_field('logo_footer', 'option');
+   $copyright = get_field('copyright', 'option');
+   $telefonofooter = get_field('telefono_footer', 'option');
+   $mailfooter = get_field('mail_footer', 'option');
+   $logopequeño = get_field('logo_pequeno', 'option');
+  ?>
   <footer class="footer">
     <div class="container">
       <div class="container-top">
         <div class="row">
           <div class="col-12 col-sm-12 col-lg-4">
-            <a href="#" class="logo-footer"><img src="https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/logo-alt.svg" alt="" /></a>
+            <a href="#" class="logo-footer"><img src="<?php echo $logofooter; ?>" alt="" /></a>
           </div>
           <div class="col-12 col-sm-12 col-lg-1"></div>
           <div class="col-12 col-sm-12 col-lg-7">
             <div class="row d-flex align-items-center">
               <div class="col-12 col-sm-12 col-md-8">
-                <a href="tel:+34915429040" class="btn-telefono">+34 915 429 040</a><br>
-                <a href="tel:+34915429040" class="btn-email">info@sagardoy.com</a>
+                <a href="tel:<?php echo $telefonofooter;?>" class="btn-telefono"><?php echo $telefonofooter;?></a><br>
+                <a href="mailto:<?php echo $mailfooter;?>" class="btn-email"><?php echo $mailfooter;?></a>
               </div>
               <div class="col-12 col-sm-12 col-lg-4 text-end">
                 <div class="btn-idioma">
@@ -88,7 +95,7 @@
       <div class="container-bottom">
         <div class="row">
           <div class="col-12 col-sm-12 col-lg-4">
-            <a href="#" class="logo-footer"><img src="https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/logo-footer.svg" alt="" /></a>
+            <a href="#" class="logo-footer"><img src="<?php echo $logopequeño;?>" alt="" /></a>
           </div>
           <div class="col-12 col-sm-12 col-lg-1"></div>
           <div class="col-12 col-sm-12 col-lg-7">
@@ -109,7 +116,7 @@
                     ?>
               </div>
               <div class="col-12 col-sm-12 col-lg-3 text-end">
-                <div class="copy">© 2024 Sagardoy <a href="#" class="logo-footer-alt"><img src="https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/logo-footer.svg" alt="" /></a></div>
+                <div class="copy"><?php echo $copyright;?> <a href="#" class="logo-footer-alt"><img src="<?php echo $logopequeño;?>" alt="" /></a></div>
               </div>
             </div>
           </div>
