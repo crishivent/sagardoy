@@ -49,7 +49,7 @@
             <div class="menu">
               <div class="row">
                 <div class="col-12 col-sm-12 col-lg-6 border-top pt-3">
-                  <h2 class="title">SAGARDOY</h2>
+                  <h2 class="title"><?php _e('SAGARDOY', 'sagardoy'); ?></h2>
                   <?php 
                  $menu_name = 'sagardoy';
                     if ($menu_name) {
@@ -60,12 +60,12 @@
                         }
                         echo '</ul>';
                     } else {
-                        echo 'No se ha encontrado un menú en esta ubicación.';
+                        echo 'No se ha encontrado menú.';
                     }
                     ?>
                 </div>
                 <div class="col-12 col-sm-12 col-lg-6 border-top pt-3">
-                  <h2 class="title">SEDES</h2>
+                  <h2 class="title"><?php _e('SEDES', 'sagardoy'); ?></h2>
                  <?php 
                  $menu_name = 'sedes';
                     if ($menu_name) {
@@ -76,7 +76,7 @@
                         }
                         echo '</ul>';
                     } else {
-                        echo 'No se ha encontrado un menú en esta ubicación.';
+                        echo 'No se ha encontrado menú.';
                     }
                     ?>
                 </div>
@@ -104,7 +104,7 @@
                         }
                         echo '</ul>';
                     } else {
-                        echo 'No se ha encontrado un menú en esta ubicación.';
+                        echo 'No se ha encontrado menú.';
                     }
                     ?>
               </div>

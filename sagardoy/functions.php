@@ -23,35 +23,6 @@ if ( ! file_exists( get_template_directory() . '/clases/class-wp-bootstrap.php' 
 
 */
 
-//Crear página de opciones con ACF
-
-add_action('acf/init', 'my_acf_op_init');
-function my_acf_op_init() {
-
-    // Check function exists.
-    if( function_exists('acf_add_options_page') ) {
-
-        // Add parent.
-        $parent = acf_add_options_page(array(
-            'page_title'  => __('Opciones Generales Sagardoy'),
-            'menu_title'  => __('Opciones Generales'),
-            'menu_slug'     => 'theme-general-settings',
-            'capability'    => 'edit_posts',
-            'redirect'    => false,
-        ));
-
-        // Add sub page.
-        $child = acf_add_options_page(array(
-            'page_title'  => __('Footer'),
-            'menu_title'  => __('Footer'),
-            'parent_slug' => $parent['theme-general-settings'],
-        ));
-    }
-}
-
-
-
-
 
 /* Menú */
 function location_menu() {
