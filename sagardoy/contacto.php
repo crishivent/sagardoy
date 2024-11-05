@@ -4,6 +4,11 @@ Template Name: Página de contacto
 */
 
 get_header();
+
+$sedes = get_field('sedes', 'option');
+$email = get_field('email_general', 'option');
+$telefono = get_field('telefono_general', 'option');
+
  ?>
 
   <section class="modulo-35 pt-130 pb-130">
@@ -14,17 +19,18 @@ get_header();
             <h2 class="titulo">Contacto</h2>
             <div class="subtitulo">Nuestras Sedes</div>
             <ul class="lista">
-              <li><a href="#" data-id="01" class="btn-link activo">Madrid</a></li>
-              <li><a href="#" data-id="02" class="btn-link">Barcelona</a></li>
-              <li><a href="#" data-id="03" class="btn-link">Málaga</a></li>
-              <li><a href="#" data-id="04" class="btn-link">Sevilla</a></li>
-              <li><a href="#" data-id="05" class="btn-link">Bilbao</a></li>
-              <li><a href="#" data-id="06" class="btn-link">Las Palmas</a></li>
-              <li><a href="#" data-id="07" class="btn-link">Internacional</a></li>
+                <?php 
+                $i=1;
+                foreach ($sedes as $sede) {
+                    if($i==1){$activo='activo';}
+                    echo '<li><a href="#" data-id="0'.$i.'" class="btn-link '.$activo.'">'.htmlspecialchars($sede['nombre']).'</a></li>';
+                    $i++;
+                }?>
+              
             </ul>
             <div class="info">
-              <a href="mailto:info@sagardoy.com" class="btn-email">info@sagardoy.com</a><br>
-              <a href="tel:+34914540071" class="btn-tel">+34 91 454 0071</a>
+              <a href="mailto:<?php echo $email;?>" class="btn-email"><?php echo $email;?></a><br>
+              <a href="tel:<?php echo $telefono; ?>" class="btn-tel"><?php echo $telefono;?></a>
             </div>
           </div>
           <div class="col-12 col-sm-12 col-lg-1"></div>
@@ -32,96 +38,37 @@ get_header();
             <div class="row">
               <div class="col-12">
                 <div class="imagenes-holder">
-                  <div class="imagen-holder show" id="img-01">
-                    <div class="titulo">Sagardoy Madrid</div>
-                    <img src="images/img-contacto-madrid.jpg" class="img-fluid" />
-                  </div>
-                  <div class="imagen-holder" id="img-02">
-                    <div class="titulo">Sagardoy Barcelona</div>
-                    <img src="images/img-contacto-madrid.jpg" class="img-fluid" />
-                  </div>
-                  <div class="imagen-holder" id="img-03">
-                    <div class="titulo">Sagardoy Málaga</div>
-                    <img src="images/img-contacto-madrid.jpg" class="img-fluid" />
-                  </div>
-                  <div class="imagen-holder" id="img-04">
-                    <div class="titulo">Sagardoy Sevilla</div>
-                    <img src="images/img-contacto-madrid.jpg" class="img-fluid" />
-                  </div>
-                  <div class="imagen-holder" id="img-05">
-                    <div class="titulo">Sagardoy Bilbao</div>
-                    <img src="images/img-contacto-madrid.jpg" class="img-fluid" />
-                  </div>
-                  <div class="imagen-holder" id="img-06">
-                    <div class="titulo">Sagardoy Las Palmas</div>
-                    <img src="images/img-contacto-madrid.jpg" class="img-fluid" />
-                  </div>
-                  <div class="imagen-holder" id="img-07">
-                    <div class="titulo">Sagardoy Internacional</div>
-                    <img src="images/img-contacto-internacional.jpg" class="img-fluid" />
-                  </div>
+                    <?php 
+                $i=1;
+                foreach ($sedes as $sede) {
+                    if($i==1){$activo='show';}
+                    echo '<div class="imagen-holder '.$activo.'" id="img-0'.$i.'">
+                    <div class="titulo">'.htmlspecialchars($sede['titulo_derecha']).'</div>
+                    <img src="'.htmlspecialchars($sede['imagen']).'" class="img-fluid" />
+                  </div>';
+                    $i++;
+                }?>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-12 col-sm-12 col-lg-5">
                 <div class="infos-holder">
-                  <div class="info-holder show" id="info-01">
-                    <div class="texto">Sapien arcu justo vulputate lectus nullam tempus volutpat. Lorem laoreet mollis faucibus eu neque turpis. Dui aliquam id maecenas mauris amet pretium ut amet. Donec nisi cras.</div>
+                <?php 
+                $i=1;
+                foreach ($sedes as $sede) {
+                    if($i==1){$activo='show';}
+                    echo '<div class="info-holder '.$activo.'" id="info-0'.$i.'">
+                    <div class="texto">'.htmlspecialchars($sede['descripcion']).'</div>
                     <div class="info">
-                      <a href="#" class="btn-direccion">C. de Velázquez, 86, D, 2ª planta,<br>Salamanca, 28006 Madrid</a><br><br>
-                      <a href="tel:+34915429040">+34 915 429 040</a><br>
-                      <a href="mailto:madrid@sagardoy.com" class="btn-email">madrid@sagardoy.com</a>
+                      <a href="#" class="btn-direccion">'.htmlspecialchars($sede['direccion']).'</a><br><br>
+                      <a href="tel:'.htmlspecialchars($sede['telefono']).'">'.htmlspecialchars($sede['telefono']).'</a><br>
+                      <a href="mailto:'.htmlspecialchars($sede['email']).'" class="btn-email">'.htmlspecialchars($sede['email']).'</a>
                     </div>
-                  </div>
-                  <div class="info-holder" id="info-02">
-                    <div class="texto">Sapien arcu justo vulputate lectus nullam tempus volutpat. Lorem laoreet mollis faucibus eu neque turpis. Dui aliquam id maecenas mauris amet pretium ut amet. Donec nisi cras.</div>
-                    <div class="info">
-                      <a href="#" class="btn-direccion">C. de Velázquez, 86, D, 2ª planta,<br>Salamanca, 28006 Madrid</a><br><br>
-                      <a href="tel:+34914540071">+34 91 454 0071</a><br>
-                      <a href="mailto:barcelona@sagardoy.com" class="btn-email">barcelona@sagardoy.com</a>
-                    </div>
-                  </div>
-                  <div class="info-holder" id="info-03">
-                    <div class="texto">Sapien arcu justo vulputate lectus nullam tempus volutpat. Lorem laoreet mollis faucibus eu neque turpis. Dui aliquam id maecenas mauris amet pretium ut amet. Donec nisi cras.</div>
-                    <div class="info">
-                      <a href="#" class="btn-direccion">C. de Velázquez, 86, D, 2ª planta,<br>Salamanca, 28006 Madrid</a><br><br>
-                      <a href="tel:+34914540071">+34 91 454 0071</a><br>
-                      <a href="mailto:malaga@sagardoy.com" class="btn-email">malaga@sagardoy.com</a>
-                    </div>
-                  </div>
-                  <div class="info-holder" id="info-04">
-                    <div class="texto">Sapien arcu justo vulputate lectus nullam tempus volutpat. Lorem laoreet mollis faucibus eu neque turpis. Dui aliquam id maecenas mauris amet pretium ut amet. Donec nisi cras.</div>
-                    <div class="info">
-                      <a href="#" class="btn-direccion">C. de Velázquez, 86, D, 2ª planta,<br>Salamanca, 28006 Madrid</a><br><br>
-                      <a href="tel:+34914540071">+34 91 454 0071</a><br>
-                      <a href="mailto:sevilla@sagardoy.com" class="btn-email">sevilla@sagardoy.com</a>
-                    </div>
-                  </div>
-                  <div class="info-holder" id="info-05">
-                    <div class="texto">Sapien arcu justo vulputate lectus nullam tempus volutpat. Lorem laoreet mollis faucibus eu neque turpis. Dui aliquam id maecenas mauris amet pretium ut amet. Donec nisi cras.</div>
-                    <div class="info">
-                      <a href="#" class="btn-direccion">C. de Velázquez, 86, D, 2ª planta,<br>Salamanca, 28006 Madrid</a><br><br>
-                      <a href="tel:+34914540071">+34 91 454 0071</a><br>
-                      <a href="mailto:bilbao@sagardoy.com" class="btn-email">bilbao@sagardoy.com</a>
-                    </div>
-                  </div>
-                  <div class="info-holder" id="info-06">
-                    <div class="texto">Sapien arcu justo vulputate lectus nullam tempus volutpat. Lorem laoreet mollis faucibus eu neque turpis. Dui aliquam id maecenas mauris amet pretium ut amet. Donec nisi cras.</div>
-                    <div class="info">
-                      <a href="#" class="btn-direccion">C. de Velázquez, 86, D, 2ª planta,<br>Salamanca, 28006 Madrid</a><br><br>
-                      <a href="tel:+34914540071">+34 91 454 0071</a><br>
-                      <a href="mailto:laspalmas@sagardoy.com" class="btn-email">laspalmas@sagardoy.com</a>
-                    </div>
-                  </div>
-                  <div class="info-holder" id="info-07">
-                    <div class="texto">Sapien arcu justo vulputate lectus nullam tempus volutpat. Lorem laoreet mollis faucibus eu neque turpis. Dui aliquam id maecenas mauris amet pretium ut amet. Donec nisi cras.</div>
-                    <div class="info">
-                      <a href="#" class="btn-direccion">C. de Velázquez, 86, D, 2ª planta,<br>Salamanca, 28006 Madrid</a><br><br>
-                      <a href="tel:+34914540071">+34 91 454 0071</a><br>
-                      <a href="mailto:internacional@sagardoy.com" class="btn-email">internacional@sagardoy.com</a>
-                    </div>
-                  </div>
+                  </div>';
+                    $i++;
+                }?>
+
                 </div>
               </div>
               <div class="col-12 col-sm-12 col-lg-1"></div>
