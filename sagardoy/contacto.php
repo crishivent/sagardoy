@@ -22,7 +22,7 @@ $telefono = get_field('telefono_general', 'option');
                 <?php 
                 $i=1;
                 foreach ($sedes as $sede) {
-                    if($i==1){$activo='activo';}
+                    if($i==1){$activo='activo';}else{$activo='noac';}
                     echo '<li><a href="#" data-id="0'.$i.'" class="btn-link '.$activo.'">'.htmlspecialchars($sede['nombre']).'</a></li>';
                     $i++;
                 }?>
@@ -41,7 +41,7 @@ $telefono = get_field('telefono_general', 'option');
                     <?php 
                 $i=1;
                 foreach ($sedes as $sede) {
-                    if($i==1){$activo='show';}
+                    if($i==1){$activo='show';}else{$activo='noac';}
                     echo '<div class="imagen-holder '.$activo.'" id="img-0'.$i.'">
                     <div class="titulo">'.htmlspecialchars($sede['titulo_derecha']).'</div>
                     <img src="'.htmlspecialchars($sede['imagen']).'" class="img-fluid" />
@@ -57,7 +57,7 @@ $telefono = get_field('telefono_general', 'option');
                 <?php 
                 $i=1;
                 foreach ($sedes as $sede) {
-                    if($i==1){$activo='show';}
+                    if($i==1){$activo='show';}else{$activo='noac';}
                     echo '<div class="info-holder '.$activo.'" id="info-0'.$i.'">
                     <div class="texto">'.htmlspecialchars($sede['descripcion']).'</div>
                     <div class="info">
