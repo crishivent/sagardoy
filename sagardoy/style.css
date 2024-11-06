@@ -183,7 +183,7 @@ button:focus {
   -webkit-mask-image: url("../images/ico-flecha-left.svg");
 }
 .icons.ico-flecha-right {
-  -webkit-mask-image: url("../images/ico-flecha-right.svg");
+  -webkit-mask-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/ico-flecha-right.svg");
 }
 /* ============================================= */
 /* Icons */
@@ -916,7 +916,7 @@ button:focus {
   -webkit-mask-size: contain;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
-  -webkit-mask-image: url("../images/ico-flecha-right.svg");
+  -webkit-mask-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/ico-flecha-right.svg");
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -ms-transition: all 0.2s ease;
@@ -982,7 +982,7 @@ button:focus {
   -webkit-mask-size: contain;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
-  -webkit-mask-image: url("../images/ico-flecha-right.svg");
+  -webkit-mask-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/ico-flecha-right.svg");
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -ms-transition: all 0.2s ease;
@@ -1554,7 +1554,7 @@ button:focus {
   -webkit-mask-size: contain;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
-  -webkit-mask-image: url("../images/ico-flecha-right.svg");
+  -webkit-mask-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/ico-flecha-right.svg");
 }
 .navbar
   .menu-content
@@ -1661,7 +1661,7 @@ button:focus {
   -webkit-mask-size: contain;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
-  -webkit-mask-image: url("../images/ico-flecha-right.svg");
+  -webkit-mask-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/ico-flecha-right.svg");
 }
 .navbar
   .menu-content
@@ -4174,7 +4174,7 @@ button:focus {
   font-size: 21px;
   line-height: 26px;
   padding: 22px 20px;
-  background-image: url("../images/ico-flecha-right.svg");
+  background-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/ico-flecha-right.svg");
   background-repeat: no-repeat;
   background-position: calc(100% - 20px) center;
   background-size: 28px;
@@ -5786,7 +5786,7 @@ button:focus {
   .info-holder
   .info
   a.btn-direccion {
-  background-image: url("../images/ico-flecha-right.svg");
+  background-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/ico-flecha-right.svg");
   background-repeat: no-repeat;
   background-position: calc(100% - 20px) bottom;
   background-size: 22px;
@@ -6131,7 +6131,7 @@ button:focus {
   margin-bottom: 5px;
 }
 .modulo-35 .mobile .layer .datas .data .info a.btn-direccion {
-  background-image: url("../images/ico-flecha-right.svg");
+  background-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/ico-flecha-right.svg");
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: 22px;
@@ -6600,7 +6600,7 @@ footer.footer .container-middle .newletter .input-email .input {
   border: 0px;
   padding-left: 20px;
   padding-right: 60px;
-  background-image: url("../images/ico-flecha-right.svg");
+  background-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/ico-flecha-right.svg");
   background-repeat: no-repeat;
   background-position: calc(100% - 20px) center;
   background-size: 28px 28px;
