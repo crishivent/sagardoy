@@ -1,3 +1,4 @@
+jQuery(function ($) {
 jQuery(document).ready(function(){
   $(".navbar .navbar-nav .col-right .btns-link .btn-link_:not(.btn-equipo)").mouseenter(function(e){
     $(".navbar .navbar-nav .col-right .btns-link .btn-link_.btn-equipo").removeClass("hover");
@@ -698,3 +699,4 @@ function stateScrollTop(){
   } else {
   }*/
 }
+});
