@@ -59,6 +59,7 @@ add_filter('upload_mimes', 'add_file_types_to_uploads');
 //Desactivar zona widgets por bloques
 add_filter( 'use_widgets_block_editor', '__return_false' );
 
-
+//Eliminar envoltura p de los inputs
+add_filter('wpcf7_autop_or_not', '__return_false');
 
 ?>
