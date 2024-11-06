@@ -18,4 +18,4 @@
 	</head>
 
 	<body <?php body_class(); ?>>
-      <?php //get_template_part('componentes/globales/comp','menu'); ?>
+      <?php get_template_part('componentes/generales/comp','menu'); ?>

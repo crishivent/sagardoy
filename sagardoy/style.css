@@ -1809,10 +1809,10 @@ button:focus {
   -o-transition: all 0.2s ease;
 }
 .navbar .menu-content .navbar-toggler .ico-menu {
-  -webkit-mask-image: url("../images/ico-menu.svg");
+  -webkit-mask-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/ico-menu.svg");
 }
 .navbar .menu-content .navbar-toggler .ico-cerrar {
-  -webkit-mask-image: url("../images/ico-cerrar.svg");
+  -webkit-mask-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/ico-cerrar.svg");
 }
 .navbar .menu-content .navbar-toggler .ico-menu {
   display: none;
