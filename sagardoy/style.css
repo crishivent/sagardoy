@@ -628,7 +628,7 @@ button:focus {
     }*/
 }
 .navbar.texto-gris .navbar-nav .col-left .navbar-brand .logo {
-  content: url("../images/logo-blue.svg");
+  content: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/logo-blue.svg");
 }
 .navbar.texto-gris .navbar-nav .col-right .btns-link .btn-link_ a {
   color: #2b2d42;
@@ -653,7 +653,7 @@ button:focus {
   color: #ffffff;
 }
 .navbar.texto-gris .menu-content .navbar-brand .logo {
-  content: url("../images/logo-blue.svg");
+  content: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/logo-blue.svg");
 }
 .navbar.texto-gris .menu-content .navbar-toggler .ico-menu,
 .navbar.texto-gris .menu-content .navbar-toggler .ico-cerrar {
@@ -663,7 +663,7 @@ button:focus {
   background-color: #2b2d42;
 }
 .navbar.scrolling .navbar-nav .col-left .navbar-brand .logo {
-  content: url("../images/logo.svg");
+  content: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/logo-2.svg");
 }
 .navbar.scrolling .navbar-nav .col-right .btns-link .btn-link_ a {
   color: #ffffff;
@@ -680,7 +680,7 @@ button:focus {
   color: #ffffff;
 }
 .navbar.scrolling .menu-content .navbar-brand .logo {
-  content: url("../images/logo.svg");
+  content: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/logo-2.svg");
 }
 .navbar.scrolling .menu-content .navbar-toggler .ico-menu,
 .navbar.scrolling .menu-content .navbar-toggler .ico-cerrar {
@@ -6396,7 +6396,7 @@ button:focus {
   padding-bottom: 10px;
   text-decoration: none;
   text-transform: uppercase;
-  background-image: url("../images/ico-arrow-right-blue.svg");
+  background-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/logo-blue.svg");
   background-repeat: no-repeat;
   background-position: calc(100% - 20px) center;
   background-size: 22px;
