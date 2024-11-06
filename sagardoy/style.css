@@ -6101,6 +6101,29 @@ button:focus {
   .modulo-35 .mobile .layer .datas .data .info {
     margin-bottom: 26px;
   }
+  .modulo-35 .desktop .col-right .wpcf7-submit {
+    width: 100%;
+    display: inline-block;
+    font-family: "Poppins-Regular", sans-serif;
+    color: #2b2d42;
+    font-size: 16px;
+    line-height: 19px;
+    text-decoration: none;
+    padding: 14px 30px;
+    text-transform: uppercase;
+    border-radius: 26px;
+    border: 2px solid #ff1300;
+    text-align: center;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    background: white;
+  }
+  .modulo-35 .desktop .col-right .wpcf7-submit:hover {
+    color: #ffffff;
+    background-color: #ff1300;
+  }
 }
 .modulo-35 .mobile .layer .datas .data .info a {
   display: inline-block;
