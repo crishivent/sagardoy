@@ -1,28 +1,35 @@
+  <?php
+  $contador1 = get_field('contador_1', 'option');
+  $contador2 = get_field('contador_2', 'option'); 
+  $contador3 = get_field('contador_3', 'option'); 
+  $contador4 = get_field('contador_4', 'option'); 
+  ?>
+ 
  <section class="modulo-03 pt-90 pb-90">
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-3 col-md-3 text-center">
           <div class="holder">
-            <div class="numero"><span class="plus">+</span><span class="counter" data-count="43">0</span></div>
-            <div class="texto">años de experiencia</div>
+            <div class="numero"><span class="plus">+</span><span class="counter" data-count="<?php echo $contador1;?>">0</span></div>
+            <div class="texto"><?php echo $contador1;?></div>
           </div>
         </div>
         <div class="col-12 col-sm-3 col-md-3 text-center">
           <div class="holder">
-            <div class="numero"><span class="plus">+</span><span class="counter" data-count="350">0</span></div>
-            <div class="texto">profesionales</div>
+            <div class="numero"><span class="plus">+</span><span class="counter" data-count="<?php echo $contador2;?>">0</span></div>
+            <div class="texto"><?php echo $contador2;?></div>
           </div>
         </div>
         <div class="col-12 col-sm-3 col-md-3 text-center">
           <div class="holder">
-            <div class="numero"><span class="counter" data-count="35">0</span></div>
-            <div class="texto">sedes en el mundo</div>
+            <div class="numero"><span class="counter" data-count="<?php echo $contador3;?>">0</span></div>
+            <div class="texto"><?php echo $contador3;?></div>
           </div>
         </div>
         <div class="col-12 col-sm-3 col-md-3 text-center">
           <div class="holder">
-            <div class="numero"><span class="plus">+</span><span class="counter" data-count="43">0</span></div>
-            <div class="texto">años de experiencia</div>
+            <div class="numero"><span class="plus">+</span><span class="counter" data-count="<?php echo $contador4;?>">0</span></div>
+            <div class="texto"><?php echo $contador4;?></div>
           </div>
         </div>
       </div>

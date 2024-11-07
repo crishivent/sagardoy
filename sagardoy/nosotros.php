@@ -31,7 +31,7 @@ $enlacebtn = get_field('boton_servicios');
 <!-- Quienes impulsa -->
 <?php get_template_part('componentes/nosotros/comp','impulsa');?>
 
-<!-- Quienes experiencia Contadores -->
+<!-- Quienes experiencia Contadores ok -->
 <?php get_template_part('componentes/nosotros/comp','experiencia');?>
 
 <!-- Quienes Premios slider -->
@@ -43,7 +43,7 @@ $enlacebtn = get_field('boton_servicios');
 <!-- Quienes equipo -->
 <?php get_template_part('componentes/nosotros/comp','equipo');?>
 
-<!-- Quienes opiniones -->
+<!-- Quienes opiniones OK -->
 <?php get_template_part('componentes/generales/comp','opiniones');?>
 
 <!-- Contactanos -->
