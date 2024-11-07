@@ -1,3 +1,5 @@
+ <?php $opiniones = get_field('opiniones', 'option'); ?>
+ 
  <section class="modulo-08 pt-130 pb-130">
     <div class="container">
       <div class="btns-slider-testimonios">
@@ -8,21 +10,13 @@
         <div class="col-12 col-sm-10 col-md-10">
           <div class="slider-testimonios">
             <div class="slick-slider" data-sizes="100vw">
-              <div>
-                <h2 class="texto">“Mattis nullam imperdiet elit urna mollis. Mi et tortor sit est pretium vulputate aliquam donec pellentesque. At egestas tortor scelerisque lobortis.”</h2>
-              </div>
-              <div>
-                <h2 class="texto">2 “Mattis nullam imperdiet elit urna mollis. Mi et tortor sit est pretium vulputate aliquam donec pellentesque. At egestas tortor scelerisque lobortis.”</h2>
-              </div>
-              <div>
-                <h2 class="texto">3 “Mattis nullam imperdiet elit urna mollis. Mi et tortor sit est pretium vulputate aliquam donec pellentesque. At egestas tortor scelerisque lobortis.”</h2>
-              </div>
-              <div>
-                <h2 class="texto">4 “Mattis nullam imperdiet elit urna mollis. Mi et tortor sit est pretium vulputate aliquam donec pellentesque. At egestas tortor scelerisque lobortis.”</h2>
-              </div>
-              <div>
-                <h2 class="texto">5 “Mattis nullam imperdiet elit urna mollis. Mi et tortor sit est pretium vulputate aliquam donec pellentesque. At egestas tortor scelerisque lobortis.”</h2>
-              </div>
+              <?php 
+                $i=1;
+                foreach ($opiniones as $opinion) {
+                  echo '<div>
+                          <h2 class="texto">'.htmlspecialchars($opinion['opinion']).'</h2>
+                        </div>';
+                }?>
             </div>
           </div>
         </div>
