@@ -44,7 +44,7 @@ $enlacebtn = get_field('boton_servicios');
 <?php get_template_part('componentes/nosotros/comp','equipo');?>
 
 <!-- Quienes opiniones -->
-<?php get_template_part('componentes/nosotros/comp','opiniones');?>
+<?php get_template_part('componentes/generales/comp','opiniones');?>
 
 <!-- Contactanos -->
 <?php get_template_part('componentes/generales/comp','contactanos');?>
