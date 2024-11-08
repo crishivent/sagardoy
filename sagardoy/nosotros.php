@@ -16,6 +16,16 @@ $tituloquienes = get_field('titular_quienes_somos');
 $puntosclave = get_field('puntos_clave');
 $enlacebtn = get_field('boton_servicios');
 
+// Impulsa tu carrera
+$impulsa = get_field('impulsa_tu_carrera');
+$impulsa2 = get_field('impulsa_tu_carrera_2');
+
+
+
+
+
+
+
 
 
 

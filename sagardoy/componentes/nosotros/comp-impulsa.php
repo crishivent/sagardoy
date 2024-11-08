@@ -2,7 +2,7 @@
     <div class="container">
       <div class="accesos">
         <div class="acceso left">
-          <div class="titulo">Impulsa tu carrera profesional</div>
+          <div class="titulo"><?php echo $impulsa['titulo'];?></div>
           <img src="images/img-sagardoy-school.jpg" class="img-fluid" alt="" />
           <div class="holder">
             <p class="texto">Pulvinar nibh dignissim nec tristique congue. Lacus rhoncus sit euismod scelerisque vitae. Vestibulum faucibus lectus facilisi sed dui adipiscing.</p>
