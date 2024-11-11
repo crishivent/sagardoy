@@ -5275,10 +5275,11 @@ button:focus {
 }
 .modulo-31 {
   position: relative;
-  background: url("../images/img-grafismo-01.svg") no-repeat left top / auto
-      87px,
-    #edf2f4 url("../images/img-grafismo-02.svg") no-repeat right bottom / auto
-      87px;
+  background: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/img-grafismo-01.svg")
+      no-repeat left top / auto 87px,
+    #edf2f4
+      url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/img-grafismo-02.svg")
+      no-repeat right bottom / auto 87px;
 }
 @media (max-width: 991px) {
   .modulo-31 {
