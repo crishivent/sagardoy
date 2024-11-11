@@ -20,8 +20,10 @@ $enlacebtn = get_field('boton_servicios');
 set_query_var("impulsa", get_field('impulsa_tu_carrera'));
 set_query_var("impulsa2", get_field('impulsa_tu_carrera_2'));
 
-
-
+//Media kit
+set_query_var("titulomedia", get_field('titulo_media_kit'));
+set_query_var("descripcionmedia", get_field('descripcion_media_kit'));
+set_query_var("archivomedia", get_field('archivo_media_kit'));
 
 
 
@@ -38,7 +40,7 @@ set_query_var("impulsa2", get_field('impulsa_tu_carrera_2'));
 <?php get_template_part('componentes/nosotros/comp','somos');?>
 
 
-<!-- Quienes impulsa -->
+<!-- Quienes impulsa ok-->
 <?php get_template_part('componentes/nosotros/comp','impulsa');?>
 
 <!-- Quienes experiencia Contadores ok -->
@@ -59,7 +61,7 @@ set_query_var("impulsa2", get_field('impulsa_tu_carrera_2'));
 <!-- Contactanos -->
 <?php get_template_part('componentes/generales/comp','contactanos');?>
 
-<!-- Newsletter -->
+<!-- Newsletter ok-->
 <?php get_template_part('componentes/generales/comp','newsletter');?>
 
 <!-- Quienes historia -->
