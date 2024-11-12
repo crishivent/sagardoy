@@ -28,6 +28,9 @@ set_query_var("archivomedia", get_field('archivo_media_kit'));
 //Historia
 set_query_var("historia", get_field('historia'));
 
+//Premios
+set_query_var("premios", get_field('premios'));
+set_query_var("titulopremios", get_field('titulo_premios'));
 
 
 
@@ -67,10 +70,10 @@ set_query_var("historia", get_field('historia'));
 <!-- Newsletter ok-->
 <?php get_template_part('componentes/generales/comp','newsletter');?>
 
-<!-- Quienes historia -->
+<!-- Quienes historia ok-->
 <?php get_template_part('componentes/nosotros/comp','historia');?>
 
-<!-- Quienes media kit -->
+<!-- Quienes media kit ok-->
 <?php get_template_part('componentes/nosotros/comp','mediakit');?>
 
 
