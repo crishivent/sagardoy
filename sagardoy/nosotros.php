@@ -70,7 +70,7 @@ set_query_var("pagina_informacion", get_field('pagina_informacion'));
 <?php get_template_part('componentes/generales/comp','opiniones');?>
 
 <!-- Contactanos -->
-<?php get_template_part('componentes/generales/comp','contactanos');?>
+<?php get_template_part('componentes/nosotros/comp','contactanos');?>
 
 <!-- Newsletter ok-->
 <?php get_template_part('componentes/generales/comp','newsletter');?>
