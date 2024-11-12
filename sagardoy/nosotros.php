@@ -25,6 +25,9 @@ set_query_var("titulomedia", get_field('titulo_media_kit'));
 set_query_var("descripcionmedia", get_field('descripcion_media_kit'));
 set_query_var("archivomedia", get_field('archivo_media_kit'));
 
+//Historia
+set_query_var("historia", get_field('historia'));
+
 
 
 
