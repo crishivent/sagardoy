@@ -1,30 +1,40 @@
+<?php 
+$sedes = get_field('sedes', 'option');
+$titulo1=get_query_var("titulo_donde_estamos");
+$imagendondeestamos=get_query_var("imagen_donde_estamos");
+$tituloderechadondeestamos=get_query_var("titulo_derecha_donde_estamos");
+$descripcionderechadondeestamos=get_query_var("descripcion_derecha_donde_estamos");
+$descripciondondeestamos=get_query_var("descripcion_donde_estamos");
+?>
 <section class="modulo-06 pt-65 pb-130">
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-12 col-lg-5">
-          <h2 class="titulo">Acompañamos a nuestros clientes allí donde estén</h2>
-          <p class="texto">Asesoramos a nuestros clientes en España desde nuestras sedes en <b>Madrid, Barcelona, Málaga, Sevilla, Bilbao y Las Palmas de Gran Canaria</b>. Además, nuestra presencia global se refuerza a través de Ius Laboris, una reconocida asociación internacional de firmas especializadas en asesoramiento laboral, de la cual somos miembros fundadores.</p>
+          <h2 class="titulo"><?php echo $titulo1;?></h2>
+          <p class="texto"><?php echo $descripciondondeestamos;?></p>
         </div>
         <div class="col-12 col-sm-12 col-lg-7">
-          <img src="images/img-mapa.svg" class="img-fluid" alt="" />
+          <img src="<?php echo $imagendondeestamos; ?>" class="img-fluid" alt="" />
         </div>
       </div>
       <div class="cols-bottom">
         <div class="row">
           <div class="col-12 col-sm-12 col-lg-6">
             <h2 class="titulo">Sedes en España</h2>
-            <p class="texto">Encuentra nuestras sedes en: Madrid</p>
+            <p class="texto">Encuentra nuestras sedes en: <?php echo $sedes[0]['nombre']; ?></p>
             <ul class="lista">
-              <li><a href="#">Barcelona</a></li>
-              <li><a href="#">Málaga</a></li>
-              <li><a href="#">Sevilla</a></li>
-              <li><a href="#">Bilbao</a></li>
-              <li><a href="#">Las Palmas de Gran Canaria.</a></li>
+
+            <?php 
+                foreach ($sedes as $sede) {
+                    if($i==1){}else{
+                    echo '<li><a href="#">'.htmlspecialchars($sede['nombre']).'</a></li>';
+                    }
+                }?>
             </ul>
           </div>
           <div class="col-12 col-sm-12 col-lg-6">
-            <h2 class="titulo">Sagardoy en el mundo</h2>
-            <p class="texto">Somos un despacho sin límites, ni fronteras, presente en los 5 continentes y asentado en más de 56 países, con más de 1,500 abogados a nivel mundial, a través de Ius Laboris.</p>
+            <h2 class="titulo"><?php echo $tituloderechadondeestamos;?></h2>
+            <p class="texto"><?php echo $descripcionderechadondeestamos;?></p>
           </div>
         </div>
       </div>

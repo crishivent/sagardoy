@@ -45,6 +45,12 @@ set_query_var("enlace_equipo_de_expertos", get_field('enlace_equipo_de_expertos'
 set_query_var("imagen_equipo_de_expertos", get_field('imagen_equipo_de_expertos'));
 
 
+//Donde estamos
+set_query_var("titulo_donde_estamos", get_field('titulo_donde_estamos'));
+set_query_var("descripcion_donde_estamos", get_field('descripcion_donde_estamos'));
+set_query_var("imagen_donde_estamos", get_field('imagen_donde_estamos'));
+set_query_var("titulo_derecha_donde_estamos", get_field('titulo_derecha_donde_estamos'));
+set_query_var("descripcion_derecha_donde_estamos", get_field('descripcion_derecha_donde_estamos'));
 
 
 
@@ -67,10 +73,10 @@ set_query_var("imagen_equipo_de_expertos", get_field('imagen_equipo_de_expertos'
 <!-- Quienes Premios slider ok-->
 <?php get_template_part('componentes/nosotros/comp','premioslider');?>
 
-<!-- Quienes donde estamos -->
+<!-- Quienes donde estamos ok-->
 <?php get_template_part('componentes/nosotros/comp','dondeestamos');?>
 
-<!-- Quienes equipo -->
+<!-- Quienes equipo ok-->
 <?php get_template_part('componentes/nosotros/comp','equipo');?>
 
 <!-- Quienes opiniones OK -->
