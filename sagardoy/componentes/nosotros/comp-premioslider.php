@@ -24,8 +24,9 @@
               foreach ($premios as $premio) {
                 $imagen = $premio['premios']['imagen_premio'];
                 $texto = $premio['premios']['texto_premio'];
+                $enlacepremios= $premio['premios']['enlace_premios'];
                   echo '<div>
-                          <a href="#">
+                          <a href="'.$enlacepremios.'">
                             <div class="line-border">
                               <img src="'.$imagen.'" class="img-fluid" alt="">
                               <div class="texto">'.$texto.'</div>
