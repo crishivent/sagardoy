@@ -25,7 +25,7 @@
               $b=1;
               foreach ($historia as $elemento) {
                 $titulo = $elemento['elementos_historia']['titulo_historia'];
-                  echo '<option value="0'.$a.'">'.$titulo.'</option>';
+                  echo '<option value="0'.$b.'">'.$titulo.'</option>';
                   $b++;
               }
             ?>
