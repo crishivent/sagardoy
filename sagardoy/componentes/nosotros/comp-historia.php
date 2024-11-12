@@ -43,7 +43,7 @@
                 $descripcion = $elemento['elementos_historia']['descripcion_historia'];
                 $enlace = $elemento['elementos_historia']['enlace_leer_mas'];
                 if($c==1){$show='show';}
-                  echo '<div class="contenido $c" id="c-0$c">
+                  echo '<div class="contenido $show" id="c-0$c">
                         <img src="$imagen" class="img-fluid" alt="" />
                         <p class="texto">$descripcion</p>
                         ';
