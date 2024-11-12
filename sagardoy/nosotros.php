@@ -38,6 +38,13 @@ set_query_var("titulo_informacion", get_field('titulo_informacion'));
 set_query_var("pagina_informacion", get_field('pagina_informacion'));
 
 
+//Equipo de expertos
+set_query_var("titulo_equipo_expertos", get_field('titulo_equipo_expertos'));
+set_query_var("descripcion_equipo_de_expertos", get_field('descripcion_equipo_de_expertos'));
+set_query_var("enlace_equipo_de_expertos", get_field('enlace_equipo_de_expertos'));
+set_query_var("imagen_equipo_de_expertos", get_field('imagen_equipo_de_expertos'));
+
+
 
 
 
