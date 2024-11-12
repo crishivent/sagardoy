@@ -6,7 +6,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-12 col-lg-4">
-          <h2 class="titulo">Historia</h2>
+          <h2 class="titulo"><?php _e('Historia', 'sagardoy'); ?></h2>
           <ul class="lista">
             <?php 
               $a=1;
@@ -20,7 +20,7 @@
           </ul>
           <div class="select">
             <select id="select">
-              <option value="0" disabled selected>Seleccionar...</option>
+              <option value="0" disabled selected><?php _e('Seleccionar...', 'sagardoy'); ?></option>
               <?php 
               $b=1;
               foreach ($historia as $elemento) {
