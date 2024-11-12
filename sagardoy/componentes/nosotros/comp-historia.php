@@ -12,7 +12,8 @@
               $a=1;
               foreach ($historia as $elemento) {
                 $titulo = $elemento['elementos_historia']['titulo_historia'];
-                  echo '<li><a href="#" data-id="0$a" class="btn-link activo">$titulo</a></li>';
+                  if($a==1){$acti="activo";}else{$acti='';}
+                  echo '<li><a href="#" data-id="0'.$a.'" class="btn-link '.$acti.'">'.$titulo.'</a></li>';
                   $a++;
               }
             ?>
@@ -24,7 +25,7 @@
               $b=1;
               foreach ($historia as $elemento) {
                 $titulo = $elemento['elementos_historia']['titulo_historia'];
-                  echo '<option value="0$a">$titulo</option>';
+                  echo '<option value="0'.$a.'">'.$titulo.'</option>';
                   $b++;
               }
             ?>
@@ -42,13 +43,13 @@
                 $imagen = $elemento['elementos_historia']['imagen_historia'];
                 $descripcion = $elemento['elementos_historia']['descripcion_historia'];
                 $enlace = $elemento['elementos_historia']['enlace_leer_mas'];
-                if($c==1){$show='show';}
-                  echo '<div class="contenido $show" id="c-0$c">
-                        <img src="$imagen" class="img-fluid" alt="" />
-                        <p class="texto">$descripcion</p>
+                if($c==1){$show='show';}else{$show='';}
+                  echo '<div class="contenido $show" id="c-0'.$c.'">
+                        <img src="'.$imagen.'" class="img-fluid" alt="" />
+                        <p class="texto">'.$descripcion.'</p>
                         ';
                   if (!empty($enlace)) {
-                      echo "<a href='$enlace' class='btn-link'>Leer más</a>";
+                      echo '<a href="'.$enlace.'" class="btn-link">Leer más</a>';
                   }
 
                         
