@@ -32,6 +32,11 @@ set_query_var("historia", get_field('historia'));
 set_query_var("premios", get_field('premios'));
 set_query_var("titulopremios", get_field('titulo_premios'));
 
+//Necesitas información
+set_query_var("imagen_informacion", get_field('imagen_informacion'));
+set_query_var("titulo_informacion", get_field('titulo_informacion'));
+set_query_var("pagina_informacion", get_field('pagina_informacion'));
+
 
 
 
@@ -52,7 +57,7 @@ set_query_var("titulopremios", get_field('titulo_premios'));
 <!-- Quienes experiencia Contadores ok -->
 <?php get_template_part('componentes/nosotros/comp','experiencia');?>
 
-<!-- Quienes Premios slider -->
+<!-- Quienes Premios slider ok-->
 <?php get_template_part('componentes/nosotros/comp','premioslider');?>
 
 <!-- Quienes donde estamos -->
