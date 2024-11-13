@@ -7,9 +7,9 @@ Template Name: Página Nosotros
 get_header();
 
 //Cabecera
-$fondocabecera = get_field('fondo_de_cabecera');
-$titulo = get_field('nosotros_titulo');
-$subtitulo = get_field('nosotros_subtitulo');
+set_query_var("fondo_de_cabecera", get_field('fondo_de_cabecera'));
+set_query_var("nosotros_titulo", get_field('nosotros_titulo'));
+set_query_var("nosotros_subtitulo", get_field('nosotros_subtitulo'));
 
 //Quienes Somos
 $tituloquienes = get_field('titular_quienes_somos');
@@ -56,7 +56,7 @@ set_query_var("descripcion_derecha_donde_estamos", get_field('descripcion_derech
 
 
  ?>
-<!-- Cabecera -->
+<!-- Cabecera ok-->
 <?php get_template_part('componentes/nosotros/comp','cabecera');?>
 
 
