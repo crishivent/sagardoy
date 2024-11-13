@@ -6,7 +6,7 @@ $tituloderechadondeestamos=get_query_var("titulo_derecha_donde_estamos");
 $descripcionderechadondeestamos=get_query_var("descripcion_derecha_donde_estamos");
 $descripciondondeestamos=get_query_var("descripcion_donde_estamos");
 ?>
-<section class="modulo-06 pt-65 pb-130">
+<section id="gdondeestamos" class="modulo-06 pt-65 pb-130">
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-12 col-lg-5">

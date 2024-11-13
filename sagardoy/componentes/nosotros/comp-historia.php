@@ -2,7 +2,7 @@
 <?php 
  $historia = get_query_var('historia');
 ?>
-<section class="modulo-30 pt-130 pb-130">
+<section id="ghistoria" class="modulo-30 pt-130 pb-130">
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-12 col-lg-4">

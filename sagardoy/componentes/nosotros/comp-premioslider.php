@@ -4,7 +4,7 @@
 ?>
 
 
-<section class="modulo-27 pt-130 pb-65">
+<section id="greconocimiento" class="modulo-27 pt-130 pb-65">
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-12 col-lg-9">

@@ -59,10 +59,11 @@ set_query_var("descripcion_derecha_donde_estamos", get_field('descripcion_derech
 <!-- Cabecera ok-->
 <?php get_template_part('componentes/nosotros/comp','cabecera');?>
 
+<!-- Quienes ganchos ok-->
+<?php get_template_part('componentes/nosotros/comp','ganchos');?>
 
-<!-- Quienes somos -->
+<!-- Quienes somos ok-->
 <?php get_template_part('componentes/nosotros/comp','somos');?>
-
 
 <!-- Quienes impulsa ok-->
 <?php get_template_part('componentes/nosotros/comp','impulsa');?>

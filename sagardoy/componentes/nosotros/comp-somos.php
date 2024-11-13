@@ -5,7 +5,7 @@ $btnservicio=get_query_var("boton_servicios");
 
 ?> 
  
- <section class="modulo-28 pt-130 pb-130">
+ <section id="gsomos" class="modulo-28 pt-130 pb-130">
     <div class="container">
       <div class="row">
         <div class="col-12">

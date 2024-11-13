@@ -5,7 +5,7 @@
 
 ?> 
  
- <section class="modulo-31 pt-130 pb-130">
+ <section id="gmediakit" class="modulo-31 pt-130 pb-130">
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-12 col-lg-3"></div>
