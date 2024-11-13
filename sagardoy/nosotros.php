@@ -12,9 +12,9 @@ set_query_var("nosotros_titulo", get_field('nosotros_titulo'));
 set_query_var("nosotros_subtitulo", get_field('nosotros_subtitulo'));
 
 //Quienes Somos
-$tituloquienes = get_field('titular_quienes_somos');
-$puntosclave = get_field('puntos_clave');
-$enlacebtn = get_field('boton_servicios');
+set_query_var("titular_quienes_somos", get_field('titular_quienes_somos'));
+set_query_var("puntos_clave", get_field('puntos_clave'));
+set_query_var("boton_servicios", get_field('boton_servicios'));
 
 // Impulsa tu carrera
 set_query_var("impulsa", get_field('impulsa_tu_carrera'));
