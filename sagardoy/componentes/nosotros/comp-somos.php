@@ -42,7 +42,7 @@ $btnservicio=get_query_var("boton_servicios");
       </div>
       <div class="row">
         <div class="col-12">
-          <a href="<?php echo $btnservicio; ?>" class="btn-link">Servicios Sagardoy</a>
+          <a href="<?php echo $btnservicio; ?>" class="btn-link"><?php _e('Servicios Sagardoy', 'sagardoy'); ?></a>
         </div>
       </div>
     </div>
