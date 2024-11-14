@@ -1,14 +1,30 @@
+<?php 
 
+$titulo=get_query_var("titulo");
+$tags=get_query_var("tags");
+$fecha=get_query_var("fecha");
+
+
+//FALTA GANCHO DE NOTICIAS Y LOS ESPECIALISTAS
+?>
 
 
 <section class="section cabecera-interna-noticias cabecera">
-    <a href="#" class="btn-volver"><u>Noticias</u></a>
+    <a href="#" class="btn-volver"><u><?php _e('Noticias', 'sagardoy'); ?></u></a>
 
     <div class="holder">
       <div class="row">
         <div class="col-12 col-sm-12 col-lg-10">
-          <div class="subtitulo"><span><b>SAGARDOY LEGAL NEWS</b></span><span>25.12.2024</span></div>
-          <div class="titulo">Dolor magna diam nunc sed, in sit leonec netus a dui ipsum sit diam quam.</div>
+          <div class="subtitulo"><span><b><?php if ( $tags ) {
+           
+            foreach ( $tags as $tag ) {
+                echo '' . $tag->name . ' '; // Muestra el nombre de cada etiqueta
+            }
+            
+        } else {
+            echo '';
+        }?></b></span><span><?php echo $fecha; ?></span></div>
+          <div class="titulo"><?php echo $titulo;?></div>
         </div>
         <div class="col-12 col-sm-12 col-lg-2 d-lg-flex flex-column justify-content-end align-items-end">
           <div>
