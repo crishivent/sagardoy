@@ -77,50 +77,58 @@ set_query_var("fecha", get_the_date( 'd.m.Y' ));
 
         </div>
         <div class="col-12 col-sm-12 col-lg-1"></div>
+
+
+
         <div class="col-12 col-sm-4 col-lg-4 d-none d-lg-block">
           <div class="noticias-relacionadas">
-            <div class="titulo">Noticias relacionadas</div>
+            <div class="titulo"><?php _e('Noticias relacionadas', 'sagardoy'); ?></div>
+            <?php 
+            // Obtener las categorías del post actual
+                $categories = wp_get_post_categories( get_the_ID() );
+
+                if ( $categories ) {
+                    // Crear consulta para posts relacionados
+                    $args = array(
+                        'category__in'   => $categories,     // Coincidir con las categorías del post actual
+                        'post__not_in'   => array( get_the_ID() ), // Excluir el post actual
+                        'posts_per_page' => 4,               // Número de posts relacionados a mostrar
+                        'ignore_sticky_posts' => 1           // Ignorar posts fijos
+                    );
+                    $related_posts = new WP_Query( $args );
+
+                    // Verificar si hay posts relacionados
+                    if ( $related_posts->have_posts() ) {
+                        while ( $related_posts->have_posts() ) {
+                            $related_posts->the_post();
+                            $img=$thumbnail_url = get_the_post_thumbnail_url( get_the_ID(), 'thumbnail' );
+                            ?>
+                            <div class="noticia">
+                        <div class="row">
+                            <div class="col-8 col-sm-9 col-md-9 d-lg-flex align-items-center">
+                            <a href="<?php the_permalink(); ?>" class="titulo"><?php the_title(); ?></a>
+                            </div>
+                            <div class="col-4 col-sm-3 col-md-3">
+                            <a href="#"><img src="<?php echo $img; ?>" class="image" alt="" /></a>
+                            </div>
+                        </div>
+                        </div>
+                            <li>
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            </li>
+                            <?php
+                        }
+                    
+                    } else {
+                        echo '<p>No hay posts relacionados.</p>';
+                    }
+
+                    // Restaurar postdata original después de la consulta personalizada
+                    wp_reset_postdata();
+                }
             
-            <div class="noticia">
-              <div class="row">
-                <div class="col-8 col-sm-9 col-md-9 d-lg-flex align-items-center">
-                  <a href="#" class="titulo">Dolor magna diam nunc sed in sit leonec netus a dui.</a>
-                </div>
-                <div class="col-4 col-sm-3 col-md-3">
-                  <a href="#"><img src="images/img-noticia-01.png" class="image" alt="" /></a>
-                </div>
-              </div>
-            </div>
-            <div class="noticia">
-              <div class="row">
-                <div class="col-8 col-sm-9 col-md-9 d-lg-flex align-items-center">
-                  <a href="#" class="titulo">Dolor magna diam nunc sed in sit leonec netus a dui.</a>
-                </div>
-                <div class="col-4 col-sm-3 col-md-3">
-                  <a href="#"><img src="images/img-noticia-02.png" class="image" alt="" /></a>
-                </div>
-              </div>
-            </div>
-            <div class="noticia">
-              <div class="row">
-                <div class="col-8 col-sm-9 col-md-9 d-lg-flex align-items-center">
-                  <a href="#" class="titulo">Dolor magna diam nunc sed in sit leonec netus a dui.</a>
-                </div>
-                <div class="col-4 col-sm-3 col-md-3">
-                  <a href="#"><img src="images/img-noticia-03.png" class="image" alt="" /></a>
-                </div>
-              </div>
-            </div>
-            <div class="noticia">
-              <div class="row">
-                <div class="col-8 col-sm-9 col-md-9 d-lg-flex align-items-center">
-                  <a href="#" class="titulo">Dolor magna diam nunc sed in sit leonec netus a dui.</a>
-                </div>
-                <div class="col-4 col-sm-3 col-md-3">
-                  <a href="#"><img src="images/img-noticia-04.png" class="image" alt="" /></a>
-                </div>
-              </div>
-            </div>
+            
+            ?>
           </div>
 
           <div class="newletter">
