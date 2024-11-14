@@ -113,9 +113,6 @@ set_query_var("fecha", get_the_date( 'd.m.Y' ));
                             </div>
                         </div>
                         </div>
-                            <li>
-                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                            </li>
                             <?php
                         }
                     
