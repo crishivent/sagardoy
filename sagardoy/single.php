@@ -10,7 +10,7 @@ get_header();
 //Cabecera
 set_query_var("titulo", get_the_title());
 set_query_var("tags", get_the_tags());
-set_query_var("fecha", get_the_date());
+set_query_var("fecha", get_the_date( 'd.m.Y' ));
 
 
 ?>
