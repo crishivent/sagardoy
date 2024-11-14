@@ -699,4 +699,25 @@ function stateScrollTop(){
   } else {
   }*/
 }
+
+function copyLink(link, element) {
+    // Crear un elemento temporal para copiar el texto
+    const tempInput = document.createElement("input");
+    document.body.appendChild(tempInput);
+    tempInput.value = link;
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999); // Para móviles
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+    
+    // Cambiar el texto del enlace al que se hizo clic
+    element.textContent = "Copiado en el portapapeles";
+    
+    // Volver a cambiar el texto después de unos segundos
+    setTimeout(() => {
+        element.textContent = "Copiar Link";
+    }, 2000); // 2 segundos de espera antes de volver al texto original
+}
+
+
 });
