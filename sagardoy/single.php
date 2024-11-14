@@ -71,7 +71,7 @@ set_query_var("fecha", get_the_date( 'd.m.Y' ));
                 <a href="#" class="btn-facebook"></a>
                 <a href="#" class="btn-whatsapp"></a>
               </div>
-              <a href="#" class="btn-copiar">Copiar enlace</a>
+               <a href="javascript:void(0);" onclick="copyLink('<?php echo esc_url(the_permalink() ); ?>')" class="btn-copiar"><?php _e('Copiar Link', 'sagardoy'); ?></a>
             </div>
           </div>
 
