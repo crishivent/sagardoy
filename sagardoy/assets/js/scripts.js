@@ -1,5 +1,28 @@
 jQuery(function ($) {
 jQuery(document).ready(function(){
+
+
+  function copyLink(link, element) {
+    // Crear un elemento temporal para copiar el texto
+    const tempInput = document.createElement("input");
+    document.body.appendChild(tempInput);
+    tempInput.value = link;
+    tempInput.select();
+    tempInput.setSelectionRange(0, 99999); // Para móviles
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+    
+    // Cambiar el texto del enlace al que se hizo clic
+    element.textContent = "Copiado en el portapapeles";
+    
+    // Volver a cambiar el texto después de unos segundos
+    setTimeout(() => {
+        element.textContent = "Copiar Link";
+    }, 2000); // 2 segundos de espera antes de volver al texto original
+}
+
+
+
   $(".navbar .navbar-nav .col-right .btns-link .btn-link_:not(.btn-equipo)").mouseenter(function(e){
     $(".navbar .navbar-nav .col-right .btns-link .btn-link_.btn-equipo").removeClass("hover");
   });
@@ -699,25 +722,28 @@ function stateScrollTop(){
   } else {
   }*/
 }
+});
 
-function copyLink(link, element) {
-    // Crear un elemento temporal para copiar el texto
-    const tempInput = document.createElement("input");
-    document.body.appendChild(tempInput);
-    tempInput.value = link;
-    tempInput.select();
-    tempInput.setSelectionRange(0, 99999); // Para móviles
-    document.execCommand("copy");
-    document.body.removeChild(tempInput);
-    
-    // Cambiar el texto del enlace al que se hizo clic
-    element.textContent = "Copiado en el portapapeles";
-    
-    // Volver a cambiar el texto después de unos segundos
-    setTimeout(() => {
-        element.textContent = "Copiar Link";
-    }, 2000); // 2 segundos de espera antes de volver al texto original
-}
-
-
+document.addEventListener('DOMContentLoaded', function() {
+    // Definir la función copyLink para copiar el enlace al portapapeles
+    window.copyLink = function(link, element) {
+        // Crear un elemento temporal para copiar el texto
+        const tempInput = document.createElement("input");
+        document.body.appendChild(tempInput);
+        tempInput.value = link;
+        tempInput.select();
+        tempInput.setSelectionRange(0, 99999); // Para dispositivos móviles
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        
+        // Cambiar el texto del enlace al que se hizo clic
+        if (element) {
+            element.textContent = "Copiado en el portapapeles";
+            
+            // Volver a cambiar el texto después de unos segundos
+            setTimeout(() => {
+                element.textContent = "Copiar Link";
+            }, 2000); // Esperar 2 segundos antes de volver al texto original
+        }
+    };
 });
