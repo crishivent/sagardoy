@@ -7151,7 +7151,7 @@ Extra     extra large	xxl	  ≥1400px
   line-height: 19px;
   padding: 12px 12px 12px 40px;
   display: inline-block;
-  background-image: url("../images/ico-flecha-left.svg");
+  background-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/ico-flecha-left-1.svg");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 28px;
@@ -7360,7 +7360,7 @@ Extra     extra large	xxl	  ≥1400px
 }
 .modulo-36 .lista {
   padding-left: 16px;
-  list-style-image: url("../images/ico-listas.svg");
+  list-style-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/ico-listas.svg");
 }
 .modulo-36 .lista li {
   padding-left: 5px;
@@ -7468,13 +7468,13 @@ Extra     extra large	xxl	  ≥1400px
   background-color: #ff1300;
 }
 .modulo-36 .btns-redes .btns-holder .btns .btn-linkedin {
-  -webkit-mask-image: url("../images/ico-linkedin.svg");
+  -webkit-mask-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/ico-linkedin-2.svg");
 }
 .modulo-36 .btns-redes .btns-holder .btns .btn-facebook {
-  -webkit-mask-image: url("../images/ico-facebook.svg");
+  -webkit-mask-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/ico-facebook.svg");
 }
 .modulo-36 .btns-redes .btns-holder .btns .btn-whatsapp {
-  -webkit-mask-image: url("../images/ico-whatsapp.svg");
+  -webkit-mask-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/ico-whatsapp.svg");
 }
 .modulo-36 .btns-redes .btns-holder .btn-copiar {
   font-family: "Poppins-Medium", sans-serif;
@@ -7579,7 +7579,7 @@ Extra     extra large	xxl	  ≥1400px
   border: 0px;
   padding-left: 20px;
   padding-right: 60px;
-  background-image: url("../images/ico-flecha-right.svg");
+  background-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/ico-flecha-right-1.svg");
   background-repeat: no-repeat;
   background-position: calc(100% - 20px) center;
   background-size: 28px 28px;
