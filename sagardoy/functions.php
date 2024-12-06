@@ -62,4 +62,18 @@ add_filter( 'use_widgets_block_editor', '__return_false' );
 //Eliminar envoltura p de los inputs
 add_filter('wpcf7_autop_or_not', '__return_false');
 
+// Le indicamos a wordpress que use blog para las entradas
+function custom_blog_template( $template ) {
+    if ( is_home() ) { // Comprueba si estamos en la página del blog
+        $new_template = locate_template( array( 'blog.php' ) );
+        if ( '' != $new_template ) {
+            return $new_template; // Retorna la plantilla 'blog.php'
+        }
+    }
+    return $template; // Si no estamos en la página del blog, retorna la plantilla original
+}
+add_filter( 'template_include', 'custom_blog_template' );
+
+
+
 ?>

@@ -3570,8 +3570,10 @@ button:focus {
 }
 .modulo-13 .articulos .articulo .img-fluid {
   display: block;
-  width: 100%;
-  height: auto;
+  /*width: 100%;
+  height: auto;*/
+  width: 269px;
+  height: 179px;
   border-radius: 12px;
   object-fit: cover;
   object-position: center;
