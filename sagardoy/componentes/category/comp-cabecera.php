@@ -1,5 +1,5 @@
 <section class="section cabecera-interna-publicaciones cabecera">
-    <a href="https://sagardoy.neuronalcode.io/blog/" class="btn-volver"><u><?php _e('Publicaciones', 'sagardoy'); ?></u></a>
+    <a href="javascript:window.history.back();" class="btn-volver"><u><?php _e('Publicaciones', 'sagardoy'); ?></u></a>
     <div class="holder">
       <div class="container">
         <div class="row">

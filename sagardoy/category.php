@@ -27,8 +27,7 @@ get_header();
                     $args = array(
                         'category__in'   => $categories,     // Coincidir con las categorías del post actual
                         'post__not_in'   => array( get_the_ID() ), // Excluir el post actual
-                        'posts_per_page' => 20,               // Número de posts relacionados a mostrar
-                        'orderby'        => 'rand',
+                        'posts_per_page' => 30,               // Número de posts relacionados a mostrar
                         'ignore_sticky_posts' => 1           // Ignorar posts fijos
                     );
                     $related_posts = new WP_Query( $args );
