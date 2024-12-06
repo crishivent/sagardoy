@@ -21,7 +21,7 @@ get_header();
         </div>
       </div>
     </div>
-    <img src="images/img-cabecera-actualidad.jpg" class="img-fluid" alt="" />
+    <img src="https://sagardoy.neuronalcode.io/wp-content/uploads/2024/12/img-cabecera-actualidad.jpg" class="img-fluid" alt="" />
   </section>
 
 <!-- enlaces -->
