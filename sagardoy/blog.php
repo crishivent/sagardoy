@@ -592,34 +592,41 @@ get_header();
       </div>
     </div>
   </section>-->
-
-  <section class="modulo-19 pb-130">
+<section class="modulo-19 pb-130">
     <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <div class="d-flex flex-row align-items-center justify-content-center gap-1">
-                    <!-- Paginación de WordPress -->
-                    <?php
-                    // Comprobamos si estamos en una página de archivo o un blog
-                    if (have_posts()) :
-                        // Usamos paginate_links() para generar los enlaces de paginación
-                        echo paginate_links(array(
-                            'prev_text'    => '<a href="#" class="icons ico-flecha-left btn-prev"></a>', // Icono de flecha izquierda
-                            'next_text'    => '<a href="#" class="icons ico-flecha-right btn-next"></a>', // Icono de flecha derecha
-                            'type'          => 'list', // Tipo de salida de los enlaces
-                            'before_page_number' => '<a href="#" class="btn-numero">', // Clase para los números de página
-                            'after_page_number'  => '</a>', // Cerrar el enlace de cada número
-                            'end_size'      => 3, // Mostrar 3 páginas al final
-                            'mid_size'      => 2, // Mostrar 2 páginas cerca de la página actual
-                        ));
-                    endif;
-                    ?>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-12 text-center">
+          <div class="d-flex flex-row align-items-center justify-content-center gap-1">
+            <?php
+            // Paginación de WordPress
+            global $wp_query;
+
+            // Configurar la paginación
+            $big = 999999999; // Necesario para que funcione correctamente en URLs con parámetros
+            $args = array(
+                'base'      => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+                'format'    => '',
+                'current'   => max( 1, get_query_var('paged') ),
+                'total'     => $wp_query->max_num_pages,
+                'prev_text' => __('&laquo; Anterior'),
+                'next_text' => __('Siguiente &raquo;'),
+                'type'      => 'array',
+            );
+
+            // Mostrar la paginación
+            $pagination_links = paginate_links($args);
+
+            if ( !empty( $pagination_links ) ) {
+                foreach ( $pagination_links as $link ) {
+                    echo '<a href="' . esc_url($link) . '" class="btn-numero">' . $link . '</a>';
+                }
+            }
+            ?>
+          </div>
         </div>
+      </div>
     </div>
 </section>
-
 
 
 <?php get_footer(); ?>
