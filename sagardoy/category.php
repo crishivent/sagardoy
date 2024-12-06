@@ -50,7 +50,7 @@ get_header();
                                     <div class="line-border">
                                     <div class="row">
                                         <div class="col-5 col-sm-4 col-md-4">
-                                        <img src="<img src="<?php echo $img; ?>" class="img-fluid" alt="">
+                                        <img src="<?php echo $img; ?>" class="img-fluid" alt="">
                                         </div>
                                         <div class="col-7 col-sm-8 col-md-8">
                                         <div class="data">
