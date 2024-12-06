@@ -23,45 +23,7 @@ set_query_var("fecha", get_the_date( 'd.m.Y' ));
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-12 col-lg-6">
-          <div class="texto-top">Quam dui montes quam ultrices aliquet mollis ornare amet. Viverra phasellus sit integer proin faucibus. Ut nisl dictumst odio neque. Odio feugiat scelerisque non ac. Urna netus pellentesque nulla elementum. Turpis dictum vulputate bibendum velit sagittis. Purus nulla.</div>
-          <h2 class="titulo-l">Titular tamaño L</h2>
-          <h3 class="titulo-m">Titular tamaño M</h3>
-          <p class="texto">
-            Pulvinar nibh dignissim nec tristique congue. Lacus rhoncus sit euismod scelerisque vitae. Vestibulum faucibus lectus facilisi sed dui adipiscing. At massa non arcu hendrerit. Ante nibh et condimentum commodo auctor aliquet sit. Egestas tortor convallis pellentesque eget gravida. Velit est id ultricies magnis id viverra.
-            <br><br>
-            Malesuada magna lacus at tortor quisque. Etiam molestie amet cras facilisi nam lacus massa sed viverra. Nec massa scelerisque <span class="rojo">vestibulum egestas ullamcorper</span> magna massa proin consectetur. Sit vel tincidunt in sit auctor lacus sit. Sed faucibus vitae tincidunt libero. Mauris id convallis tristique semper cum. Blandit tristique vitae quam velit. Tincidunt porta neque nullam augue. Faucibus pulvinar feugiat at feugiat a in et quis. Turpis sit magna adipiscing in sed dolor sollicitudin. Maecenas semper tortor convallis nisi eget amet pretium. Sagittis facilisis mi egestas pulvinar.
-          </p>
-          <h4 class="titulo-s">(Titular tamaño S) Pulvinar nibh dignissim nec tristique congue. Lacus</h4>
-          <ul class="lista">
-            <li>Sagittis egestas quis convallis fringilla mauris lacus euismod tellus.</li>
-            <li>Nec tristique nulla rutrum augue quam maecenas pharetra fames.</li>
-            <li>Lacus placerat viverra sed ipsum elementum pharetra. Gravida porttitor dolor est ut dignissim consequat cras. Pellentesque lorem consectetur quam elit id. Elementum at id arcu eget gravida lectus sed. Eget avida porttitor dolor est ut dignissim consequat.</li>
-            <li>Nec tristique nulla rutrum augue quam.</li>
-            <li>Elementum at id arcu eget gravida lectus sed.</li>
-          </ul>
-          <div class="image-holder">
-            <img src="images/img-noticia.png" class="image" alt="" />
-            <p class="texto">Elementum at id arcu eget gravida lectus sed.</p>
-          </div>
-          <div class="testimonio">
-            <div class="texto">“Id ac purus odio molestie semper arcu. Nam enim nulla et dolor at et feugiat at. Suspendisse aliquam phasellus donec non. Quam sagittis ornare sollicitudin lorem ornare vel. Mi turpis fusce vitae luctus purus natoque nunc ultricies nunc. Lacinia ut orci tempor pretium tortor.”</div>
-            <div class="nombre">Nombre y Apellidos</div>
-            <div class="cargo">Cargo</div>
-          </div>
-
-          <div class="bloque mb-100">
-            <h3 class="titulo-m"><span class="num">1</span> Titular tamaño M</h3>
-            <p class="texto">Pulvinar nibh dignissim nec tristique congue. Lacus rhoncus sit euismod scelerisque vitae. Vestibulum faucibus lectus facilisi sed dui adipiscing. At massa non arcu hendrerit. Ante nibh et condimentum commodo auctor aliquet sit. Egestas tortor convallis pellentesque eget gravida.</p>
-          </div>
-
-          <div class="bloque mb-100">
-            <h3 class="titulo-m"><span class="num">2</span> Titular tamaño M</h3>
-            <p class="texto">
-              Pulvinar nibh dignissim nec tristique congue. Lacus rhoncus sit euismod scelerisque vitae. Vestibulum faucibus lectus facilisi sed dui adipiscing. At massa non arcu hendrerit. Ante nibh et condimentum commodo auctor aliquet sit. Egestas tortor convallis pellentesque eget gravida. Velit est id ultricies magnis id viverra.
-              <br><br>
-              Malesuada magna lacus at tortor quisque. Etiam molestie amet cras facilisi nam lacus massa sed viverra. Nec massa scelerisque vestibulum egestas ullamcorper magna massa proin consectetur. Sit vel tincidunt in sit auctor lacus sit. Sed faucibus vitae tincidunt libero. Mauris id convallis tristique semper cum. Blandit tristique vitae quam velit. Tincidunt porta neque nullam augue. Faucibus pulvinar feugiat at feugiat a in et quis. Turpis sit magna adipiscing in sed dolor sollicitudin. Maecenas semper tortor convallis nisi eget amet pretium. Sagittis facilisis mi egestas pulvinar.
-            </p>
-          </div>
+          <?php the_content();?>
 
           <div class="btns-redes">
             <div class="titulo">Compartir</div>

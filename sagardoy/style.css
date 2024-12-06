@@ -7305,8 +7305,19 @@ Extra     extra large	xxl	  ≥1400px
   line-height: 51px;
   margin-bottom: 30px;
 }
+.single-post .modulo-36 .h2 {
+  font-family: "TiemposHeadline-Regular", sans-serif;
+  color: #2b2d42;
+  font-size: 48px;
+  line-height: 51px;
+  margin-bottom: 30px;
+}
 @media (max-width: 480px) {
   .modulo-36 .titulo-l {
+    font-size: 30px;
+    line-height: 33px;
+  }
+  .single-post .modulo-36 .h2 {
     font-size: 30px;
     line-height: 33px;
   }
@@ -7335,8 +7346,37 @@ Extra     extra large	xxl	  ≥1400px
   margin-right: 15px;
   margin-top: -2px;
 }
+
+.single-post .modulo-36 h3 {
+  font-family: "TiemposHeadline-Regular", sans-serif;
+  color: #ff1300;
+  font-size: 30px;
+  line-height: 38px;
+  margin-bottom: 20px;
+}
+.single-post .modulo-36 h3 span {
+  font-family: "Poppins-Bold", sans-serif;
+  color: #2b2d42;
+  font-size: 16px;
+  line-height: 21px;
+  border: 1px solid rgba(43, 45, 66, 0.2);
+  border-radius: 12px;
+  padding: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  vertical-align: top;
+  margin-right: 15px;
+  margin-top: -2px;
+}
 @media (max-width: 480px) {
   .modulo-36 .titulo-m {
+    font-size: 24px;
+    line-height: 38px;
+  }
+  .single-post .modulo-36 h3 {
     font-size: 24px;
     line-height: 38px;
   }
@@ -7358,6 +7398,16 @@ Extra     extra large	xxl	  ≥1400px
   margin-top: 57px;
   margin-bottom: 40px;
 }
+
+.single-post .modulo-36 h4 {
+  font-family: "Poppins-Bold", sans-serif;
+  color: #2b2d42;
+  font-size: 16px;
+  line-height: 26px;
+  margin-top: 57px;
+  margin-bottom: 40px;
+}
+
 .modulo-36 .lista {
   padding-left: 16px;
   list-style-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/ico-listas.svg");
@@ -7370,6 +7420,20 @@ Extra     extra large	xxl	  ≥1400px
   font-size: 16px;
   line-height: 26px;
 }
+
+.single-pos .modulo-36 ul {
+  padding-left: 16px;
+  list-style-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/ico-listas.svg");
+}
+.single-pos .modulo-36 ul li {
+  padding-left: 5px;
+  margin-bottom: 10px;
+  font-family: "Poppins-Regular", sans-serif;
+  color: #2b2d42;
+  font-size: 16px;
+  line-height: 26px;
+}
+
 .modulo-36 .image-holder {
   margin-top: 100px;
   margin-bottom: 100px;
