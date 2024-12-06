@@ -1934,6 +1934,14 @@ button:focus {
   font-size: 16px;
   line-height: 21px;
 }
+
+.section.cabecera-interna-publicaciones .holder .catedescri p {
+  font-family: "Poppins-Regular", sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 21px;
+}
+
 @media (max-width: 480px) {
   .section.cabecera-interna .holder {
     top: inherit;

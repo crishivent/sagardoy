@@ -10,9 +10,9 @@
           <div class="col-12 col-sm-12 col-lg-4"></div>
         </div>
         <div class="row">
-          <div class="col-12 col-sm-12 col-lg-6">
+          <div class="col-12 col-sm-12 col-lg-6 catedescri">
             <!-- Descripción de la categoría actual -->
-            <p class="texto"><?php echo category_description(); ?></p>
+            <?php echo category_description(); ?>
           </div>
           <div class="col-12 col-sm-12 col-lg-6"></div>
         </div>
