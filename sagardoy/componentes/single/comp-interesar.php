@@ -21,7 +21,7 @@
                     $args = array(
                         'category__in'   => $categories,     // Coincidir con las categorías del post actual
                         //'post__not_in'   => array( get_the_ID() ), // Excluir el post actual
-                        'posts_per_page' => 4,               // Número de posts relacionados a mostrar
+                        'posts_per_page' => 3,               // Número de posts relacionados a mostrar
                         'orderby'        => 'rand',
                         'ignore_sticky_posts' => 1           // Ignorar posts fijos
                     );
