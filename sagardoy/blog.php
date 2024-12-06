@@ -37,19 +37,6 @@ get_header();
 
 
 <!-- buscador -->
- <!-- <section class="modulo-18 pt-70 pb-70">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-          <div class="input-email">
-            <input class="input" value="" placeholder="Buscar"></input>
-            <a href="#" class="btn-link"></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>-->
-
 <section class="modulo-18 pt-70 pb-70">
     <div class="container">
         <div class="row">
@@ -68,60 +55,7 @@ get_header();
 
 
 <!-- primer bloque de noticias -->
-<!--<section class="modulo-13 pb-130">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-sm-12 col-lg-2"></div>
-        <div class="col-12 col-sm-12 col-lg-8">
-          <div class="articulos">
-            <div class="articulo">
-              <div class="row">
-                <div class="col-7 col-sm-8 col-md-8">
-                  <div class="top">
-                    <div class="categoria">NOTICIAS</div>
-                    <div class="fecha">25.12.2024</div>
-                  </div>
-                  <a href="#" class="titulo">Dolor magna diam nunc sed in sit leo. Nec netus a dui ipsum sit diam quam. Erat massa.</a>
-                </div>
-                <div class="col-5 col-sm-4 col-md-4">
-                  <a href="#"><img src="images/img-noticia-01.png" class="img-fluid" alt="" /></a>
-                </div>
-              </div>
-            </div>
-            <div class="articulo">
-              <div class="row">
-                <div class="col-7 col-sm-8 col-md-8">
-                  <div class="top">
-                    <div class="categoria">RECONOCIMIENTOS</div>
-                    <div class="fecha">25.12.2024</div>
-                  </div>
-                  <a href="#" class="titulo">Et dignissim duis volutpat imperdiet auctor ultrices vel odio. Elementum et tempor ullamcorper montes lorem at cursus. Congue phasellus lorem ipsum.</a>
-                </div>
-                <div class="col-5 col-sm-4 col-md-4">
-                  <a href="#"><img src="images/img-noticia-02.png" class="img-fluid" alt="" /></a>
-                </div>
-              </div>
-            </div>
-            <div class="articulo">
-              <div class="row">
-                <div class="col-7 col-sm-8 col-md-8">
-                  <div class="top">
-                    <div class="categoria">EVENTOS</div>
-                    <div class="fecha">25.12.2024</div>
-                  </div>
-                  <a href="#" class="titulo">Gravida purus volutpat ultrices aenean pellentesque ultrices luctus risus faucibus.</a>
-                </div>
-                <div class="col-5 col-sm-4 col-md-4">
-                  <a href="#"><img src="images/img-noticia-03.png" class="img-fluid" alt="" /></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-12 col-lg-2"></div>
-      </div>
-    </div>
-  </section> -->
+
 <section class="modulo-13 pb-130">
     <div class="container">
         <div class="row">
@@ -130,14 +64,14 @@ get_header();
                 <div class="articulos">
                     <?php
                     $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-                    $posts_per_page = 3;
+                    $posts_per_page = 3; // Número de publicaciones por bloque
 
                     $args = array(
                         'posts_per_page' => $posts_per_page,
                         'post_status'    => 'publish',
                         'orderby'        => 'date',
                         'order'          => 'DESC',
-                        'offset'         => ($paged - 1) * $posts_per_page, // Normal offset
+                        'offset'         => $paged, // Normal offset
                         );
 
                     $latest_posts = new WP_Query($args);
@@ -291,62 +225,6 @@ get_header();
 
 
   <!-- segundo bloque -->
-<!--
-<section class="modulo-13 pt-70 pb-70">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-sm-12 col-lg-2"></div>
-        <div class="col-12 col-sm-12 col-lg-8">
-          <div class="articulos">
-            <div class="articulo">
-              <div class="row">
-                <div class="col-7 col-sm-8 col-md-8">
-                  <div class="top">
-                    <div class="categoria">NOTICIAS</div>
-                    <div class="fecha">25.12.2024</div>
-                  </div>
-                  <a href="#" class="titulo">Dolor magna diam nunc sed in sit leo. Nec netus a dui ipsum sit diam quam. Erat massa.</a>
-                </div>
-                <div class="col-5 col-sm-4 col-md-4">
-                  <a href="#"><img src="images/img-noticia-04.png" class="img-fluid" alt="" /></a>
-                </div>
-              </div>
-            </div>
-            <div class="articulo">
-              <div class="row">
-                <div class="col-7 col-sm-8 col-md-8">
-                  <div class="top">
-                    <div class="categoria">RECONOCIMIENTOS</div>
-                    <div class="fecha">25.12.2024</div>
-                  </div>
-                  <a href="#" class="titulo">Et dignissim duis volutpat imperdiet auctor ultrices vel odio. Elementum et tempor ullamcorper montes lorem at cursus. Congue phasellus lorem ipsum.</a>
-                </div>
-                <div class="col-5 col-sm-4 col-md-4">
-                  <a href="#"><img src="images/img-noticia-05.png" class="img-fluid" alt="" /></a>
-                </div>
-              </div>
-            </div>
-            <div class="articulo">
-              <div class="row">
-                <div class="col-7 col-sm-8 col-md-8">
-                  <div class="top">
-                    <div class="categoria">EVENTOS</div>
-                    <div class="fecha">25.12.2024</div>
-                  </div>
-                  <a href="#" class="titulo">Gravida purus volutpat ultrices aenean pellentesque ultrices luctus risus faucibus.</a>
-                </div>
-                <div class="col-5 col-sm-4 col-md-4">
-                  <a href="#"><img src="images/img-noticia-06.png" class="img-fluid" alt="" /></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-12 col-lg-2"></div>
-      </div>
-    </div>
-  </section>-->
-
   <section class="modulo-13 pt-70 pb-70">
     <div class="container">
         <div class="row">
@@ -355,18 +233,19 @@ get_header();
                 <div class="articulos">
                     <?php
                     // Realizamos una consulta para obtener los siguientes 3 posts (después de los primeros 3)
-                   $paged2 = get_query_var('paged') ? get_query_var('paged') : 1;
-                   $posts_per_page = 3;
+                   //$paged2 = get_query_var('paged') ? get_query_var('paged') : 1;
+                   //$posts_per_page = 3;
 
-                    $args = array(
+                    $args2 = array(
                         'posts_per_page' => $posts_per_page,
                         'post_status'    => 'publish',
                         'orderby'        => 'date',
                         'order'          => 'DESC',
-                        'offset'         => ($paged2 - 1) * $posts_per_page + 3, // Saltar los 3 primeros posts
+                        'offset'         => ($paged - 1) * $posts_per_page + $posts_per_page,
+                        'paged'          => $paged,// Saltar los 3 primeros posts
                     );
 
-                    $next_posts = new WP_Query($args);
+                    $next_posts = new WP_Query($args2);
 
                     // Comprobamos si hay posts
                     if ($next_posts->have_posts()) :
@@ -453,62 +332,6 @@ get_header();
 
 
 <!-- tercer bloque -->
- <!--
-<section class="modulo-13 pt-70 pb-70">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-sm-12 col-lg-2"></div>
-        <div class="col-12 col-sm-12 col-lg-8">
-          <div class="articulos">
-            <div class="articulo">
-              <div class="row">
-                <div class="col-7 col-sm-8 col-md-8">
-                  <div class="top">
-                    <div class="categoria">NOTICIAS</div>
-                    <div class="fecha">25.12.2024</div>
-                  </div>
-                  <a href="#" class="titulo">Dolor magna diam nunc sed in sit leo. Nec netus a dui ipsum sit diam quam. Erat massa.</a>
-                </div>
-                <div class="col-5 col-sm-4 col-md-4">
-                  <a href="#"><img src="images/img-noticia-04.png" class="img-fluid" alt="" /></a>
-                </div>
-              </div>
-            </div>
-            <div class="articulo">
-              <div class="row">
-                <div class="col-7 col-sm-8 col-md-8">
-                  <div class="top">
-                    <div class="categoria">RECONOCIMIENTOS</div>
-                    <div class="fecha">25.12.2024</div>
-                  </div>
-                  <a href="#" class="titulo">Et dignissim duis volutpat imperdiet auctor ultrices vel odio. Elementum et tempor ullamcorper montes lorem at cursus. Congue phasellus lorem ipsum.</a>
-                </div>
-                <div class="col-5 col-sm-4 col-md-4">
-                  <a href="#"><img src="images/img-noticia-05.png" class="img-fluid" alt="" /></a>
-                </div>
-              </div>
-            </div>
-            <div class="articulo">
-              <div class="row">
-                <div class="col-7 col-sm-8 col-md-8">
-                  <div class="top">
-                    <div class="categoria">EVENTOS</div>
-                    <div class="fecha">25.12.2024</div>
-                  </div>
-                  <a href="#" class="titulo">Gravida purus volutpat ultrices aenean pellentesque ultrices luctus risus faucibus.</a>
-                </div>
-                <div class="col-5 col-sm-4 col-md-4">
-                  <a href="#"><img src="images/img-noticia-06.png" class="img-fluid" alt="" /></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-12 col-lg-2"></div>
-      </div>
-    </div>
-  </section>-->
-
   <section class="modulo-13 pt-70 pb-70">
     <div class="container">
         <div class="row">
@@ -517,18 +340,19 @@ get_header();
                 <div class="articulos">
                     <?php
                     // Realizamos una consulta para obtener los siguientes 3 posts (después de los primeros 3)
-                    $paged3 = get_query_var('paged') ? get_query_var('paged') : 1;
-                    $posts_per_page = 3;
+                    //$paged3 = get_query_var('paged') ? get_query_var('paged') : 1;
+                    //$posts_per_page = 3;
 
-                    $args = array(
+                    $args3 = array(
                         'posts_per_page' => $posts_per_page,
                         'post_status'    => 'publish',
                         'orderby'        => 'date',
                         'order'          => 'DESC',
-                        'offset'         => ($paged3 - 1) * $posts_per_page + 6, // Saltar los 6 primeros posts
+                        'offset'         => ($paged - 1) * $posts_per_page + 2 * $posts_per_page,
+                        'paged'          => $paged,
                     );
 
-                    $next_posts = new WP_Query($args);
+                    $next_posts = new WP_Query($args3);
 
                     // Comprobamos si hay posts
                     if ($next_posts->have_posts()) :
@@ -583,27 +407,6 @@ get_header();
 
 
 <!-- paginacion -->
-<!--<section class="modulo-19 pb-130">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-          <div class="d-flex flex-row align-items-center justify-content-center gap-1">
-            <a href="#" class="icons ico-flecha-left btn-prev"></a>
-            <a href="#" class="btn-numero activo">1</a>
-            <a href="#" class="btn-numero">2</a>
-            <a href="#" class="btn-numero">3</a>
-            <a href="#" class="btn-numero">4</a>
-            <span class="btn-puntos">...</span>
-            <a href="#" class="btn-numero">12</a>
-            <a href="#" class="icons ico-flecha-right btn-next"></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>-->
-
-
-
 <section class="modulo-19 pb-130">
     <div class="container">
       <div class="row">
@@ -616,10 +419,10 @@ get_header();
             // Configurar la paginación
             $big = 999999999; // Necesario para que funcione correctamente en URLs con parámetros
             $args = array(
-                'base'      => add_query_arg('pagedX', '%#%'),
+                'base'      => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
                 'format'    => '',
-                'current'   => max( 1, get_query_var('paged') ),
-                'total'     => $wp_query->max_num_pages,
+                'current'   => max(1, $paged),
+                'total'     => $latest_posts->max_num_pages, // Basado en el total del primer bloque
                 'prev_text' => __('&laquo; Anterior'),
                 'next_text' => __('Siguiente &raquo;'),
                 'type'      => 'array',
