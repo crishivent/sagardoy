@@ -7310,8 +7310,10 @@ Extra     extra large	xxl	  ≥1400px
   }
 }
 .modulo-04 .noticias .noticia .image {
-  width: 100%;
-  height: auto;
+  /* width: 100%;
+  height: auto;*/
+  width: 196px;
+  height: 129px;
   border-radius: 12px;
   object-fit: cover;
   object-position: top center;
