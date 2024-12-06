@@ -4,8 +4,8 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-4 col-md-4">
-          <div class="titulo">También te puede interesar</div>
-          <a href="#" class="btn-ver-mas">VER MÁS NOTICIAS</a>
+          <div class="titulo"><?php _e('También te puede interesar', 'sagardoy'); ?></div>
+          <a href="#" class="btn-ver-mas"><?php _e('VER MÁS NOTICIAS', 'sagardoy'); ?></a>
         </div>
         <div class="col-12 col-sm-2 col-md-2"></div>
         <div class="col-12 col-sm-6 col-md-6">
@@ -54,21 +54,6 @@
                               </div>
                             </div>
                           </div>
-
-
-
-
-
-                            <div class="noticia">
-                        <div class="row">
-                            <div class="col-8 col-sm-9 col-md-9 d-lg-flex align-items-center">
-                            <a href="<?php the_permalink(); ?>" class="titulo"><?php the_title(); ?></a>
-                            </div>
-                            <div class="col-4 col-sm-3 col-md-3">
-                            <a href="#"><img src="<?php echo $img; ?>" class="image" alt="" /></a>
-                            </div>
-                        </div>
-                        </div>
                             <?php
                         }
                     
@@ -85,11 +70,11 @@
 
 
           </div>
-          <a href="#" class="btn-ver-mas mobile">VER MÁS NOTICIAS</a>
+          <a href="#" class="btn-ver-mas mobile"><?php _e('VER MÁS NOTICIAS', 'sagardoy'); ?></a>
         </div>
       </div>
       <div class="row">
-        <div class="col-12"><a href="#" class="btn-conoce">Conoce nuestras publicaciones</a></div>
+        <div class="col-12"><a href="#" class="btn-conoce"><?php _e('Conoce nuestras publicaciones', 'sagardoy'); ?></a></div>
       </div>
     </div>
   </section>
