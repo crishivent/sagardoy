@@ -446,8 +446,7 @@ get_header();
             $args = array(
                 'base'      => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
                 'format'    => '',
-                'current'   => max(1, $paged),
-                'total'     => $latest_posts->max_num_pages, // Basado en el total del primer bloque
+                'total'     => $wp_query->max_num_pages, // Basado en el total del primer bloque
                 'prev_text' => __('&laquo; Anterior'),
                 'next_text' => __('Siguiente &raquo;'),
                 'type'      => 'array',
