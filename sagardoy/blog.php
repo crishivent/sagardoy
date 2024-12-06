@@ -129,12 +129,14 @@ get_header();
             <div class="col-12 col-sm-12 col-lg-8">
                 <div class="articulos">
                     <?php
+                    $paged = get_query_var('paged') ? get_query_var('paged') : 1;
                     // Realizamos una consulta para obtener los 3 últimos posts
                     $args = array(
                         'posts_per_page' => 3, // Número de posts a mostrar
                         'post_status'     => 'publish', // Solo posts publicados
                         'orderby'         => 'date', // Ordenar por fecha
                         'order'           => 'DESC', // Orden descendente
+                        'paged'          => $paged, // Página actual para la paginación
                     );
 
                     $latest_posts = new WP_Query($args);
@@ -352,12 +354,20 @@ get_header();
                 <div class="articulos">
                     <?php
                     // Realizamos una consulta para obtener los siguientes 3 posts (después de los primeros 3)
+                    $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+
+                    // Número de posts a mostrar por página
+                    $posts_per_page = 3;
+
+                    // Calcular el offset dinámicamente
+                    $offset = ($paged - 1) * $posts_per_page + 3; // Saltar los primeros 3 posts
+
                     $args = array(
-                        'posts_per_page' => 3, // Número de posts a mostrar
-                        'post_status'     => 'publish', // Solo posts publicados
-                        'orderby'         => 'date', // Ordenar por fecha
-                        'order'           => 'DESC', // Orden descendente
-                        'offset'          => 3, // Saltamos los primeros 3 posts
+                        'posts_per_page' => $posts_per_page, // Número de posts por página
+                        'post_status'    => 'publish', // Solo posts publicados
+                        'orderby'        => 'date', // Ordenar por fecha
+                        'order'          => 'DESC', // Orden descendente
+                        'offset'         => $offset, // Offset dinámico
                     );
 
                     $next_posts = new WP_Query($args);
@@ -511,12 +521,20 @@ get_header();
                 <div class="articulos">
                     <?php
                     // Realizamos una consulta para obtener los siguientes 3 posts (después de los primeros 3)
+                    $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+
+                    // Número de posts a mostrar por página
+                    $posts_per_page = 3;
+
+                    // Calcular el offset dinámicamente
+                    $offset = ($paged - 1) * $posts_per_page + 6; // Saltar los primeros 6 posts
+
                     $args = array(
-                        'posts_per_page' => 3, // Número de posts a mostrar
-                        'post_status'     => 'publish', // Solo posts publicados
-                        'orderby'         => 'date', // Ordenar por fecha
-                        'order'           => 'DESC', // Orden descendente
-                        'offset'          => 6, // Saltamos los primeros 6 posts
+                        'posts_per_page' => $posts_per_page, // Número de posts por página
+                        'post_status'    => 'publish', // Solo posts publicados
+                        'orderby'        => 'date', // Ordenar por fecha
+                        'order'          => 'DESC', // Orden descendente
+                        'offset'         => $offset, // Offset dinámico
                     );
 
                     $next_posts = new WP_Query($args);
