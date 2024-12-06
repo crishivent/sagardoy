@@ -616,7 +616,7 @@ get_header();
             // Configurar la paginación
             $big = 999999999; // Necesario para que funcione correctamente en URLs con parámetros
             $args = array(
-                'base'      => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+                'base'      => add_query_arg('pagedX', '%#%'),
                 'format'    => '',
                 'current'   => max( 1, get_query_var('paged') ),
                 'total'     => $wp_query->max_num_pages,
