@@ -45,7 +45,6 @@ get_header();
                     <!-- Formulario de búsqueda de WordPress -->
                     <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
                         <input type="text" class="input" name="s" value="" placeholder="Buscar" />
-                        <button type="submit" class="btn-link"><?php _e('Buscar', 'sagardoy'); ?></button>
                     </form>
                 </div>
             </div>
@@ -63,18 +62,61 @@ get_header();
             <div class="col-12 col-sm-12 col-lg-8">
                 <div class="articulos">
                     <?php
-                    $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-                    $posts_per_page = 3; // Número de publicaciones por bloque
+
+                    $paged = get_query_var('paged') ? get_query_var('paged') : 1; // Obtiene la página actual
 
                     $args = array(
+                        'posts_per_page' => 9, // 9 posts por página
+                        'post_status'    => 'publish',
+                        'orderby'        => 'date',
+                        'order'          => 'DESC',
+                        'paged'          => $paged, // Paginación
+                    );
+
+                    $all_posts = new WP_Query($args);
+
+                    if ($all_posts->have_posts()){
+                        $post_count = 0;
+                        $block1 = array();
+                        $block2 = array();
+                        $block3 = array();
+
+                        // Recorremos todos los posts obtenidos
+                        while ($all_posts->have_posts()) : $all_posts->the_post();
+                            $post_count++;
+
+                            if ($post_count <= 3) {
+                                $block1[] = $post;  // Primer bloque (posts 1-3)
+                            } elseif ($post_count <= 6) {
+                                $block2[] = $post;  // Segundo bloque (posts 4-6)
+                            } else {
+                                $block3[] = $post;  // Tercer bloque (posts 7-9)
+                            }
+                        endwhile;
+
+                    }
+                        
+
+
+
+
+
+
+                    //$paged = get_query_var('paged') ? get_query_var('paged') : 1;
+                    //$posts_per_page = 9; // Número de publicaciones por bloque
+
+                     /*   $args = array(
                         'posts_per_page' => $posts_per_page,
                         'post_status'    => 'publish',
                         'orderby'        => 'date',
                         'order'          => 'DESC',
                         'offset'         => $paged, // Normal offset
-                        );
+                        );*/
+                    
 
-                    $latest_posts = new WP_Query($args);
+                    
+
+                    //$latest_posts = new WP_Query($args);
 
                     // Comprobamos si hay posts
                     if ($latest_posts->have_posts()) :
@@ -232,60 +274,60 @@ get_header();
             <div class="col-12 col-sm-12 col-lg-8">
                 <div class="articulos">
                     <?php
-                    // Realizamos una consulta para obtener los siguientes 3 posts (después de los primeros 3)
-                   //$paged2 = get_query_var('paged') ? get_query_var('paged') : 1;
-                   //$posts_per_page = 3;
-
-                    $args2 = array(
-                        'posts_per_page' => $posts_per_page,
+                    // Realizamos una consulta para obtener los 9 posts (todos) de la página actual
+                    $paged = get_query_var('paged') ? get_query_var('paged') : 1; // Obtener la página actual
+                    $posts_per_page = 9; // 9 posts por página
+                    
+                    // Ajustamos la consulta para obtener los 9 posts de la página actual
+                    $args = array(
+                        'posts_per_page' => $posts_per_page, // Obtener los 9 posts
                         'post_status'    => 'publish',
                         'orderby'        => 'date',
                         'order'          => 'DESC',
-                        'offset'         => ($paged - 1) * $posts_per_page + $posts_per_page,
-                        'paged'          => $paged,// Saltar los 3 primeros posts
+                        'paged'          => $paged,
                     );
 
-                    $next_posts = new WP_Query($args2);
+                    $all_posts = new WP_Query($args);
 
                     // Comprobamos si hay posts
-                    if ($next_posts->have_posts()) :
-                        while ($next_posts->have_posts()) : $next_posts->the_post();
-                            // Obtener la URL de la miniatura del post
-                            $img = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
-                            // Obtener las categorías del post
-                            $post_categories = get_the_category();
-                            $category_name = !empty($post_categories) ? $post_categories[0]->name : 'Sin categoría';
-                            // Obtener la fecha de publicación
-                            $post_date = get_the_date('d.m.Y');
-                            // Enlace del post
-                            $post_link = get_permalink();
-                    ?>
+                    if ($all_posts->have_posts()) :
+                        $post_count = 0;
+                        $block2 = array(); // Array para el segundo bloque
+
+                        // Recorrer todos los posts obtenidos
+                        while ($all_posts->have_posts()) : $all_posts->the_post();
+                            $post_count++;
+
+                            // Dividimos los posts en bloques
+                            if ($post_count < 4) { // Del post 0 al 6
+                                $block[] = $post; // Añadimos los posts al segundo bloque
+                            }
+                        endwhile;
+
+                        // Mostrar los posts del segundo bloque
+                        foreach ($block as $post) : setup_postdata($post); ?>
                             <div class="articulo">
                                 <div class="row">
                                     <div class="col-7 col-sm-8 col-md-8">
                                         <div class="top">
                                             <!-- Mostrar la categoría del post -->
-                                            <div class="categoria"><?php echo esc_html($category_name); ?></div>
+                                            <div class="categoria"><?php echo esc_html(get_the_category()[0]->name); ?></div>
                                             <!-- Mostrar la fecha del post -->
-                                            <div class="fecha"><?php echo esc_html($post_date); ?></div>
+                                            <div class="fecha"><?php echo esc_html(get_the_date('d.m.Y')); ?></div>
                                         </div>
                                         <!-- Enlace y título del post -->
-                                        <a href="<?php echo esc_url($post_link); ?>" class="titulo"><?php the_title(); ?></a>
+                                        <a href="<?php the_permalink(); ?>" class="titulo"><?php the_title(); ?></a>
                                     </div>
                                     <div class="col-5 col-sm-4 col-md-4">
                                         <!-- Imagen destacada del post -->
-                                        <a href="<?php echo esc_url($post_link); ?>"><img src="<?php echo esc_url($img); ?>" class="img-fluid" alt="<?php the_title(); ?>" /></a>
+                                        <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'thumbnail')); ?>" class="img-fluid" alt="<?php the_title(); ?>" /></a>
                                     </div>
                                 </div>
                             </div>
-                    <?php
-                        endwhile;
+                        <?php endforeach; wp_reset_postdata(); 
                     else :
                         echo '<p>No hay más publicaciones.</p>';
                     endif;
-
-                    // Restaurar los datos del post original
-                    wp_reset_postdata();
                     ?>
                 </div>
             </div>
@@ -293,6 +335,78 @@ get_header();
         </div>
     </div>
 </section>
+
+
+<!-- Segundo bloque -->
+<section class="modulo-13 pt-70 pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-lg-2"></div>
+            <div class="col-12 col-sm-12 col-lg-8">
+                <div class="articulos">
+                    <?php
+                    // Realizamos una consulta para obtener los 9 posts (todos) de la página actual
+                   /* $paged = get_query_var('paged') ? get_query_var('paged') : 1; // Obtener la página actual
+                    $posts_per_page = 9; // 9 posts por página
+                    
+                    // Ajustamos la consulta para obtener los 9 posts de la página actual
+                    $args2 = array(
+                        'posts_per_page' => $posts_per_page, // Obtener los 9 posts
+                        'post_status'    => 'publish',
+                        'orderby'        => 'date',
+                        'order'          => 'DESC',
+                        'paged'          => $paged,
+                    );
+
+                    $all_posts = new WP_Query($args2);*/
+
+                    // Comprobamos si hay posts
+                    if ($all_posts->have_posts()) :
+                        $post_count = 0;
+                        $block2 = array(); // Array para el segundo bloque
+
+                        // Recorrer todos los posts obtenidos
+                        while ($all_posts->have_posts()) : $all_posts->the_post();
+                            $post_count++;
+
+                            // Dividimos los posts en bloques
+                            if ($post_count > 3 && $post_count <= 6) { // Del post 4 al 6
+                                $block2[] = $post; // Añadimos los posts al segundo bloque
+                            }
+                        endwhile;
+
+                        // Mostrar los posts del segundo bloque
+                        foreach ($block2 as $post) : setup_postdata($post); ?>
+                            <div class="articulo">
+                                <div class="row">
+                                    <div class="col-7 col-sm-8 col-md-8">
+                                        <div class="top">
+                                            <!-- Mostrar la categoría del post -->
+                                            <div class="categoria"><?php echo esc_html(get_the_category()[0]->name); ?></div>
+                                            <!-- Mostrar la fecha del post -->
+                                            <div class="fecha"><?php echo esc_html(get_the_date('d.m.Y')); ?></div>
+                                        </div>
+                                        <!-- Enlace y título del post -->
+                                        <a href="<?php the_permalink(); ?>" class="titulo"><?php the_title(); ?></a>
+                                    </div>
+                                    <div class="col-5 col-sm-4 col-md-4">
+                                        <!-- Imagen destacada del post -->
+                                        <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'thumbnail')); ?>" class="img-fluid" alt="<?php the_title(); ?>" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; wp_reset_postdata(); 
+                    else :
+                        echo '<p>No hay más publicaciones.</p>';
+                    endif;
+                    ?>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-lg-2"></div>
+        </div>
+    </div>
+</section>
+
 
 
 
@@ -332,67 +446,68 @@ get_header();
 
 
 <!-- tercer bloque -->
-  <section class="modulo-13 pt-70 pb-70">
+ <!-- Tercer bloque -->
+<section class="modulo-13 pt-70 pb-70">
     <div class="container">
         <div class="row">
             <div class="col-12 col-sm-12 col-lg-2"></div>
             <div class="col-12 col-sm-12 col-lg-8">
                 <div class="articulos">
                     <?php
-                    // Realizamos una consulta para obtener los siguientes 3 posts (después de los primeros 3)
-                    //$paged3 = get_query_var('paged') ? get_query_var('paged') : 1;
-                    //$posts_per_page = 3;
-
+                    // Realizamos una consulta para obtener los 9 posts (todos) de la página actual
+                   /* $paged = get_query_var('paged') ? get_query_var('paged') : 1; // Obtener la página actual
+                    $posts_per_page = 9; // 9 posts por página
+                    
+                    // Ajustamos la consulta para obtener los 9 posts de la página actual
                     $args3 = array(
-                        'posts_per_page' => $posts_per_page,
+                        'posts_per_page' => $posts_per_page, // Obtener los 9 posts
                         'post_status'    => 'publish',
                         'orderby'        => 'date',
                         'order'          => 'DESC',
-                        'offset'         => ($paged - 1) * $posts_per_page + 2 * $posts_per_page,
                         'paged'          => $paged,
                     );
 
-                    $next_posts = new WP_Query($args3);
+                    $all_posts = new WP_Query($args3);*/
 
                     // Comprobamos si hay posts
-                    if ($next_posts->have_posts()) :
-                        while ($next_posts->have_posts()) : $next_posts->the_post();
-                            // Obtener la URL de la miniatura del post
-                            $img = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
-                            // Obtener las categorías del post
-                            $post_categories = get_the_category();
-                            $category_name = !empty($post_categories) ? $post_categories[0]->name : 'Sin categoría';
-                            // Obtener la fecha de publicación
-                            $post_date = get_the_date('d.m.Y');
-                            // Enlace del post
-                            $post_link = get_permalink();
-                    ?>
+                    if ($all_posts->have_posts()) :
+                        $post_count = 0;
+                        $block3 = array(); // Array para el tercer bloque
+
+                        // Recorrer todos los posts obtenidos
+                        while ($all_posts->have_posts()) : $all_posts->the_post();
+                            $post_count++;
+
+                            // Dividimos los posts en bloques
+                            if ($post_count > 6 && $post_count <= 9) { // Del post 7 al 9
+                                $block3[] = $post; // Añadimos los posts al tercer bloque
+                            }
+                        endwhile;
+
+                        // Mostrar los posts del tercer bloque
+                        foreach ($block3 as $post) : setup_postdata($post); ?>
                             <div class="articulo">
                                 <div class="row">
                                     <div class="col-7 col-sm-8 col-md-8">
                                         <div class="top">
                                             <!-- Mostrar la categoría del post -->
-                                            <div class="categoria"><?php echo esc_html($category_name); ?></div>
+                                            <div class="categoria"><?php echo esc_html(get_the_category()[0]->name); ?></div>
                                             <!-- Mostrar la fecha del post -->
-                                            <div class="fecha"><?php echo esc_html($post_date); ?></div>
+                                            <div class="fecha"><?php echo esc_html(get_the_date('d.m.Y')); ?></div>
                                         </div>
                                         <!-- Enlace y título del post -->
-                                        <a href="<?php echo esc_url($post_link); ?>" class="titulo"><?php the_title(); ?></a>
+                                        <a href="<?php the_permalink(); ?>" class="titulo"><?php the_title(); ?></a>
                                     </div>
                                     <div class="col-5 col-sm-4 col-md-4">
                                         <!-- Imagen destacada del post -->
-                                        <a href="<?php echo esc_url($post_link); ?>"><img src="<?php echo esc_url($img); ?>" class="img-fluid" alt="<?php the_title(); ?>" /></a>
+                                        <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'thumbnail')); ?>" class="img-fluid" alt="<?php the_title(); ?>" /></a>
                                     </div>
                                 </div>
                             </div>
-                    <?php
-                        endwhile;
+                        <?php endforeach; wp_reset_postdata(); 
                     else :
                         echo '<p>No hay más publicaciones.</p>';
                     endif;
-
-                    // Restaurar los datos del post original
-                    wp_reset_postdata();
                     ?>
                 </div>
             </div>
