@@ -15,7 +15,7 @@ get_header();
       <div class="container">
         <div class="row">
           <div class="col-12 col-sm-7 col-md-7 border-left">
-            <div class="titulo">Actualidad</div>
+            <div class="titulo"><?php _e('Actualidad', 'sagardoy'); ?></div>
           </div>
           <div class="col-12 col-sm-5 col-md-5"></div>
         </div>
@@ -29,7 +29,7 @@ get_header();
     <div class="container">
       <div class="row">
         <div class="col-12 d-flex justify-content-center">
-          <a href="#" class="btn-link activo">Noticias</a> <a href="#" class="btn-link">Publicaciones</a>
+          <a href="https://sagardoy.neuronalcode.io/blog/" class="btn-link activo"><?php _e('Noticias', 'sagardoy'); ?></a> <a href="#" class="btn-link"><?php _e('Publicaciones', 'sagardoy'); ?></a>
         </div>
       </div>
     </div>
@@ -95,28 +95,6 @@ get_header();
                         endwhile;
 
                     }
-                        
-
-
-
-
-
-
-                    //$paged = get_query_var('paged') ? get_query_var('paged') : 1;
-                    //$posts_per_page = 9; // Número de publicaciones por bloque
-
-                     /*   $args = array(
-                        'posts_per_page' => $posts_per_page,
-                        'post_status'    => 'publish',
-                        'orderby'        => 'date',
-                        'order'          => 'DESC',
-                        'offset'         => $paged, // Normal offset
-                        );*/
-                    
-
-                    
-
-                    //$latest_posts = new WP_Query($args);
 
                    foreach ($block1 as $post) : setup_postdata($post); ?>
                             <div class="articulo">
@@ -152,7 +130,7 @@ get_header();
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-6 col-md-6">
-          <h2 class="titulo">Destacado</h2>
+          <h2 class="titulo"><?php _e('Destacado', 'sagardoy'); ?></h2>
         </div>
         <div class="col-12 col-sm-6 col-md-6 text-end">
           <div class="d-inline-flex align-items-center">
@@ -165,82 +143,48 @@ get_header();
       </div>
       <div id="slider_01" class="slider-publicaciones">
         <div class="slick-slider" data-sizes="100vw">
-          <div>
+
+        <?php
+
+        $destacado = array(
+          'post_type' => 'post',
+          'posts_per_page' => -1,  // Todos los posts
+          'meta_key' => 'destacado', // El nombre del campo personalizado
+          'meta_value' => '1', // Valor del checkbox "destacado"
+        );
+        
+        $des = new WP_Query($destacado);
+        
+        if ( $des->have_posts() ) {
+            while ( $des->have_posts() ) {
+                ?>
+            <div>
             <a href="#">
               <div class="line-border">
                 <div class="row">
                   <div class="col-7 col-sm-8 col-md-8">
                     <div class="data">
                       <div>
-                        <div class="top"><h2 class="subtitulo">NOTICIAS</h2> <div class="fecha">25.12.2024</div></div>
-                        <h2 class="titulo">Dolor magna diam nunc sed in sit leo. Nec netus a dui ipsum sit diam quam. Erat massa.</h2>
+                        <div class="top"><h2 class="subtitulo"><?php echo get_the_category_list(', '); ?></h2> <div class="fecha"><?php echo get_the_date('d.m.Y'); ?></div></div>
+                        <h2 class="titulo"><?php the_title(); ?></h2>
                       </div>
                     </div>
                   </div>
                   <div class="col-5 col-sm-4 col-md-4">
-                    <img src="images/img-publicaciones-04.jpg" class="img-fluid" alt="">
+                    <img src="<?php the_post_thumbnail_url('full'); ?>" class="img-fluid" alt="<?php the_title(); ?>">
                   </div>
                 </div>
               </div>
             </a>
           </div>
-          <div>
-            <a href="#">
-              <div class="line-border">
-                <div class="row">
-                  <div class="col-7 col-sm-8 col-md-8">
-                    <div class="data">
-                      <div>
-                        <div class="top"><h2 class="subtitulo">NOTICIAS</h2> <div class="fecha">25.12.2024</div></div>
-                        <h2 class="titulo">Dolor magna diam nunc sed in sit leo. Nec netus a dui ipsum sit diam quam. Erat massa.</h2>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-5 col-sm-4 col-md-4">
-                    <img src="images/img-publicaciones-05.jpg" class="img-fluid" alt="">
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div>
-            <a href="#">
-              <div class="line-border">
-                <div class="row">
-                  <div class="col-7 col-sm-8 col-md-8">
-                    <div class="data">
-                      <div>
-                        <div class="top"><h2 class="subtitulo">NOTICIAS</h2> <div class="fecha">25.12.2024</div></div>
-                        <h2 class="titulo">Dolor magna diam nunc sed in sit leo. Nec netus a dui ipsum sit diam quam. Erat massa.</h2>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-5 col-sm-4 col-md-4">
-                    <img src="images/img-publicaciones-06.jpg" class="img-fluid" alt="">
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div>
-            <a href="#">
-              <div class="line-border">
-                <div class="row">
-                  <div class="col-7 col-sm-8 col-md-8">
-                    <div class="data">
-                      <div>
-                        <div class="top"><h2 class="subtitulo">NOTICIAS</h2> <div class="fecha">25.12.2024</div></div>
-                        <h2 class="titulo">Dolor magna diam nunc sed in sit leo. Nec netus a dui ipsum sit diam quam. Erat massa.</h2>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-5 col-sm-4 col-md-4">
-                    <img src="images/img-publicaciones-04.jpg" class="img-fluid" alt="">
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
+
+            <?php
+            }
+        }
+        
+        
+        ?>
+
         </div>
       </div>
     </div>
@@ -255,36 +199,6 @@ get_header();
             <div class="col-12 col-sm-12 col-lg-8">
                 <div class="articulos">
                     <?php
-                    // Realizamos una consulta para obtener los 9 posts (todos) de la página actual
-                   /* $paged = get_query_var('paged') ? get_query_var('paged') : 1; // Obtener la página actual
-                    $posts_per_page = 9; // 9 posts por página
-                    
-                    // Ajustamos la consulta para obtener los 9 posts de la página actual
-                    $args2 = array(
-                        'posts_per_page' => $posts_per_page, // Obtener los 9 posts
-                        'post_status'    => 'publish',
-                        'orderby'        => 'date',
-                        'order'          => 'DESC',
-                        'paged'          => $paged,
-                    );
-
-                    $all_posts = new WP_Query($args2);*/
-
-                    // Comprobamos si hay posts
-                    /*if ($all_posts->have_posts()) :
-                        $post_count = 0;
-                        $block2 = array(); // Array para el segundo bloque
-
-                        // Recorrer todos los posts obtenidos
-                        while ($all_posts->have_posts()) : $all_posts->the_post();
-                            $post_count++;
-
-                            // Dividimos los posts en bloques
-                            if ($post_count > 3 && $post_count <= 6) { // Del post 4 al 6
-                                $block2[] = $post; // Añadimos los posts al segundo bloque
-                            }
-                        endwhile;*/
-
                         // Mostrar los posts del segundo bloque
                         foreach ($block2 as $post) : setup_postdata($post); ?>
                             <div class="articulo">
@@ -306,9 +220,6 @@ get_header();
                                 </div>
                             </div>
                         <?php endforeach; wp_reset_postdata(); 
-                  /*  else :
-                        echo '<p>No hay más publicaciones.</p>';
-                    endif;*/
                     ?>
                 </div>
             </div>
@@ -364,36 +275,6 @@ get_header();
             <div class="col-12 col-sm-12 col-lg-8">
                 <div class="articulos">
                     <?php
-                    // Realizamos una consulta para obtener los 9 posts (todos) de la página actual
-                   /* $paged = get_query_var('paged') ? get_query_var('paged') : 1; // Obtener la página actual
-                    $posts_per_page = 9; // 9 posts por página
-                    
-                    // Ajustamos la consulta para obtener los 9 posts de la página actual
-                    $args3 = array(
-                        'posts_per_page' => $posts_per_page, // Obtener los 9 posts
-                        'post_status'    => 'publish',
-                        'orderby'        => 'date',
-                        'order'          => 'DESC',
-                        'paged'          => $paged,
-                    );
-
-                    $all_posts = new WP_Query($args3);*/
-
-                    // Comprobamos si hay posts
-                   /* if ($all_posts->have_posts()) :
-                        $post_count = 0;
-                        $block3 = array(); // Array para el tercer bloque
-
-                        // Recorrer todos los posts obtenidos
-                        while ($all_posts->have_posts()) : $all_posts->the_post();
-                            $post_count++;
-
-                            // Dividimos los posts en bloques
-                            if ($post_count > 6 && $post_count <= 9) { // Del post 7 al 9
-                                $block3[] = $post; // Añadimos los posts al tercer bloque
-                            }
-                        endwhile;*/
-
                         // Mostrar los posts del tercer bloque
                         foreach ($block3 as $post) : setup_postdata($post); ?>
                             <div class="articulo">
@@ -415,9 +296,7 @@ get_header();
                                 </div>
                             </div>
                         <?php endforeach; wp_reset_postdata(); 
-                   /* else :
-                        echo '<p>No hay más publicaciones.</p>';
-                    endif;*/
+                
                     ?>
                 </div>
             </div>
