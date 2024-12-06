@@ -4095,6 +4095,24 @@ button:focus {
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
+
+.modulo-19 .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 44px;
+  font-family: "Poppins-Regular", sans-serif;
+  font-size: 14px;
+  line-height: 50px;
+  color: #2b2d42;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
 @media (max-width: 480px) {
   .modulo-19 .btn-numero {
     width: 30px;
@@ -4102,13 +4120,44 @@ button:focus {
     font-size: 12px;
     line-height: 30px;
   }
+  .modulo-19 .page-numbers {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+    line-height: 30px;
+  }
 }
+.modulo-19 .current:hover,
+.modulo-19 .current.activo {
+  font-family: "Poppins-Bold", sans-serif;
+  color: #ffffff;
+  background-color: #ff1300;
+}
+
 .modulo-19 .btn-numero:hover,
 .modulo-19 .btn-numero.activo {
   font-family: "Poppins-Bold", sans-serif;
   color: #ffffff;
   background-color: #ff1300;
 }
+
+.modulo-19 .dots {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 44px;
+  font-family: "Poppins-Regular", sans-serif;
+  font-size: 14px;
+  line-height: 50px;
+  color: #2b2d42;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
 .modulo-19 .btn-puntos {
   display: inline-flex;
   align-items: center;
