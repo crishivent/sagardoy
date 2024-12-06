@@ -43,10 +43,12 @@ get_header();
 
                              // Obtener la fecha de publicación
                              $post_date = get_the_date('d.m.Y'); // Formato: día.mes.año
+                             // Obtener el enlace del post
+                            $post_link = get_permalink();
                             ?>
 
                              <div class="col-12 col-sm-6 col-lg-4 mb-4">
-                                <a href="#">
+                                <a href="<?php echo esc_url($post_link); ?>">
                                     <div class="line-border">
                                     <div class="row">
                                         <div class="col-5 col-sm-4 col-md-4">
