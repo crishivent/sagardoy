@@ -112,6 +112,10 @@ set_query_var("fecha", get_the_date( 'd.m.Y' ));
   </section>
 
 
+  <!-- Cabecera ok-->
+<?php get_template_part('componentes/single/comp','interesar');?>
+
+
 
 
 <?php get_footer(); ?>
