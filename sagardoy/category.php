@@ -97,15 +97,18 @@ get_header();
         </div>
         <div class="col-12 col-sm-6 col-md-6">
           <div class="btns">
-               <?php
-                    // Obtener solo las 3 primeras categorías
+                <?php
+                    // Obtener la categoría actual
+                    $current_category = get_queried_object_id();
+
+                    // Obtener solo 3 categorías, excluyendo la actual
                     $categories = get_categories(array(
-                        'number' => 3, // Mostrar solo 3 categorías
+                        'number'  => 3,             // Mostrar solo 3 categorías
+                        'exclude' => array($current_category), // Excluir la categoría actual
                     ));
 
-                    // Iterar a través de las categorías seleccionadas y generar enlaces
+                    // Generar enlaces para las categorías seleccionadas
                     foreach ($categories as $category) {
-                        // Obtener el enlace de la categoría
                         $category_link = get_category_link($category->term_id);
                         ?>
                         <a href="<?php echo esc_url($category_link); ?>" class="btn-link">
