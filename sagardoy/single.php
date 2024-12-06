@@ -26,12 +26,12 @@ set_query_var("fecha", get_the_date( 'd.m.Y' ));
           <?php the_content();?>
 
           <div class="btns-redes">
-            <div class="titulo">Compartir</div>
+            <div class="titulo"><?php _e('Compartir', 'sagardoy'); ?></div>
             <div class="btns-holder">
               <div class="btns">
-                <a href="#" class="btn-linkedin"></a>
-                <a href="#" class="btn-facebook"></a>
-                <a href="#" class="btn-whatsapp"></a>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink();?>" class="btn-linkedin"></a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink();?>" class="btn-facebook"></a>
+                <a href="https://wa.me/?text=<?php the_permalink();?>" class="btn-whatsapp"></a>
               </div>
               <a href="javascript:void(0);" onclick="copyLink('<?php echo esc_url( the_permalink() ); ?>', event.target)" class="btn-copiar copy-link"><?php _e('Copiar Link', 'sagardoy'); ?></a>
             </div>
