@@ -592,6 +592,9 @@ get_header();
       </div>
     </div>
   </section>-->
+
+
+
 <section class="modulo-19 pb-130">
     <div class="container">
       <div class="row">
@@ -618,7 +621,8 @@ get_header();
 
             if ( !empty( $pagination_links ) ) {
                 foreach ( $pagination_links as $link ) {
-                    echo '<a href="' . esc_url($link) . '" class="btn-numero">' . $link . '</a>';
+                    // Imprime el enlace directamente
+                    echo $link;
                 }
             }
             ?>
@@ -627,6 +631,7 @@ get_header();
       </div>
     </div>
 </section>
+
 
 
 <?php get_footer(); ?>
