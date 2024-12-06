@@ -10,7 +10,7 @@ $fecha=get_query_var("fecha");
 
 
 <section class="section cabecera-interna-noticias cabecera">
-    <a href="#" class="btn-volver"><u><?php _e('Noticias', 'sagardoy'); ?></u></a>
+    <a href="javascript:window.history.back();" class="btn-volver"><u><?php _e('Noticias', 'sagardoy'); ?></u></a>
 
     <div class="holder">
       <div class="row">
