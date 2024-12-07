@@ -1,21 +1,24 @@
-
+<?php 
+$open_company=get_query_var("open_company");
+$in_company=get_query_var("in_company");
+?>
   <section class="modulo-29 pb-130">
     <div class="container">
       <div class="accesos">
         <div class="acceso left">
-          <div class="titulo">Open Programms</div>
-          <img src="images/img-open-programms.jpg" class="img-fluid" alt="" />
+          <div class="titulo"><?php $open_company['open_company']['titulo_open'];?></div>
+          <img src="<?php $open_company['open_company']['imagen_open'];?>" class="img-fluid" alt="" />
           <div class="holder">
-            <p class="texto">Pulvinar nibh dignissim nec tristique congue. Lacus rhoncus sit euismod scelerisque vitae. Vestibulum faucibus lectus facilisi sed dui adipiscing. At massa non arcu hendrerit.</p>
-            <a href="#" class="btn-link">Saber más</a>
+            <p class="texto"><?php $open_company['open_company']['descripcion_open'];?></p>
+            <a href="<?php $open_company['open_company']['link_open'];?>" class="btn-link"><?php _e('Saber más', 'sagardoy'); ?></a>
           </div>
         </div>
         <div class="acceso right">
-          <div class="titulo">In Company</div>
-          <img src="images/img-legal-expat.jpg" class="img-fluid" alt="" />
+          <div class="titulo"><?php $open_company['in_company']['titulo_open'];?></div>
+          <img src="<?php $open_company['in_company']['imagen_open'];?>" class="img-fluid" alt="" />
           <div class="holder">
-            <p class="texto">Pulvinar nibh dignissim nec tristique congue. Lacus rhoncus sit euismod scelerisque vitae. Vestibulum faucibus lectus facilisi sed dui adipiscing. At massa non arcu hendrerit.</p>
-            <a href="#" class="btn-link">Saber más</a>
+            <p class="texto"><?php $open_company['in_company']['descripcion_open'];?></p>
+            <a href="<?php $open_company['in_company']['link_open'];?>" class="btn-link"><?php _e('Saber más', 'sagardoy'); ?></a>
           </div>
         </div>
       </div>
