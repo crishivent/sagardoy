@@ -21,14 +21,21 @@ get_header();
        <?php 
             // Obtener las categorías del post actual
                 $categories = wp_get_post_categories( get_the_ID() );
+                $category = get_queried_object();
 
-                if ( $categories ) {
+                if ( $category ) {
                     // Crear consulta para posts relacionados
                     $args = array(
-                        'category__in'   => $categories,     // Coincidir con las categorías del post actual
-                        'post__not_in'   => array( get_the_ID() ), // Excluir el post actual
-                        'posts_per_page' => 30,               // Número de posts relacionados a mostrar
-                        'ignore_sticky_posts' => 1           // Ignorar posts fijos
+                        'post_type' => 'post',           // Tipo de post
+                        'posts_per_page' => -1,          // Mostrar todos los posts
+                        'tax_query' => array(           // Agregar filtro por categoría
+                            array(
+                                'taxonomy' => 'category',  // Tipo de taxonomía (en este caso, categorías)
+                                'field'    => 'slug',      // Filtrar por slug
+                                'terms'    => $category->slug,   // Slug de la categoría
+                                'operator' => 'IN',        // Operador para asegurar que se traigan los posts de esta categoría
+                            ),
+                        ),
                     );
                     $related_posts = new WP_Query( $args );
 
