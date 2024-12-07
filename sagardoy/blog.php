@@ -29,7 +29,7 @@ get_header();
     <div class="container">
       <div class="row">
         <div class="col-12 d-flex justify-content-center">
-          <a href="https://sagardoy.neuronalcode.io/blog/" class="btn-link activo"><?php _e('Noticias', 'sagardoy'); ?></a> <a href="#" class="btn-link"><?php _e('Publicaciones', 'sagardoy'); ?></a>
+          <a href="https://sagardoy.neuronalcode.io/blog/" class="btn-link activo"><?php _e('Noticias', 'sagardoy'); ?></a> <a href="https://sagardoy.neuronalcode.io/publicaciones/" class="btn-link"><?php _e('Publicaciones', 'sagardoy'); ?></a>
         </div>
       </div>
     </div>
