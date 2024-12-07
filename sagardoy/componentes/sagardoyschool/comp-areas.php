@@ -1,5 +1,5 @@
  <?php 
-$descripcion_areas=get_query_var("titdescripcion_areasulo_futuro");
+$descripcion_areas=get_query_var("descripcion_areas");
 $imagen_areas=get_query_var("imagen_areas");
 $titulo_areas=get_query_var("titulo_areas");
 $lista_areas=get_query_var("lista_areas");
