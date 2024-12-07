@@ -6,19 +6,23 @@ $in_company=get_query_var("in_company");
     <div class="container">
       <div class="accesos">
         <div class="acceso left">
-          <div class="titulo"><?php echo $open_company['open_company']['titulo_open'];?></div>
-          <img src="<?php echo $open_company['open_company']['imagen_open'];?>" class="img-fluid" alt="" />
+        <?php foreach ($open_company as $open) {?>
+          <div class="titulo"><?php echo $open['open_company']['titulo_open'];?></div>
+          <img src="<?php echo $open['open_company']['imagen_open'];?>" class="img-fluid" alt="" />
           <div class="holder">
-            <p class="texto"><?php echo $open_company['open_company']['descripcion_open'];?></p>
-            <a href="<?php echo $open_company['open_company']['link_open'];?>" class="btn-link"><?php _e('Saber más', 'sagardoy'); ?></a>
+            <p class="texto"><?php echo $open['open_company']['descripcion_open'];?></p>
+            <a href="<?php echo $open['open_company']['link_open'];?>" class="btn-link"><?php _e('Saber más', 'sagardoy'); ?></a>
+            <?php }?>
           </div>
         </div>
         <div class="acceso right">
-          <div class="titulo"><?php echo $open_company['in_company']['titulo_open'];?></div>
-          <img src="<?php echo $open_company['in_company']['imagen_open'];?>" class="img-fluid" alt="" />
+          <?php foreach ($in_company as $in) {?>
+          <div class="titulo"><?php echo $in['in_company']['titulo_open'];?></div>
+          <img src="<?php echo $in['in_company']['imagen_open'];?>" class="img-fluid" alt="" />
           <div class="holder">
-            <p class="texto"><?php echo $open_company['in_company']['descripcion_open'];?></p>
-            <a href="<?php echo $open_company['in_company']['link_open'];?>" class="btn-link"><?php _e('Saber más', 'sagardoy'); ?></a>
+            <p class="texto"><?php echo $in['in_company']['descripcion_open'];?></p>
+            <a href="<?php echo $in['in_company']['link_open'];?>" class="btn-link"><?php _e('Saber más', 'sagardoy'); ?></a>
+            <?php }?>
           </div>
         </div>
       </div>
