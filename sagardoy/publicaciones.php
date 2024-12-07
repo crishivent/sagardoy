@@ -99,7 +99,7 @@ $category = get_term_by( 'slug', 'actualidad', 'category' );
         foreach ($bloque as $post) : setup_postdata($post); ?>
 
          <div>
-            <a href="#">
+            <a href="<?php the_permalink(); ?>">
               <div class="line-border">
                 <div class="row">
                   <div class="col-5 col-sm-4 col-lg-4">
@@ -191,7 +191,7 @@ $category2 = get_term_by( 'slug', 'eventos', 'category' );
         foreach ($bloque2 as $post) : setup_postdata($post); ?>
 
          <div>
-            <a href="#">
+            <a href="<?php the_permalink(); ?>">
               <div class="line-border">
                 <div class="row">
                   <div class="col-5 col-sm-4 col-lg-4">
@@ -288,7 +288,7 @@ $category3 = get_term_by( 'slug', 'novedades-normativas', 'category' );
         foreach ($bloque3 as $post) : setup_postdata($post); ?>
 
          <div>
-            <a href="#">
+            <a href="<?php the_permalink(); ?>">
               <div class="line-border">
                 <div class="row">
                   <div class="col-5 col-sm-4 col-lg-4">
@@ -393,7 +393,7 @@ $category4 = get_term_by( 'slug', 'sentencias', 'category' );
         foreach ($bloque4 as $post) : setup_postdata($post); ?>
 
          <div>
-            <a href="#">
+            <a href="<?php the_permalink(); ?>">
               <div class="line-border">
                 <div class="row">
                   <div class="col-5 col-sm-4 col-lg-4">
