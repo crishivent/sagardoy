@@ -26,6 +26,10 @@ set_query_var("imagen_areas", get_field('imagen_areas'));
 set_query_var("titulo_areas", get_field('titulo_areas'));
 set_query_var("lista_areas", get_field('lista_areas'));
 
+// Open Company
+set_query_var("open_company", get_field('open_company'));
+set_query_var("in_company", get_field('in_company'));
+
 
 
 
@@ -34,7 +38,7 @@ set_query_var("lista_areas", get_field('lista_areas'));
 <!-- Quienes Cabecera OK-->
 <?php get_template_part('componentes/sagardoyschool/comp','cabecera');?>
 
-<!-- Quienes Areas -->
+<!-- Quienes Areas Ok-->
 <?php get_template_part('componentes/sagardoyschool/comp','areas');?>
 
 <!-- Quienes Open Company -->
