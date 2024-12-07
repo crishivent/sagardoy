@@ -20,7 +20,7 @@ get_header();
 
        <?php 
             // Obtener las categorías del post actual
-                $categories = wp_get_post_categories( get_the_ID() );
+                //$categories = wp_get_post_categories( get_the_ID() );
                 $category = get_queried_object();
 
                 if ( $category ) {
@@ -64,7 +64,7 @@ get_header();
                                         <div class="data">
                                             <div class="d-flex flex-column justify-content-between">
                                             <div>
-                                                <h2 class="subtitulo"><?php echo esc_html($category_name); ?></h2>
+                                                <h2 class="subtitulo"><?php echo esc_html($category->name); ?></h2>
                                                 <h2 class="titulo"><?php the_title(); ?></h2>
                                             </div>
                                             <div>
