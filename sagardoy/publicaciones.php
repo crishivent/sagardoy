@@ -426,6 +426,8 @@ $category4 = get_term_by( 'slug', 'sentencias', 'category' );
 
 
 
+  <?php get_template_part('componentes/generales/comp','newsletter');?>
+
 
 
 
