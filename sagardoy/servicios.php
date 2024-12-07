@@ -5,6 +5,13 @@ Template Name: Página Servicios
 
 get_header();
 
+
+//Necesitas información
+set_query_var("imagen_informacion", get_field('imagen_informacion'));
+set_query_var("titulo_informacion", get_field('titulo_informacion'));
+set_query_var("pagina_informacion", get_field('pagina_informacion'));
+
+
 ?>
 
 <!-- cabecera -->
@@ -234,56 +241,12 @@ get_header();
   </section>
 
 
-<!-- Segunda seccion -->
- <section class="modulo-08 pt-130 pb-130">
-    <div class="container">
-      <div class="btns-slider-testimonios">
-        <a href="#" class="icons ico-flecha-left btn-prev"></a>
-        <a href="#" class="icons ico-flecha-right btn-next"></a>
-      </div>
-      <div class="row">
-        <div class="col-12 col-sm-10 col-md-10">
-          <div class="slider-testimonios">
-            <div class="slick-slider" data-sizes="100vw">
-              <div>
-                <h2 class="texto">“Mattis nullam imperdiet elit urna mollis. Mi et tortor sit est pretium vulputate aliquam donec pellentesque. At egestas tortor scelerisque lobortis.”</h2>
-              </div>
-              <div>
-                <h2 class="texto">2 “Mattis nullam imperdiet elit urna mollis. Mi et tortor sit est pretium vulputate aliquam donec pellentesque. At egestas tortor scelerisque lobortis.”</h2>
-              </div>
-              <div>
-                <h2 class="texto">3 “Mattis nullam imperdiet elit urna mollis. Mi et tortor sit est pretium vulputate aliquam donec pellentesque. At egestas tortor scelerisque lobortis.”</h2>
-              </div>
-              <div>
-                <h2 class="texto">4 “Mattis nullam imperdiet elit urna mollis. Mi et tortor sit est pretium vulputate aliquam donec pellentesque. At egestas tortor scelerisque lobortis.”</h2>
-              </div>
-              <div>
-                <h2 class="texto">5 “Mattis nullam imperdiet elit urna mollis. Mi et tortor sit est pretium vulputate aliquam donec pellentesque. At egestas tortor scelerisque lobortis.”</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-2 col-md-2"></div>
-      </div>
-    </div>
-  </section>
 
-<!-- Tercera sección -->
+<!-- Quienes opiniones OK -->
+<?php get_template_part('componentes/generales/comp','opiniones');?>
 
-  <section class="modulo-09 pt-130 pb-130">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-sm-5 col-md-5">
-          <img src="images/img-contactanos.jpg" class="img-fluid" alt="" />
-        </div>
-        <div class="col-12 col-sm-1 col-md-1"></div>
-        <div class="col-12 col-sm-6 col-md-6 d-flex justify-content-center flex-column">
-          <h2 class="titulo">¿Te gustaría recibir ayuda personalizada para resolver tus dudas?</h2>
-          <a href="#" class="btn-link">Contacta con nosotros</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- Contactanos -->
+<?php get_template_part('componentes/servicios/comp','contactanos');?>
 
 
 
