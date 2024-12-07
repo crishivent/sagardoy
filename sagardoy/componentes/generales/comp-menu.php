@@ -20,7 +20,7 @@
                         $menu_items = wp_get_nav_menu_items($menu_name);
                         echo '<ul class="btns-link">';
                         foreach ($menu_items as $item) {
-                            echo '<li class"btn-link_"><a href="' . esc_url($item->url) . '">' . esc_html($item->title) . '</a></li>';
+                            echo '<li class="btn-link_"><a href="' . esc_url($item->url) . '">' . esc_html($item->title) . '</a></li>';
 
                         }
                         echo '</ul>';
