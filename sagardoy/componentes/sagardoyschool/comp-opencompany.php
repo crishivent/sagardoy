@@ -6,19 +6,19 @@ $in_company=get_query_var("in_company");
     <div class="container">
       <div class="accesos">
         <div class="acceso left">
-          <div class="titulo"><?php $open_company['open_company']['titulo_open'];?></div>
-          <img src="<?php $open_company['open_company']['imagen_open'];?>" class="img-fluid" alt="" />
+          <div class="titulo"><?php echo $open_company['open_company']['titulo_open'];?></div>
+          <img src="<?php echo $open_company['open_company']['imagen_open'];?>" class="img-fluid" alt="" />
           <div class="holder">
-            <p class="texto"><?php $open_company['open_company']['descripcion_open'];?></p>
-            <a href="<?php $open_company['open_company']['link_open'];?>" class="btn-link"><?php _e('Saber más', 'sagardoy'); ?></a>
+            <p class="texto"><?php echo $open_company['open_company']['descripcion_open'];?></p>
+            <a href="<?php echo $open_company['open_company']['link_open'];?>" class="btn-link"><?php _e('Saber más', 'sagardoy'); ?></a>
           </div>
         </div>
         <div class="acceso right">
-          <div class="titulo"><?php $open_company['in_company']['titulo_open'];?></div>
-          <img src="<?php $open_company['in_company']['imagen_open'];?>" class="img-fluid" alt="" />
+          <div class="titulo"><?php echo $open_company['in_company']['titulo_open'];?></div>
+          <img src="<?php echo $open_company['in_company']['imagen_open'];?>" class="img-fluid" alt="" />
           <div class="holder">
-            <p class="texto"><?php $open_company['in_company']['descripcion_open'];?></p>
-            <a href="<?php $open_company['in_company']['link_open'];?>" class="btn-link"><?php _e('Saber más', 'sagardoy'); ?></a>
+            <p class="texto"><?php echo $open_company['in_company']['descripcion_open'];?></p>
+            <a href="<?php echo $open_company['in_company']['link_open'];?>" class="btn-link"><?php _e('Saber más', 'sagardoy'); ?></a>
           </div>
         </div>
       </div>
