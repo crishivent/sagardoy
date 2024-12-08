@@ -12,6 +12,7 @@ $idiomas= get_field('idiomas');
 $email= get_field('email');
 $telefono= get_field('telefono');
 $imagen_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+ $sede = get_field('sedes');
 
 
 
@@ -34,7 +35,7 @@ $imagen_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
               </div>
               <div class="col-12 col-sm-4 col-md-4">
                 <div class="titulo-top"><?php _e('SEDES', 'sagardoy'); ?></div>
-                <div class="texto">Sagardoy Madrid</div>
+                <div class="texto"><?php echo $sede;?></div>
               </div>
               <div class="col-12 col-sm-4 col-md-4">
                 <div class="titulo-top"><?php _e('IDIOMAS', 'sagardoy'); ?></div>
