@@ -1,13 +1,6 @@
 <?php 
 get_header();
 
-?>
-
-
-<?php 
-get_footer();
-
-
 // Cabecera
 set_query_var("titulo_home", get_field('titulo_home'));
 set_query_var("subtitulo_home", get_field('subtitulo_home'));
@@ -96,3 +89,11 @@ set_query_var("descripcion_derecha_donde_estamos", get_field('descripcion_derech
 
 <!-- Newsletter Ok-->
 <?php get_template_part('componentes/generales/comp','newsletter');?>
+
+
+
+
+
+<?php 
+get_footer();
+?>
