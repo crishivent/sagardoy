@@ -69,7 +69,6 @@ set_query_var("descripcion_derecha_donde_estamos", get_field('descripcion_derech
 
 
 
-
 <!-- Últimas noticias Ok-->
 <?php get_template_part('componentes/home/comp','ultimasnoticias');?>
 
