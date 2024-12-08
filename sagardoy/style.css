@@ -9112,3 +9112,8 @@ Extra     extra large	xxl	  ≥1400px
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
+
+/* Genericas */
+.cabecera-genericas {
+  margin-top: 10%;
+}
