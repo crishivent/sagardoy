@@ -16,7 +16,7 @@ $premios=get_query_var("premios");
         <div class="slick-slider" data-sizes="100vw">
            <?php 
               foreach ($premios as $premio) {
-                $imagen = $premio['premios']['premio'];
+                $imagen = $premio['premio'];
                   echo '<div><img src="'.$imagen.'" class="img-fluid" alt=""></div>';
               }
         ?>
