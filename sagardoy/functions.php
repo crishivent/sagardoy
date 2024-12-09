@@ -74,6 +74,7 @@ function custom_blog_template( $template ) {
 }
 add_filter( 'template_include', 'custom_blog_template' );
 
-
+//Activar imagenes destacadas en páginas
+add_theme_support('post-thumbnails');
 
 ?>

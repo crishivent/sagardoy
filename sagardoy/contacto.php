@@ -45,7 +45,7 @@ $imagen_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
                     $activo = (get_the_ID() == $current_id) ? 'activo' : '';
                         ?>
                         <li>
-                            <a href="<?php the_permalink(); ?>" data-id="02" class="btn-link <?php echo $activo; ?>">
+                            <a href="<?php the_permalink(); ?>" data-id="02" class="btn-link ">
                                 <?php echo esc_html(get_the_title()); // Muestra el título del post ?>
                             </a>
                         </li>
@@ -54,7 +54,7 @@ $imagen_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
                     endwhile;
                     ?>
                     <li>
-                            <a href="https://sagardoy.neuronalcode.io/contacto/" data-id="01" class="btn-link">
+                            <a href="https://sagardoy.neuronalcode.io/contacto/" data-id="01" class="btn-link show">
                                 <?php _e('Internacional', 'sagardoy'); ?>
                             </a>
                     </li>
@@ -142,13 +142,20 @@ $imagen_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
                         $activo = (get_the_ID() == $current_i) ? 'activo' : '';
                         ?>
                         <li>
-                            <a href="<?php the_permalink(); ?>" data-id="01" class="btn-link <?php echo $activo; ?>">
+                            <a href="<?php the_permalink(); ?>" data-id="02" class="btn-link ">
                                 <?php echo esc_html(get_the_title()); // Muestra el título del post ?>
                             </a>
                         </li>
                         <?php
                         $i++; // Incrementa el contador
                     endwhile;
+                    ?>
+                    <li>
+                            <a href="https://sagardoy.neuronalcode.io/contacto/" data-id="01" class="btn-link show">
+                                <?php _e('Internacional', 'sagardoy'); ?>
+                            </a>
+                    </li>
+                    <?php
                     wp_reset_postdata(); // Resetea la consulta
                 else :
                     echo '<li>No hay sedes disponibles.</li>';
