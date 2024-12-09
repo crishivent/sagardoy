@@ -71,6 +71,7 @@ set_query_var('descripcion_equipo',get_field('descripcion_equipo', 'option'));
                 </div>
               </div>
               <div class="col-12 col-sm-2 col-md-2">
+                <?php echo do_shortcode('[facetwp facet="buscar"]');?>
                 <a href="#" class="btn-buscar">Buscar</a>
               </div>
             </div>
@@ -121,9 +122,28 @@ set_query_var('descripcion_equipo',get_field('descripcion_equipo', 'option'));
 
 
 
+          <!-- Buscamos talento -->
+  <section class="modulo-12 pt-130 pb-130">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-lg-4">
+          <h2 class="titulo">Buscamos talento</h2>
+        </div>
+        <div class="col-12 col-sm-12 col-lg-1"></div>
+        <div class="col-12 col-sm-12 col-lg-7">
+          <img src="images/img-buscamos.jpg" class="img-fluid" alt="" />
+          <p class="texto">Pulvinar nibh dignissim nec tristique congue. Lacus rhoncus sit euismod scelerisque vitae. Vestibulum faucibus lectus facilisi sed dui adipiscing. At massa non arcu hendrerit. Ante nibh et condimentum commodo auctor aliquet sit. Egestas tortor convallis pellentesque eget gravida lorem ipsum doloor sit amet.</p>
+          <a href="#" class="btn-link">únete al equipo</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 
+
+<!-- Quienes opiniones OK -->
+<?php get_template_part('componentes/generales/comp','opiniones');?>
 
 
 
