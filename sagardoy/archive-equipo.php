@@ -96,82 +96,46 @@ set_query_var('descripcion_equipo',get_field('descripcion_equipo', 'option'));
 
 
 <!-- Resultado -->
- <section class="modulo-11 pt-130 pb-130 buscador-resultado">
+
+
+<section class="modulo-11 pt-130 pb-130 buscador-resultado">
     <div class="container">
-      <div class="row">
-        <div class="col-12 col-sm-4 col-lg-3 mb-5">
-          <img src="images/I_igo_Sagardoy_de_Sim_n-1-color1.jpg" class="img-fluid" alt="" />
-          <div class="nombre">Iñigo Sagardoy de Simón</div>
-          <div class="cargo">Presidente</div>
+        <div class="row">
+            <?php
+            // Consulta personalizada para obtener los miembros del equipo
+            $args = array(
+                'post_type' => 'equipo', // Custom post type 'equipo'
+                'posts_per_page' => -1, // Traer todos los posts
+                'post_status' => 'publish', // Solo los publicados
+            );
+
+            $query = new WP_Query($args);
+
+            if ($query->have_posts()) :
+                while ($query->have_posts()) : $query->the_post();
+
+                    $cargo = get_field('cargo'); // Campo personalizado 'cargo'
+                    $imagen = get_the_post_thumbnail_url(get_the_ID(), 'full'); // URL de la imagen destacada
+                    $nombre = get_the_title(); // Título del post
+            ?>
+                    <div class="col-12 col-sm-4 col-lg-3 mb-5">
+                        <img src="<?php echo esc_url($imagen); ?>" class="img-fluid" alt="<?php echo esc_attr($nombre); ?>" />
+                        <div class="nombre"><?php echo esc_html($nombre); ?></div>
+                        <div class="cargo"><?php echo esc_html($cargo); ?></div>
+                    </div>
+            <?php
+                endwhile;
+                wp_reset_postdata(); // Resetea la consulta
+            else :
+                echo '<div class="col-12"><p>No hay miembros del equipo disponibles.</p></div>';
+            endif;
+            ?>
         </div>
-        <div class="col-12 col-sm-4 col-lg-3 mb-5">
-          <img src="images/I_igo_Sagardoy_de_Sim_n-1-color2.jpg" class="img-fluid" alt="" />
-          <div class="nombre">Juan Antonio Sagardoy Bengoechea</div>
-          <div class="cargo">Presidente de Honor</div>
+        <div class="text-center">
+            <a href="#" class="btn-ver-mas">Ver más</a>
         </div>
-        <div class="col-12 col-sm-4 col-lg-3 mb-5">
-          <img src="images/I_igo_Sagardoy_de_Sim_n-1-color3.jpg" class="img-fluid" alt="" />
-          <div class="nombre">Martín Godino Reyes</div>
-          <div class="cargo">Socio Director</div>
-        </div>
-        <div class="col-12 col-sm-4 col-lg-3 mb-5">
-          <img src="images/I_igo_Sagardoy_de_Sim_n-1-color4.jpg" class="img-fluid" alt="" />
-          <div class="nombre">Ana Godino Reyes</div>
-          <div class="cargo">Socia</div>
-        </div>
-        <div class="col-12 col-sm-4 col-lg-3 mb-5">
-          <img src="images/I_igo_Sagardoy_de_Sim_n-1-color5.jpg" class="img-fluid" alt="" />
-          <div class="nombre">Román Gil Alburquerque</div>
-          <div class="cargo">Socia</div>
-        </div>
-        <div class="col-12 col-sm-4 col-lg-3 mb-5">
-          <img src="images/I_igo_Sagardoy_de_Sim_n-1-color6.jpg" class="img-fluid" alt="" />
-          <div class="nombre">Raquel Muñiz Ferrer</div>
-          <div class="cargo">Socia</div>
-        </div>
-        <div class="col-12 col-sm-4 col-lg-3 mb-5">
-          <img src="images/I_igo_Sagardoy_de_Sim_n-1-color7.jpg" class="img-fluid" alt="" />
-          <div class="nombre">José Luis Fraile Quinzaños</div>
-          <div class="cargo">Socia</div>
-        </div>
-        <div class="col-12 col-sm-4 col-lg-3 mb-5">
-          <img src="images/I_igo_Sagardoy_de_Sim_n-1-color8.jpg" class="img-fluid" alt="" />
-          <div class="nombre">María Jesús Herrera Duque</div>
-          <div class="cargo">Socia</div>
-        </div>
-        <div class="col-12 col-sm-4 col-lg-3 mb-5">
-          <img src="images/I_igo_Sagardoy_de_Sim_n-1-color9.jpg" class="img-fluid" alt="" />
-          <div class="nombre">David Isaac Tobía</div>
-          <div class="cargo">Socio</div>
-        </div>
-        <div class="col-12 col-sm-4 col-lg-3 mb-5">
-          <img src="images/I_igo_Sagardoy_de_Sim_n-1-color10.jpg" class="img-fluid" alt="" />
-          <div class="nombre">Montserrat Alonso Paulí</div>
-          <div class="cargo">Socia</div>
-        </div>
-        <div class="col-12 col-sm-4 col-lg-3 mb-5">
-          <img src="images/I_igo_Sagardoy_de_Sim_n-1-color11.jpg" class="img-fluid" alt="" />
-          <div class="nombre">Bruno Álvarez Padín</div>
-          <div class="cargo">Socio</div>
-        </div>
-        <div class="col-12 col-sm-4 col-lg-3 mb-5">
-          <img src="images/I_igo_Sagardoy_de_Sim_n-1-color12.jpg" class="img-fluid" alt="" />
-          <div class="nombre">Marc Carrera Domènech</div>
-          <div class="cargo">Socio</div>
-        </div>
-      </div>
-      <div class="text-center"><a href="#" class="btn-ver-mas">Ver más</a></div>
     </div>
-  </section>
-
-
-
-
-
-
-
-
-
+</section>
 
 
 
