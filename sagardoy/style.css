@@ -9117,3 +9117,23 @@ Extra     extra large	xxl	  ≥1400px
 .cabecera-genericas {
   margin-top: 10%;
 }
+
+
+/* input buscar*/
+.modulo-11 .form .input-email .facetwp-search {
+    width: 100%;
+    font-family: "Poppins-Regular", sans-serif;
+    font-size: 14px;
+    line-height: 50px;
+    color: #2b2d42;
+    background-color: rgba(43, 45, 66, 0.1);
+    border-radius: 50px;
+    height: 50px;
+    border: 0px;
+    padding-left: 60px;
+    padding-right: 20px;
+    background-image: url(../images/ico-buscar.svg);
+    background-repeat: no-repeat;
+    background-position: 20px center;
+    background-size: 22px 22px;
+}
