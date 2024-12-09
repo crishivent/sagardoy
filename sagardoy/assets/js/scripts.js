@@ -80,7 +80,7 @@ jQuery(document).ready(function(){
   /* ---------------------------------------------------------------------------------------------------------*/
 
   $(".modulo-35 .desktop .col-left .lista li .btn-link").on("click", function(e){
-    e.preventDefault();
+    //e.preventDefault();
     $(".modulo-35 .desktop .col-left .lista li .btn-link").removeClass("activo");
     $(this).addClass("activo");
     let id = $(this).attr("data-id");
@@ -93,7 +93,7 @@ jQuery(document).ready(function(){
   });
 
   $(".modulo-35 .mobile .lista li .btn-link").on("click", function(e){
-    e.preventDefault();
+    //e.preventDefault();
     $(".modulo-35 .mobile .layer").addClass("show");
 
     let id = $(this).attr("data-id");
@@ -102,7 +102,7 @@ jQuery(document).ready(function(){
   });
 
   $(".modulo-35 .mobile .layer .titulo .btn-volver").on("click", function(e){
-    e.preventDefault();
+    //e.preventDefault();
     $(".modulo-35 .mobile .layer").removeClass("show");
   });
 

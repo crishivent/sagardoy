@@ -35,17 +35,16 @@ $imagen_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
                     'posts_per_page' => -1, // Trae todos los posts
                     'post_status' => 'publish', // Solo los publicados
                 );
-
+                $current_id = get_the_ID();
                 $query = new WP_Query($args);
                 $i = 1; // Contador para identificar el índice
 
                 if ($query->have_posts()) :
                     while ($query->have_posts()) : $query->the_post();
-                        // Agrega la clase 'activo' solo al primer elemento
-                        $activo = ($i == 1) ? 'activo' : '';
+                    $activo = (get_the_ID() == $current_id) ? 'activo' : '';
                         ?>
                         <li>
-                            <a href="<?php the_permalink(); ?>" data-id="0<?php echo $i; ?>" class="btn-link <?php echo $activo; ?>">
+                            <a href="<?php the_permalink(); ?>" data-id="01" class="btn-link <?php echo $activo; ?>">
                                 <?php echo esc_html(get_the_title()); // Muestra el título del post ?>
                             </a>
                         </li>
@@ -119,17 +118,16 @@ $imagen_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
                     'posts_per_page' => -1, // Trae todos los posts
                     'post_status' => 'publish', // Solo los publicados
                 );
-
+                $current_i = get_the_ID();
                 $query = new WP_Query($args);
                 $i = 1; // Contador para identificar el índice
 
                 if ($query->have_posts()) :
                     while ($query->have_posts()) : $query->the_post();
-                        // Agrega la clase 'activo' solo al primer elemento
-                        $activo = ($i == 1) ? 'activo' : '';
+                        $activo = (get_the_ID() == $current_i) ? 'activo' : '';
                         ?>
                         <li>
-                            <a href="<?php the_permalink(); ?>" data-id="0<?php echo $i; ?>" class="btn-link <?php echo $activo; ?>">
+                            <a href="<?php the_permalink(); ?>" data-id="01" class="btn-link <?php echo $activo; ?>">
                                 <?php echo esc_html(get_the_title()); // Muestra el título del post ?>
                             </a>
                         </li>
