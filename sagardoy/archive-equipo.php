@@ -50,7 +50,7 @@ $enlace_boton_talento = get_field('enlace_boton_talento', 'option');
 
 <!-- Filtros profesionales -->
 
-<section class="modulo-11 pt-130 pb-130">
+<section id="equiporesult" class="modulo-11 pt-130 pb-130">
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-12 col-lg-1"></div>
@@ -92,7 +92,7 @@ $enlace_boton_talento = get_field('enlace_boton_talento', 'option');
 <!-- Resultado -->
 
 
-<section id="equiporesult" class="modulo-11 pt-130 pb-130 buscador-resultado">
+<section class="modulo-11 pt-130 pb-130 buscador-resultado">
     <div class="container">
         <div class="row">
             <?php
