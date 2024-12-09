@@ -8,7 +8,11 @@
   $titulocontador3 = get_field('titulo_contador_3', 'option');
   $titulocontador4 = get_field('titulo_contador_4', 'option');
 
-  $descripcionequipo = get_query_var('descripcion_equipo');
+
+if(!empty(get_query_var('descripcion_equipo'))){
+ $descripcionequipo = get_query_var('descripcion_equipo');
+}
+ 
   
   ?>
  
