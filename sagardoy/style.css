@@ -9138,6 +9138,6 @@ Extra     extra large	xxl	  ≥1400px
 }
 
 .facetwp-input-wrap {
-  display: block;
+  display: block !important;
   position: relative;
 }
