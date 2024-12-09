@@ -53,7 +53,7 @@ $imagen_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
                     endwhile;
                     ?>
                     <li>
-                            <a href="https://sagardoy.neuronalcode.io/contacto/" class="btn-link">
+                            <a href="https://sagardoy.neuronalcode.io/contacto/" data-id="02" class="btn-link">
                                 <?php _e('Internacional', 'sagardoy'); ?>
                             </a>
                     </li>
@@ -77,6 +77,12 @@ $imagen_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
               <div class="col-12">
                 <div class="imagenes-holder">
                     <div class="imagen-holder show" id="img-01">
+                    <div class="titulo"><?php echo $titulo_derecha;?></div>
+                    <img src="<?php echo $imagen_url; ?>" class="img-fluid" />
+                  </div>
+                </div>
+                <div class="imagenes-holder">
+                    <div class="imagen-holder" id="img-02">
                     <div class="titulo"><?php echo $titulo_derecha;?></div>
                     <img src="<?php echo $imagen_url; ?>" class="img-fluid" />
                   </div>
