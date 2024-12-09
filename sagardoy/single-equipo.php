@@ -197,25 +197,24 @@ $post = $sede[0];
                     <select id="standard-select">
                         <option value="0" disabled selected>Sede</option>
                         <?php
-                        // Obtener los valores únicos del campo personalizado 'sede'
-                        global $wpdb;
-
-                        $meta_key = 'sede'; // Nombre del campo personalizado
-                        $results = $wpdb->get_col(
-                            $wpdb->prepare(
-                                "SELECT DISTINCT meta_value 
-                                FROM {$wpdb->postmeta} 
-                                WHERE meta_key = %s 
-                                AND meta_value != ''", 
-                                $meta_key
-                            )
+                        // Obtener todos los posts del custom post type 'sede'
+                        $args = array(
+                            'post_type'      => 'sede', // Nombre del custom post type
+                            'posts_per_page' => -1, // Traer todos los posts
+                            'post_status'    => 'publish', // Solo posts publicados
+                            'orderby'        => 'title', // Ordenar por título
+                            'order'          => 'ASC', // En orden ascendente
                         );
 
+                        $sede_query = new WP_Query($args);
+
                         // Verificar si hay resultados y crear opciones
-                        if (!empty($results)) {
-                            foreach ($results as $sede) {
-                                echo '<option value="' . esc_attr($sede) . '">' . esc_html($sede) . '</option>';
+                        if ($sede_query->have_posts()) {
+                            while ($sede_query->have_posts()) {
+                                $sede_query->the_post();
+                                echo '<option value="' . esc_attr(get_the_ID()) . '">' . esc_html(get_the_title()) . '</option>';
                             }
+                            wp_reset_postdata(); // Restaurar datos originales del post
                         } else {
                             echo '<option value="0" disabled>No hay sedes disponibles</option>';
                         }
@@ -223,6 +222,7 @@ $post = $sede[0];
                     </select>
                 </div>
             </div>
+
 
               <div class="col-12 col-sm-2 col-md-2">
                 <a href="#" class="btn-buscar">Buscar</a>
