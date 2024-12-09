@@ -26,7 +26,7 @@ set_query_var('descripcion_equipo',get_field('descripcion_equipo', 'option'));
       <div class="container">
         <div class="row">
           <div class="col-12 col-sm-7 col-md-7 border-left">
-            <div class="label">Equipo</div>
+            <div class="label"><?php _e('Equipo', 'sagardoy'); ?></div>
             <div class="titulo"><?php echo $titulo_equipo;?></div>
           </div>
           <div class="col-12 col-sm-5 col-md-5"></div>
@@ -60,6 +60,7 @@ set_query_var('descripcion_equipo',get_field('descripcion_equipo', 'option'));
               </div>
               <div class="col-12 col-sm-3 col-md-3">
                 <div class="select">
+                  <?php do_shortcode('[facetwp facet="cargos"]');?>
                   <select id="standard-select">
                     <option value="0" disabled selected>Cargo</option>
                     <option value="1">Opción 1</option>
