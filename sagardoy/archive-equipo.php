@@ -103,7 +103,7 @@ set_query_var('descripcion_equipo',get_field('descripcion_equipo', 'option'));
         <div class="row">
             <?php
             // Consulta personalizada para obtener los miembros del equipo
-            $args = array(
+          /*  $args = array(
                 'post_type' => 'equipo', // Custom post type 'equipo'
                 'posts_per_page' => -1, // Traer todos los posts
                 'post_status' => 'publish', // Solo los publicados
@@ -113,10 +113,10 @@ set_query_var('descripcion_equipo',get_field('descripcion_equipo', 'option'));
                 $args['facetwp'] = true;
             }
 
-            $query = new WP_Query($args);
+            $query = new WP_Query($args);*/
 
-            if ($query->have_posts()) :
-                while ($query->have_posts()) : $query->the_post();
+            if (have_posts()) :
+                while (have_posts()) : the_post();
 
                     $cargo = get_field('cargo'); // Campo personalizado 'cargo'
                     $imagen = get_the_post_thumbnail_url(get_the_ID(), 'full'); // URL de la imagen destacada
