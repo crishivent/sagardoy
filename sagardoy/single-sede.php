@@ -69,7 +69,7 @@ $imagen_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
             <div class="row">
               <div class="col-12">
                 <div class="imagenes-holder">
-                    <div class="imagen-holder '.$activo.'" id="img-0'.$i.'">
+                    <div class="imagen-holder show" id="img-01">
                     <div class="titulo"><?php the_title();?></div>
                     <img src="<?php echo $imagen_url; ?>" class="img-fluid" />
                   </div>
@@ -79,7 +79,7 @@ $imagen_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
             <div class="row">
               <div class="col-12 col-sm-12 col-lg-5">
                 <div class="infos-holder">
-                    <div class="info-holder show" id="info-0'.$i.'">
+                    <div class="info-holder show" id="info-01">
                         <div class="texto"><?php echo $descripcion;?></div>
                         <div class="info">
                         <a href="#" class="btn-direccion"><?php echo $direccion;?></a><br><br>
