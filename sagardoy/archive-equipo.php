@@ -96,13 +96,15 @@ set_query_var('descripcion_equipo',get_field('descripcion_equipo', 'option'));
                     $imagen = get_the_post_thumbnail_url(get_the_ID(), 'full'); // URL de la imagen destacada
                     $nombre = get_the_title(); // Título del post
             ?>
-                    <a href="<?php the_permalink(); ?>">
+                    
                       <div class="col-12 col-sm-4 col-lg-3 mb-5">
+                        <a href="<?php the_permalink(); ?>">
                           <img src="<?php echo esc_url($imagen); ?>" class="img-fluid" alt="<?php echo esc_attr($nombre); ?>" />
                           <div class="nombre"><?php echo esc_html($nombre); ?></div>
                           <div class="cargo"><?php echo esc_html($cargo); ?></div>
+                          </a>
                       </div>
-                    </a>
+                    
             <?php
                 endwhile;
                 wp_reset_postdata(); // Resetea la consulta
