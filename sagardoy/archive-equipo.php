@@ -1,9 +1,21 @@
 <?php
 /*
-Template Name: Página Equipo
+Archive Equipo
 */
 
 get_header();
+
+
+// Cabecera
+$titulo_equipo = get_field('titulo_equipo', 'option');
+$descripcion_equipo = get_field('descripcion_equipo', 'option');
+$fondo_equipo = get_field('fondo_equipo', 'option');
+
+
+
+
+
+
 
 ?>
 
@@ -16,54 +28,20 @@ get_header();
         <div class="row">
           <div class="col-12 col-sm-7 col-md-7 border-left">
             <div class="label">Equipo</div>
-            <div class="titulo">Una larga trayectoria profesional</div>
+            <div class="titulo"><?php echo $titulo_equipo;?></div>
           </div>
           <div class="col-12 col-sm-5 col-md-5"></div>
         </div>
       </div>
     </div>
-    <img src="images/img-cabecera-equipo.jpg" class="img-fluid" alt="" />
+    <img src="<?php echo $fondo_equipo; ?>" class="img-fluid" alt="" />
   </section>
 
 
 
 <!-- Contador gris -->
-<section class="modulo-03 pt-90 pb-90 bg-gris">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-sm-7 col-md-7">
-          <div class="texto-top">Quam dui montes quam ultrices aliquet mollis ornare amet. Viverra phasellus sit integer proin faucibus. Ut nisl dictumst odio neque. Odio feugiat scelerisque non ac. Urna netus pellentesque nulla elementum. Turpis dictum vulputate bibendum velit sagittis. Purus nulla.</div>
-        </div>
-        <div class="col-12 col-sm-5 col-md-5"></Div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-sm-3 col-md-3 text-center">
-          <div class="holder">
-            <div class="numero"><span class="plus">+</span><span class="counter" data-count="43">0</span></div>
-            <div class="texto">años de experiencia</div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-3 col-md-3 text-center">
-          <div class="holder">
-            <div class="numero"><span class="plus">+</span><span class="counter" data-count="350">0</span></div>
-            <div class="texto">profesionales</div>
-            </div>
-        </div>
-        <div class="col-12 col-sm-3 col-md-3 text-center">
-          <div class="holder">
-            <div class="numero"><span class="counter" data-count="35">0</span></div>
-            <div class="texto">sedes en el mundo</div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-3 col-md-3 text-center">
-          <div class="holder">
-            <div class="numero"><span class="plus">+</span><span class="counter" data-count="43">0</span></div>
-            <div class="texto">años de experiencia</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+ <?php set_query_var("archive", "bg-gris");?>
+<?php get_template_part('componentes/nosotros/comp','experiencia');?>
 
 
 <!-- Filtros profesionales -->

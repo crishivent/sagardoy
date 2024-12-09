@@ -7,10 +7,12 @@
   $titulocontador2 = get_field('titulo_contador_2', 'option');
   $titulocontador3 = get_field('titulo_contador_3', 'option');
   $titulocontador4 = get_field('titulo_contador_4', 'option');
+
+   $archive = get_query_var('archive');
   
   ?>
  
- <section class="modulo-03 pt-90 pb-90">
+ <section class="modulo-03 pt-90 pb-90 <?php if(!empty($archive)){echo $archive;} ?>">
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-3 col-md-3 text-center">
