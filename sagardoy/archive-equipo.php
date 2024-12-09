@@ -54,7 +54,8 @@ set_query_var('descripcion_equipo',get_field('descripcion_equipo', 'option'));
             <div class="row">
               <div class="col-12 col-sm-4 col-md-4">
                 <div class="input-email">
-                  <input class="input" value="" placeholder="Buscar"></input>
+                  <?php echo do_shortcode('[facetwp facet="buscar"]');?>
+                 <!-- <input class="input" value="" placeholder="Buscar"></input>-->
                   <a href="#" class="btn-link"></a>
                 </div>
               </div>
@@ -71,7 +72,6 @@ set_query_var('descripcion_equipo',get_field('descripcion_equipo', 'option'));
                 </div>
               </div>
               <div class="col-12 col-sm-2 col-md-2">
-                <?php echo do_shortcode('[facetwp facet="buscar"]');?>
                 <a href="#" class="btn-buscar">Buscar</a>
               </div>
             </div>
