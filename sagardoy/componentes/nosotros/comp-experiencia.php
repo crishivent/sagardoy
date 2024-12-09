@@ -8,12 +8,32 @@
   $titulocontador3 = get_field('titulo_contador_3', 'option');
   $titulocontador4 = get_field('titulo_contador_4', 'option');
 
-   $archive = get_query_var('archive');
+  $archive = get_query_var('archive');
+  $descripcionequipo = get_query_var('descripcion_equipo');
   
   ?>
  
- <section class="modulo-03 pt-90 pb-90 <?php if(!empty($archive)){echo $archive;} ?>">
+ <section class="modulo-03 pt-90 pb-90 <?php if(!empty($archive)){echo 'bg-gris';} ?>">
     <div class="container">
+
+    <?php 
+    if (!empty($descripcion_equipo)) {
+     ?>
+      <div class="row">
+        <div class="col-12 col-sm-7 col-md-7">
+          <div class="texto-top"><?php echo $descripcionequipo; ?></div>
+        </div>
+        <div class="col-12 col-sm-5 col-md-5"></Div>
+      </div>
+     <?php
+    }
+    ?>
+   
+
+
+
+
+
       <div class="row">
         <div class="col-12 col-sm-3 col-md-3 text-center">
           <div class="holder">

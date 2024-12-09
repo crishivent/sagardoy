@@ -8,10 +8,9 @@ get_header();
 
 // Cabecera
 $titulo_equipo = get_field('titulo_equipo', 'option');
-$descripcion_equipo = get_field('descripcion_equipo', 'option');
 $fondo_equipo = get_field('fondo_equipo', 'option');
 
-
+set_query_var('descripcion_equipo',get_field('descripcion_equipo', 'option'));
 
 
 
@@ -40,8 +39,7 @@ $fondo_equipo = get_field('fondo_equipo', 'option');
 
 
 <!-- Contador gris -->
- <?php set_query_var("archive", "bg-gris");?>
-<?php get_template_part('componentes/nosotros/comp','experiencia');?>
+<?php get_template_part('componentes/nosotros/comp','experiencias'); ?>
 
 
 <!-- Filtros profesionales -->
