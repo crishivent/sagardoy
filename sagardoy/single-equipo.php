@@ -152,7 +152,7 @@ $post = $sede[0];
             <div class="col-12 col-sm-1 col-md-1"></div>
             <div class="col-12 col-sm-10 col-md-10 text-center">
                 <h2 class="titulo">Buscar otro abogado</h2>
-                <form method="GET" action="https://sagardoy.neuronalcode.io/equipo/">
+                <form id="search-form" method="GET" action="https://sagardoy.neuronalcode.io/equipo/">
                     <div class="form">
                         <div class="row">
                             <!-- Campo de búsqueda -->
@@ -238,8 +238,6 @@ $post = $sede[0];
                             </div>
                         </div>
                     </div>
-                    <!-- Anclaje a la sección de resultados -->
-                    <input type="hidden" name="#equiporesult" value="">
                 </form>
             </div>
             <div class="col-12 col-sm-1 col-md-1"></div>
@@ -247,7 +245,23 @@ $post = $sede[0];
     </div>
 </section>
 
+<script>
+    document.getElementById('search-form').addEventListener('submit', function (e) {
+        // Prevenir envío por defecto para modificar la URL
+        e.preventDefault();
 
+        // Obtener la acción del formulario y los parámetros del formulario
+        const form = e.target;
+        const action = form.getAttribute('action');
+        const params = new URLSearchParams(new FormData(form));
+
+        // Añadir el anclaje manualmente
+        const fullUrl = `${action}?${params.toString()}#equiporesult`;
+
+        // Redirigir a la URL final
+        window.location.href = fullUrl;
+    });
+</script>
 
 
 
