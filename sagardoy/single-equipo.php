@@ -238,12 +238,15 @@ $post = $sede[0];
                             </div>
                         </div>
                     </div>
+                    <!-- Anclaje a la sección de resultados -->
+                    <input type="hidden" name="#equiporesult" value="">
                 </form>
             </div>
             <div class="col-12 col-sm-1 col-md-1"></div>
         </div>
     </div>
 </section>
+
 
 
 
