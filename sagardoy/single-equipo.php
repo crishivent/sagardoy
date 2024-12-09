@@ -151,7 +151,7 @@ $post = $sede[0];
         <div class="row">
             <div class="col-12 col-sm-1 col-md-1"></div>
             <div class="col-12 col-sm-10 col-md-10 text-center">
-                <h2 class="titulo">Buscar otro abogado</h2>
+                <h2 class="titulo"><?php _e('Buscar otro abogado', 'sagardoy'); ?></h2>
                 <form id="search-form" method="GET" action="https://sagardoy.neuronalcode.io/equipo/">
                     <div class="form">
                         <div class="row">
