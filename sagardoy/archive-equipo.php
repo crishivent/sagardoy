@@ -12,6 +12,12 @@ $fondo_equipo = get_field('fondo_equipo', 'option');
 
 set_query_var('descripcion_equipo',get_field('descripcion_equipo', 'option'));
 
+//Talento
+$titulo_talento = get_field('titulo_talento', 'option');
+$imagen_talento = get_field('imagen_talento', 'option');
+$descripcion_talento = get_field('descripcion_talento', 'option');
+$texto_boton_talento = get_field('texto_boton_talento', 'option');
+$enlace_boton_talento = get_field('enlace_boton_talento', 'option');
 
 
 
@@ -127,13 +133,13 @@ set_query_var('descripcion_equipo',get_field('descripcion_equipo', 'option'));
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-12 col-lg-4">
-          <h2 class="titulo">Buscamos talento</h2>
+          <h2 class="titulo"><?php echo $titulo_talento;?></h2>
         </div>
         <div class="col-12 col-sm-12 col-lg-1"></div>
         <div class="col-12 col-sm-12 col-lg-7">
-          <img src="images/img-buscamos.jpg" class="img-fluid" alt="" />
-          <p class="texto">Pulvinar nibh dignissim nec tristique congue. Lacus rhoncus sit euismod scelerisque vitae. Vestibulum faucibus lectus facilisi sed dui adipiscing. At massa non arcu hendrerit. Ante nibh et condimentum commodo auctor aliquet sit. Egestas tortor convallis pellentesque eget gravida lorem ipsum doloor sit amet.</p>
-          <a href="#" class="btn-link">únete al equipo</a>
+          <img src="<?php echo $imagen_talento; ?>" class="img-fluid" alt="" />
+          <p class="texto"><?php echo $descripcion_talento;?></p>
+          <a href="<?php echo $enlace_boton_talento; ?>" class="btn-link"><?php echo $texto_boton_talento;?></a>
         </div>
       </div>
     </div>
