@@ -39,7 +39,7 @@ set_query_var('descripcion_equipo',get_field('descripcion_equipo', 'option'));
 
 
 <!-- Contador gris -->
-<?php get_template_part('componentes/nosotros/comp','experiencias'); ?>
+<?php get_template_part('componentes/nosotros/comp','experiencia'); ?>
 
 
 <!-- Filtros profesionales -->
