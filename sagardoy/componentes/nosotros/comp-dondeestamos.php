@@ -21,7 +21,7 @@ $descripciondondeestamos=get_query_var("descripcion_donde_estamos");
         <div class="row">
           <div class="col-12 col-sm-12 col-lg-6">
             <h2 class="titulo">Sedes en España</h2>
-            <p class="texto">Encuentra nuestras sedes en: <?php echo $sedes[0]['nombre']; ?></p>
+            <p class="texto">Encuentra nuestras sedes en: </p>
             <ul class="lista">
               <?php
                 // Realiza una consulta personalizada para obtener los posts del custom post type 'sedes'
