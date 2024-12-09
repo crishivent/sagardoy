@@ -53,8 +53,8 @@ $imagen_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
                     endwhile;
                     ?>
                     <li>
-                            <a href="https://sagardoy.neuronalcode.io/contacto/" data-id="02" class="btn-link">
-                                Internacional
+                            <a href="https://sagardoy.neuronalcode.io/contacto/" class="btn-link">
+                                <?php _e('Internacional', 'sagardoy'); ?>
                             </a>
                     </li>
 
