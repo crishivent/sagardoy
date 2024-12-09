@@ -26,7 +26,7 @@ if(!empty(get_query_var('descripcion_equipo'))){
         <div class="col-12 col-sm-7 col-md-7">
           <div class="texto-top"><?php echo $descripcionequipo; ?></div>
         </div>
-        <div class="col-12 col-sm-5 col-md-5"></Div>
+        <div class="col-12 col-sm-5 col-md-5"></div>
       </div>
      <?php
     }
