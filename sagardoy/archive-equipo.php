@@ -60,7 +60,7 @@ set_query_var('descripcion_equipo',get_field('descripcion_equipo', 'option'));
               </div>
               <div class="col-12 col-sm-3 col-md-3">
                 <div class="select">
-                  <?php do_shortcode('[facetwp facet="cargos"]');?>
+                  <?php echo do_shortcode('[facetwp facet="cargos"]');?>
                   <select id="standard-select">
                     <option value="0" disabled selected>Cargo</option>
                     <option value="1">Opción 1</option>
@@ -108,7 +108,7 @@ set_query_var('descripcion_equipo',get_field('descripcion_equipo', 'option'));
                 'posts_per_page' => -1, // Traer todos los posts
                 'post_status' => 'publish', // Solo los publicados
             );
-            
+
             if (function_exists('facetwp_is_main_query') && facetwp_is_main_query()) {
                 $args['facetwp'] = true;
             }
