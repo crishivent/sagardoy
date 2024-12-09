@@ -108,6 +108,10 @@ set_query_var('descripcion_equipo',get_field('descripcion_equipo', 'option'));
                 'posts_per_page' => -1, // Traer todos los posts
                 'post_status' => 'publish', // Solo los publicados
             );
+            
+            if (function_exists('facetwp_is_main_query') && facetwp_is_main_query()) {
+                $args['facetwp'] = true;
+            }
 
             $query = new WP_Query($args);
 
