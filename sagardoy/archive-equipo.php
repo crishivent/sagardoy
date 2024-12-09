@@ -55,7 +55,7 @@ $enlace_boton_talento = get_field('enlace_boton_talento', 'option');
       <div class="row">
         <div class="col-12 col-sm-12 col-lg-1"></div>
         <div class="col-12 col-sm-12 col-lg-10 text-center">
-          <h2 class="titulo">Buscar abogados y profesionales</h2>
+          <h2 class="titulo"><?php _e('Buscar abogados y profesionales', 'sagardoy'); ?></h2>
           <div class="form">
             <div class="row">
               <div class="col-12 col-sm-4 col-md-4">
@@ -78,7 +78,7 @@ $enlace_boton_talento = get_field('enlace_boton_talento', 'option');
                 </div>
               </div>
               <div class="col-12 col-sm-2 col-md-2">
-                <a href="#" class="btn-buscar">Buscar</a>
+               <!-- <a href="#" class="btn-buscar">Buscar</a>-->
               </div>
             </div>
           </div>
@@ -121,7 +121,7 @@ $enlace_boton_talento = get_field('enlace_boton_talento', 'option');
             ?>
         </div>
         <div class="text-center">
-            <a href="#" class="btn-ver-mas">Ver más</a>
+           <!-- <a href="#" class="btn-ver-mas">Ver más</a>-->
         </div>
     </div>
 </section>
