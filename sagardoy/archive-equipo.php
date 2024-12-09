@@ -61,26 +61,13 @@ set_query_var('descripcion_equipo',get_field('descripcion_equipo', 'option'));
               <div class="col-12 col-sm-3 col-md-3">
                 <div class="select">
                   <?php echo do_shortcode('[facetwp facet="cargos"]');?>
-                  <select id="standard-select">
-                    <option value="0" disabled selected>Cargo</option>
-                    <option value="1">Opción 1</option>
-                    <option value="2">Opción 2</option>
-                    <option value="3">Opción 3</option>
-                    <option value="4">Opción 4</option>
-                    <option value="5">Opción 5</option>
-                  </select>
+                  
                 </div>
               </div>
               <div class="col-12 col-sm-3 col-md-3">
                 <div class="select">
-                  <select id="standard-select">
-                    <option value="0" disabled selected>Sede</option>
-                    <option value="1">Opción 1</option>
-                    <option value="2">Opción 2</option>
-                    <option value="3">Opción 3</option>
-                    <option value="4">Opción 4</option>
-                    <option value="5">Opción 5</option>
-                  </select>
+                  <?php echo do_shortcode('[facetwp facet="sedes"]');?>
+                 
                 </div>
               </div>
               <div class="col-12 col-sm-2 col-md-2">
@@ -102,19 +89,6 @@ set_query_var('descripcion_equipo',get_field('descripcion_equipo', 'option'));
     <div class="container">
         <div class="row">
             <?php
-            // Consulta personalizada para obtener los miembros del equipo
-          /*  $args = array(
-                'post_type' => 'equipo', // Custom post type 'equipo'
-                'posts_per_page' => -1, // Traer todos los posts
-                'post_status' => 'publish', // Solo los publicados
-            );
-
-            if (function_exists('facetwp_is_main_query') && facetwp_is_main_query()) {
-                $args['facetwp'] = true;
-            }
-
-            $query = new WP_Query($args);*/
-
             if (have_posts()) :
                 while (have_posts()) : the_post();
 
