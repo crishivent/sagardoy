@@ -161,29 +161,69 @@ $post = $sede[0];
                 </div>
               </div>
               <div class="col-12 col-sm-3 col-md-3">
-                <div class="select">
-                  <select id="standard-select">
-                    <option value="0" disabled selected>Cargo</option>
-                    <option value="1">Opción 1</option>
-                    <option value="2">Opción 2</option>
-                    <option value="3">Opción 3</option>
-                    <option value="4">Opción 4</option>
-                    <option value="5">Opción 5</option>
-                  </select>
-                </div>
+                  <div class="select">
+                      <select id="standard-select">
+                          <option value="0" disabled selected>Cargo</option>
+                          <?php
+                          // Obtener los valores únicos del campo personalizado 'cargo'
+                          global $wpdb;
+
+                          $meta_key = 'cargo'; // Nombre del campo personalizado
+                          $results = $wpdb->get_col(
+                              $wpdb->prepare(
+                                  "SELECT DISTINCT meta_value 
+                                  FROM {$wpdb->postmeta} 
+                                  WHERE meta_key = %s 
+                                  AND meta_value != ''", 
+                                  $meta_key
+                              )
+                          );
+
+                          // Verificar si hay resultados y crear opciones
+                          if (!empty($results)) {
+                              foreach ($results as $cargo) {
+                                  echo '<option value="' . esc_attr($cargo) . '">' . esc_html($cargo) . '</option>';
+                              }
+                          } else {
+                              echo '<option value="0" disabled>No hay cargos disponibles</option>';
+                          }
+                          ?>
+                      </select>
+                  </div>
               </div>
-              <div class="col-12 col-sm-3 col-md-3">
+
+             <div class="col-12 col-sm-3 col-md-3">
                 <div class="select">
-                  <select id="standard-select">
-                    <option value="0" disabled selected>Sede</option>
-                    <option value="1">Opción 1</option>
-                    <option value="2">Opción 2</option>
-                    <option value="3">Opción 3</option>
-                    <option value="4">Opción 4</option>
-                    <option value="5">Opción 5</option>
-                  </select>
+                    <select id="standard-select">
+                        <option value="0" disabled selected>Sede</option>
+                        <?php
+                        // Obtener los valores únicos del campo personalizado 'sede'
+                        global $wpdb;
+
+                        $meta_key = 'sede'; // Nombre del campo personalizado
+                        $results = $wpdb->get_col(
+                            $wpdb->prepare(
+                                "SELECT DISTINCT meta_value 
+                                FROM {$wpdb->postmeta} 
+                                WHERE meta_key = %s 
+                                AND meta_value != ''", 
+                                $meta_key
+                            )
+                        );
+
+                        // Verificar si hay resultados y crear opciones
+                        if (!empty($results)) {
+                            foreach ($results as $sede) {
+                                echo '<option value="' . esc_attr($sede) . '">' . esc_html($sede) . '</option>';
+                            }
+                        } else {
+                            echo '<option value="0" disabled>No hay sedes disponibles</option>';
+                        }
+                        ?>
+                    </select>
                 </div>
-              </div>
+            </div>
+
               <div class="col-12 col-sm-2 col-md-2">
                 <a href="#" class="btn-buscar">Buscar</a>
               </div>
