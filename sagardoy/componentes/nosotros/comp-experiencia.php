@@ -8,12 +8,11 @@
   $titulocontador3 = get_field('titulo_contador_3', 'option');
   $titulocontador4 = get_field('titulo_contador_4', 'option');
 
-  $archive = get_query_var('archive');
   $descripcionequipo = get_query_var('descripcion_equipo');
   
   ?>
  
- <section class="modulo-03 pt-90 pb-90 <?php if(!empty($archive)){echo 'bg-gris';} ?>">
+ <section class="modulo-03 pt-90 pb-90 <?php if(!empty($descripcionequipo)){echo 'bg-gris';} ?>">
     <div class="container">
 
     <?php 
