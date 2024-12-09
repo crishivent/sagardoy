@@ -148,92 +148,103 @@ $post = $sede[0];
             <!-- Buscar otro abogado -->
 <section class="modulo-11 pt-130 pb-130 bg-gris">
     <div class="container">
-      <div class="row">
-        <div class="col-12 col-sm-1 col-md-1"></div>
-        <div class="col-12 col-sm-10 col-md-10 text-center">
-          <h2 class="titulo">Buscar otro abogado</h2>
-          <div class="form">
-            <div class="row">
-              <div class="col-12 col-sm-4 col-md-4">
-                <div class="input-email">
-                  <input class="input" value="" placeholder="Buscar"></input>
-                  <a href="#" class="btn-link"></a>
-                </div>
-              </div>
-              <div class="col-12 col-sm-3 col-md-3">
-                  <div class="select">
-                      <select id="standard-select">
-                          <option value="0" disabled selected>Cargo</option>
-                          <?php
-                          // Obtener los valores únicos del campo personalizado 'cargo'
-                          global $wpdb;
+        <div class="row">
+            <div class="col-12 col-sm-1 col-md-1"></div>
+            <div class="col-12 col-sm-10 col-md-10 text-center">
+                <h2 class="titulo">Buscar otro abogado</h2>
+                <form method="GET" action="https://sagardoy.neuronalcode.io/equipo/">
+                    <div class="form">
+                        <div class="row">
+                            <!-- Campo de búsqueda -->
+                            <div class="col-12 col-sm-4 col-md-4">
+                                <div class="input-email">
+                                    <input 
+                                        type="text" 
+                                        name="_buscar" 
+                                        class="input" 
+                                        value="" 
+                                        placeholder="Buscar" />
+                                </div>
+                            </div>
 
-                          $meta_key = 'cargo'; // Nombre del campo personalizado
-                          $results = $wpdb->get_col(
-                              $wpdb->prepare(
-                                  "SELECT DISTINCT meta_value 
-                                  FROM {$wpdb->postmeta} 
-                                  WHERE meta_key = %s 
-                                  AND meta_value != ''", 
-                                  $meta_key
-                              )
-                          );
+                            <!-- Selección de cargos -->
+                            <div class="col-12 col-sm-3 col-md-3">
+                                <div class="select">
+                                    <select name="_cargos" id="cargos-select">
+                                        <option value="" disabled selected>Cargo</option>
+                                        <?php
+                                        // Obtener los valores únicos del campo personalizado 'cargo'
+                                        global $wpdb;
 
-                          // Verificar si hay resultados y crear opciones
-                          if (!empty($results)) {
-                              foreach ($results as $cargo) {
-                                  echo '<option value="' . esc_attr($cargo) . '">' . esc_html($cargo) . '</option>';
-                              }
-                          } else {
-                              echo '<option value="0" disabled>No hay cargos disponibles</option>';
-                          }
-                          ?>
-                      </select>
-                  </div>
-              </div>
+                                        $meta_key = 'cargo'; // Nombre del campo personalizado
+                                        $results = $wpdb->get_col(
+                                            $wpdb->prepare(
+                                                "SELECT DISTINCT meta_value 
+                                                FROM {$wpdb->postmeta} 
+                                                WHERE meta_key = %s 
+                                                AND meta_value != ''", 
+                                                $meta_key
+                                            )
+                                        );
 
-             <div class="col-12 col-sm-3 col-md-3">
-                <div class="select">
-                    <select id="standard-select">
-                        <option value="0" disabled selected>Sede</option>
-                        <?php
-                        // Obtener todos los posts del custom post type 'sede'
-                        $args = array(
-                            'post_type'      => 'sede', // Nombre del custom post type
-                            'posts_per_page' => -1, // Traer todos los posts
-                            'post_status'    => 'publish', // Solo posts publicados
-                            'orderby'        => 'title', // Ordenar por título
-                            'order'          => 'ASC', // En orden ascendente
-                        );
+                                        // Verificar si hay resultados y crear opciones
+                                        if (!empty($results)) {
+                                            foreach ($results as $cargo) {
+                                                echo '<option value="' . esc_attr($cargo) . '">' . esc_html($cargo) . '</option>';
+                                            }
+                                        } else {
+                                            echo '<option value="0" disabled>No hay cargos disponibles</option>';
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
 
-                        $sede_query = new WP_Query($args);
+                            <!-- Selección de sedes -->
+                            <div class="col-12 col-sm-3 col-md-3">
+                                <div class="select">
+                                    <select name="_sedes" id="sedes-select">
+                                        <option value="" disabled selected>Sede</option>
+                                        <?php
+                                        // Obtener todos los posts del custom post type 'sede'
+                                        $args = array(
+                                            'post_type'      => 'sede',
+                                            'posts_per_page' => -1,
+                                            'post_status'    => 'publish',
+                                            'orderby'        => 'title',
+                                            'order'          => 'ASC',
+                                        );
 
-                        // Verificar si hay resultados y crear opciones
-                        if ($sede_query->have_posts()) {
-                            while ($sede_query->have_posts()) {
-                                $sede_query->the_post();
-                                echo '<option value="' . esc_attr(get_the_ID()) . '">' . esc_html(get_the_title()) . '</option>';
-                            }
-                            wp_reset_postdata(); // Restaurar datos originales del post
-                        } else {
-                            echo '<option value="0" disabled>No hay sedes disponibles</option>';
-                        }
-                        ?>
-                    </select>
-                </div>
+                                        $sede_query = new WP_Query($args);
+
+                                        // Verificar si hay resultados y crear opciones
+                                        if ($sede_query->have_posts()) {
+                                            while ($sede_query->have_posts()) {
+                                                $sede_query->the_post();
+                                                echo '<option value="' . esc_attr(get_the_ID()) . '">' . esc_html(get_the_title()) . '</option>';
+                                            }
+                                            wp_reset_postdata();
+                                        } else {
+                                            echo '<option value="0" disabled>No hay sedes disponibles</option>';
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Botón de buscar -->
+                            <div class="col-12 col-sm-2 col-md-2">
+                                <button type="submit" class="btn-buscar">Buscar</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
-
-
-              <div class="col-12 col-sm-2 col-md-2">
-                <a href="#" class="btn-buscar">Buscar</a>
-              </div>
-            </div>
-          </div>
+            <div class="col-12 col-sm-1 col-md-1"></div>
         </div>
-        <div class="col-12 col-sm-1 col-md-1"></div>
-      </div>
     </div>
-  </section>
+</section>
+
 
 
 
