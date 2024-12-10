@@ -9141,3 +9141,20 @@ Extra     extra large	xxl	  ≥1400px
   display: block !important;
   position: relative;
 }
+
+.navbar
+  .navbar-nav
+  .col-right
+  .btns-link
+  .submenu.actualidad
+  .noticias
+  .noticia
+  .row
+  .texto
+  a {
+  font-family: "Poppins-Regular", sans-serif;
+  color: #2b2d42;
+  font-size: 16px;
+  line-height: 21px;
+  text-decoration: none;
+}
