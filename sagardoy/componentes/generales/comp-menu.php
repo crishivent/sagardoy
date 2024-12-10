@@ -184,7 +184,7 @@ $titulo_bloque_noticias_submenu = get_field('titulo_bloque_noticias_submenu', 'o
                                               <li><a href="<?php echo $enlace_actualidad_1;?>"><?php echo $titulo_enlace_derecho_actualidad;?></a></li>
                                               <li><a href="<?php echo $enlace_actualidad_2;?>"><?php echo $titulo_segundo_enlace; ?></a></li>
                                           </ul>
-                                          <div class="subtitulo"><?php echo $titulo_bloque_noticias_submenu;?>/div>
+                                          <div class="subtitulo"><?php echo $titulo_bloque_noticias_submenu;?></div>
                                           <div class="noticias">
                                               <?php
                                               // Consulta para obtener los últimos dos posts
