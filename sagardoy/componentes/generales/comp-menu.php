@@ -19,7 +19,7 @@
                         $menu_items = wp_get_nav_menu_items($menu_name);
                         echo '<ul class="btns-link">';
                         foreach ($menu_items as $item) {
-
+                          $btnn='';
                           if ($item->title=='Equipo') {
                               $btnn='btn-equipo';
                           }
@@ -31,7 +31,7 @@
 
                             echo '<li class="btn-link_ '.$btnn.'"><a href="' . esc_url($item->url) . '">' . esc_html($item->title) . '</a>';
 
-                            if ($item->title=='equipo') {
+                            if ($item->title=='Equipo') {
                               ?>
                               <!-- Desplegable equipo -->
                                <div class="submenu equipo">
@@ -140,14 +140,86 @@
                                   });
                               </script>
                               <!-- Fin Desplegable equipo -->
-                               
+
 
 
                               <?php
                             }
 
-                            if ($item->title=='actualidad') {
-                              get_template_part('componentes/generales/comp','submenuactualidad');
+                            if ($item->title=='Actualidad') {
+                              ?>
+                              <!-- Desplegable actualidad -->
+                               <div class="submenu actualidad">
+                                  <div class="row">
+                                      <div class="col-4">
+                                          <div class="titulo">Actualidad</div>
+                                          <div class="texto">
+                                              Facilisi vitae suspendisse eget dui donec, a quisque quis in quis integer volutpat. In tellus commodo
+                                          </div>
+                                      </div>
+                                      <div class="col-2"></div>
+                                      <div class="col-6">
+                                          <ul class="btns">
+                                              <li><a href="#">Noticias</a></li>
+                                              <li><a href="#">Publicaciones</a></li>
+                                          </ul>
+                                          <div class="subtitulo">Últimas noticias y publicaciones</div>
+                                          <div class="noticias">
+                                              <?php
+                                              // Consulta para obtener los últimos dos posts
+                                              $args = array(
+                                                  'post_type'      => 'post', // Tipo de contenido (puede ser 'post', 'noticia', etc.)
+                                                  'posts_per_page' => 2,     // Número de posts a obtener
+                                                  'post_status'    => 'publish', // Solo mostrar posts publicados
+                                                  'orderby'        => 'date',    // Ordenar por fecha
+                                                  'order'          => 'DESC',    // Más recientes primero
+                                              );
+
+                                              $latest_posts = new WP_Query($args);
+
+                                              // Comprobar si hay resultados
+                                              if ($latest_posts->have_posts()) :
+                                                  while ($latest_posts->have_posts()) :
+                                                      $latest_posts->the_post();
+                                              ?>
+                                                      <div class="noticia">
+                                                          <div class="row">
+                                                              <!-- Texto del post -->
+                                                              <div class="col-8">
+                                                                  <div class="texto">
+                                                                      <a href="<?php the_permalink(); ?>">
+                                                                          <?php the_title(); ?>
+                                                                      </a>
+                                                                  </div>
+                                                              </div>
+                                                              <!-- Imagen destacada -->
+                                                              <div class="col-4 text-end">
+                                                                  <?php if (has_post_thumbnail()) : ?>
+                                                                      <a href="<?php the_permalink(); ?>">
+                                                                          <?php the_post_thumbnail('thumbnail', ['class' => 'img-fluid', 'alt' => get_the_title()]); ?>
+                                                                      </a>
+                                                                  <?php else : ?>
+                                                                      <img src="path-to-default-image.jpg" class="img-fluid" alt="Default Image" />
+                                                                  <?php endif; ?>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                              <?php
+                                                  endwhile;
+                                                  wp_reset_postdata(); // Restablecer datos del post
+                                              else :
+                                              ?>
+                                                  <p>No hay noticias disponibles en este momento.</p>
+                                              <?php endif; ?>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+
+
+                            <!-- Fin desplegable actualidad -->
+
+                              <?php
                             }
                             
                             echo '</li>';
