@@ -297,14 +297,17 @@ $titulo_bloque_noticias_submenu = get_field('titulo_bloque_noticias_submenu', 'o
                  $menu_name = 'main';
                     if ($menu_name) {
                         $menu_items = wp_get_nav_menu_items($menu_name);
-                        if ($item->title=='Equipo') {
+                        
+                        
+                        foreach ($menu_items as $item) {
+
+                          $btnn='';
+                          if ($item->title=='Equipo') {
                               $btnn='btn-equipo';
                           }
                           if ($item->title=='Actualidad') {
                               $btnn='btn-actualidad';
                           }
-                        
-                        foreach ($menu_items as $item) {
                             echo '<a href="' . esc_url($item->url) . '" class="btn-link '.$btnn .'">' . esc_html($item->title) . '</a></li>';
 
                         }
