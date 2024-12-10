@@ -9169,3 +9169,22 @@ Extra     extra large	xxl	  ≥1400px
     right: 0px;
   }
 }
+
+.navbar
+  .menu-content
+  .navbar-collapse
+  .navbar-nav-mobile
+  .holder-equipo
+  .titulo
+  .btn-volver {
+  display: inline-block;
+  vertical-align: top;
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  background-color: #2b2d42;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/ico-flecha-left.svg");
+}
