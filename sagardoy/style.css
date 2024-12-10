@@ -6655,7 +6655,7 @@ footer.footer .container-top .btns-redes .btn-linkedin {
   -webkit-mask-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/ico-linkedin-1.svg");
 }
 footer.footer .container-top .btns-redes .btn-youtube {
-  -webkit-mask-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/11/ico-linkedin-1.svg");
+  -webkit-mask-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/12/ico-youtube.svg");
 }
 @media (max-width: 991px) {
   footer.footer .container-middle {
@@ -9072,10 +9072,10 @@ Extra     extra large	xxl	  ≥1400px
   -o-transition: all 0.2s ease;
 }
 .navbar .menu-content .navbar-toggler .ico-menu {
-  -webkit-mask-image: url("../images/ico-menu.svg");
+  -webkit-mask-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/12/ico-menu.svg");
 }
 .navbar .menu-content .navbar-toggler .ico-cerrar {
-  -webkit-mask-image: url("../images/ico-cerrar.svg");
+  -webkit-mask-image: url("https://sagardoy.neuronalcode.io/wp-content/uploads/2024/12/ico-cerrar.svg");
 }
 .navbar .menu-content .navbar-toggler .ico-menu {
   display: none;
