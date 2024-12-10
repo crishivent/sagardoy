@@ -9052,7 +9052,7 @@ Extra     extra large	xxl	  ≥1400px
   left: 0px;
 }
 .navbar .menu-content .navbar-toggler {
-  /*width: 100%;*/
+  width: 100%;
   padding: 40px 40px;
   margin: 0;
 }
@@ -9157,4 +9157,15 @@ Extra     extra large	xxl	  ≥1400px
   font-size: 16px;
   line-height: 21px;
   text-decoration: none;
+}
+
+@media (max-width: 992px) {
+  .navbar .menu-content .navbar-toggler {
+    padding: 21px;
+    border: 0;
+    width: auto;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
 }
