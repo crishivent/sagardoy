@@ -292,33 +292,95 @@ $titulo_bloque_noticias_submenu = get_field('titulo_bloque_noticias_submenu', 'o
                 <div class="col-12">
                   <div class="titulo"><a href="#" class="btn-volver"></a>Equipo</div>
                   <div class="form">
-                    <div class="subtitulo">Buscar abogado</div>
-                    <div class="input-email">
-                      <input class="input" value="" placeholder="Buscar"></input>
-                      <a href="#" class="btn-lupa"></a>
-                    </div>
-                    <div class="select">
-                      <select id="standard-select">
-                        <option value="0" disabled selected>Cargo</option>
-                        <option value="1">Opción 1</option>
-                        <option value="2">Opción 2</option>
-                        <option value="3">Opción 3</option>
-                        <option value="4">Opción 4</option>
-                        <option value="5">Opción 5</option>
-                      </select>
-                    </div>
-                    <div class="select">
-                      <select id="standard-select">
-                        <option value="0" disabled selected>Sede</option>
-                        <option value="1">Opción 1</option>
-                        <option value="2">Opción 2</option>
-                        <option value="3">Opción 3</option>
-                        <option value="4">Opción 4</option>
-                        <option value="5">Opción 5</option>
-                      </select>
-                    </div>
-                    <a href="#" class="btn-buscar">Buscar</a>
-                  </div>
+    <div class="subtitulo">Buscar abogado</div>
+    <form id="search-form" method="GET" action="https://sagardoy.neuronalcode.io/equipo/">
+        <div class="input-email">
+            <input 
+                type="text" 
+                name="_buscar" 
+                class="input" 
+                value="" 
+                placeholder="Buscar" />
+        </div>
+        <div class="select">
+            <select name="_cargos" id="cargos-select">
+                <option value="" disabled selected>Cargo</option>
+                <?php
+                // Obtener los valores únicos del campo personalizado 'cargo'
+                global $wpdb;
+
+                $meta_key = 'cargo'; // Nombre del campo personalizado
+                $results = $wpdb->get_col(
+                    $wpdb->prepare(
+                        "SELECT DISTINCT meta_value 
+                        FROM {$wpdb->postmeta} 
+                        WHERE meta_key = %s 
+                        AND meta_value != ''", 
+                        $meta_key
+                    )
+                );
+
+                // Verificar si hay resultados y crear opciones
+                if (!empty($results)) {
+                    foreach ($results as $cargo) {
+                        echo '<option value="' . esc_attr($cargo) . '">' . esc_html($cargo) . '</option>';
+                    }
+                } else {
+                    echo '<option value="0" disabled>No hay cargos disponibles</option>';
+                }
+                ?>
+            </select>
+        </div>
+        <div class="select">
+            <select name="_sedes" id="sedes-select">
+                <option value="" disabled selected>Sede</option>
+                <?php
+                // Obtener todos los posts del custom post type 'sede'
+                $args = array(
+                    'post_type'      => 'sede',
+                    'posts_per_page' => -1,
+                    'post_status'    => 'publish',
+                    'orderby'        => 'title',
+                    'order'          => 'ASC',
+                );
+
+                $sede_query = new WP_Query($args);
+
+                // Verificar si hay resultados y crear opciones
+                if ($sede_query->have_posts()) {
+                    while ($sede_query->have_posts()) {
+                        $sede_query->the_post();
+                        echo '<option value="' . esc_attr(get_the_ID()) . '">' . esc_html(get_the_title()) . '</option>';
+                    }
+                    wp_reset_postdata();
+                } else {
+                    echo '<option value="0" disabled>No hay sedes disponibles</option>';
+                }
+                ?>
+            </select>
+        </div>
+        <button type="submit" class="btn-buscar">Buscar</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('search-form').addEventListener('submit', function (e) {
+        // Prevenir el envío por defecto para modificar la URL
+        e.preventDefault();
+
+        // Obtener la acción del formulario y los parámetros del formulario
+        const form = e.target;
+        const action = form.getAttribute('action');
+        const params = new URLSearchParams(new FormData(form));
+
+        // Añadir el anclaje manualmente
+        const fullUrl = `${action}?${params.toString()}#equiporesult`;
+
+        // Redirigir a la URL final
+        window.location.href = fullUrl;
+    });
+</script>
+
                   <ul class="btns">
                     <li><a href="<?php echo $enlace_1_submenu;?>"><?php echo $nombre_enlace_1;?></a></li>
                     <li><a href="<?php echo $enlace_2_submenu;?>"><?php echo $nombre_enlace_2;?></a></li>
@@ -338,35 +400,61 @@ $titulo_bloque_noticias_submenu = get_field('titulo_bloque_noticias_submenu', 'o
                   </ul>
                   <div class="subtitulo"><?php echo $titulo_bloque_noticias_submenu;?></div>
                   <div class="noticias">
-                    <div class="noticia">
-                      <div class="row">
-                        <div class="col-9">
-                          <div class="top">
-                            <div class="categoria">NOTICIAS</div>
-                            <div class="fecha">25.12.2024</div>
-                          </div>
-                          <a href="#" class="titulo">Dolor magna diam nunc sed in sit leo. Nec netus a dui ipsum sit diam quam. Erat massa.</a>
+    <?php
+    // Argumentos para obtener los dos últimos posts
+    $args = array(
+        'post_type'      => 'post', // Tipo de post (puedes cambiarlo si es un custom post type)
+        'posts_per_page' => 2,     // Número de posts a mostrar
+        'post_status'    => 'publish', // Solo posts publicados
+        'orderby'        => 'date',    // Ordenar por fecha
+        'order'          => 'DESC',    // De más reciente a más antiguo
+    );
+
+    $query = new WP_Query($args);
+
+    // Verificar si hay posts y mostrar contenido
+    if ($query->have_posts()) :
+        while ($query->have_posts()) : $query->the_post(); ?>
+            <div class="noticia">
+                <div class="row">
+                    <div class="col-9">
+                        <div class="top">
+                            <div class="categoria">
+                                <?php
+                                // Obtener y mostrar la primera categoría del post
+                                $categories = get_the_category();
+                                if (!empty($categories)) {
+                                    echo esc_html($categories[0]->name);
+                                } else {
+                                    echo 'Sin categoría';
+                                }
+                                ?>
+                            </div>
+                            <div class="fecha"><?php echo get_the_date(); ?></div>
                         </div>
-                        <div class="col-3">
-                          <a href="#"><img src="images/img-publicaciones-06.jpg" class="image" alt="" /></a>
-                        </div>
-                      </div>
+                        <a href="<?php the_permalink(); ?>" class="titulo"><?php the_title(); ?></a>
                     </div>
-                    <div class="noticia">
-                      <div class="row">
-                        <div class="col-9">
-                          <div class="top">
-                            <div class="categoria">NOTICIAS</div>
-                            <div class="fecha">25.12.2024</div>
-                          </div>
-                          <a href="#" class="titulo">Dolor magna diam nunc sed in sit leo. Nec netus a dui ipsum sit diam quam. Erat massa.</a>
-                        </div>
-                        <div class="col-3">
-                          <a href="#"><img src="images/img-publicaciones-07.jpg" class="image" alt="" /></a>
-                        </div>
-                      </div>
+                    <div class="col-3">
+                        <a href="<?php the_permalink(); ?>">
+                            <?php
+                            // Mostrar la imagen destacada, si existe
+                            if (has_post_thumbnail()) {
+                                the_post_thumbnail('medium', array('class' => 'image'));
+                            } else {
+                                echo '<img src="images/default-image.jpg" class="image" alt="Imagen por defecto" />';
+                            }
+                            ?>
+                        </a>
                     </div>
-                  </div>
+                </div>
+            </div>
+        <?php endwhile;
+        wp_reset_postdata();
+    else : ?>
+        <p>No hay noticias disponibles.</p>
+    <?php endif; ?>
+</div>
+
                 </div>
               </div>
             </div>
