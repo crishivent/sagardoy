@@ -21,9 +21,24 @@
               </div>
               <div class="col-12 col-sm-12 col-lg-4 text-end">
                 <div class="btn-idioma">
-                  <a href="#">Es</a>
-                  <a href="#" class="activo">En</a>
+                    <?php
+                    // Obtener los idiomas activos
+                    $languages = apply_filters('wpml_active_languages', NULL, array('skip_missing' => 0, 'orderby' => 'id'));
+
+                    if (!empty($languages)) :
+                        foreach ($languages as $language) :
+                            // Determinar si el idioma es el activo
+                            $is_active = $language['active'] ? 'activo' : '';
+                    ?>
+                            <a href="<?php echo esc_url($language['url']); ?>" class="<?php echo $is_active; ?>">
+                                <?php echo strtoupper($language['language_code']); ?>
+                            </a>
+                    <?php
+                        endforeach;
+                    endif;
+                    ?>
                 </div>
+
                 <div class="btns-redes">
                   <a href="#" class="btn-linkedin"></a>
                   <a href="#" class="btn-youtube"></a>

@@ -76,7 +76,7 @@ $titulo_bloque_noticias_submenu = get_field('titulo_bloque_noticias_submenu', 'o
                                                                   name="_buscar" 
                                                                   class="input" 
                                                                   value="" 
-                                                                  placeholder="Buscar" />
+                                                                  placeholder="<?php _e('Buscar', 'sagardoy'); ?>" />
                                                               <a href="#" class="btn-lupa"></a>
                                                           </div>
                                                       </div>
@@ -85,7 +85,7 @@ $titulo_bloque_noticias_submenu = get_field('titulo_bloque_noticias_submenu', 'o
                                                       <div class="col-4">
                                                           <div class="select">
                                                               <select name="_cargos" id="cargos-select">
-                                                                  <option value="" disabled selected>Cargo</option>
+                                                                  <option value="" disabled selected><?php _e('Cargo', 'sagardoy'); ?></option>
                                                                   <?php
                                                                   global $wpdb;
                                                                   $meta_key = 'cargo';
@@ -112,7 +112,7 @@ $titulo_bloque_noticias_submenu = get_field('titulo_bloque_noticias_submenu', 'o
                                                       <div class="col-4">
                                                           <div class="select">
                                                               <select name="_sedes" id="sedes-select">
-                                                                  <option value="" disabled selected>Sede</option>
+                                                                  <option value="" disabled selected><?php _e('Sede', 'sagardoy'); ?></option>
                                                                   <?php
                                                                   $args = array(
                                                                       'post_type'      => 'sede',
@@ -137,7 +137,7 @@ $titulo_bloque_noticias_submenu = get_field('titulo_bloque_noticias_submenu', 'o
                                                           </div>
                                                       </div>
                                                       <div class="col-4">
-                                                          <button type="submit" class="btn-buscar">Buscar</button>
+                                                          <button type="submit" class="btn-buscar"><?php _e('Buscar', 'sagardoy'); ?></button>
                                                       </div>
                                                   </div>
                                               </form>
@@ -251,14 +251,45 @@ $titulo_bloque_noticias_submenu = get_field('titulo_bloque_noticias_submenu', 'o
                         echo 'No se ha encontrado menú.';
                     }
                 ?>
+
+                  <!-- Selector de idiomas -->
             <div class="idioma-dropdown-menu">
-              <a class="btn-idioma" href="#" data-bs-toggle="dropdown">Es</a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Es</a></li>
-                <li class="linea"></li>
-                <li><a href="#">En</a></li>
-              </ul>
-            </div>
+              <?php
+              // Obtener los idiomas activos
+              $languages = apply_filters('wpml_active_languages', NULL, array('skip_missing' => 0, 'orderby' => 'id'));
+
+              if (!empty($languages)) :
+                  // Idioma actual
+                  $current_language = '';
+                  foreach ($languages as $language) {
+                      if ($language['active']) {
+                          $current_language = $language['language_code'];
+                          break;
+                      }
+                  }
+              ?>
+                  <!-- Botón para el idioma actual -->
+                  <a class="btn-idioma" href="#" data-bs-toggle="dropdown">
+                      <?php echo strtoupper($current_language); ?>
+                  </a>
+
+                  <!-- Lista desplegable con idiomas -->
+                  <ul class="dropdown-menu">
+                      <?php foreach ($languages as $language) : ?>
+                          <li>
+                              <a href="<?php echo esc_url($language['url']); ?>">
+                                  <?php echo strtoupper($language['language_code']); ?>
+                              </a>
+                          </li>
+                          <!-- Añadir línea de separación solo entre elementos -->
+                          <?php if (next($languages)) : ?>
+                              <li class="linea"></li>
+                          <?php endif; ?>
+                      <?php endforeach; ?>
+                  </ul>
+              <?php endif; ?>
+          </div>
+          <!-- Fin Selector de idiomas -->
           </div>
         </div>
         <div class="navbar-nav-mobile d-block d-lg-none">
@@ -282,17 +313,32 @@ $titulo_bloque_noticias_submenu = get_field('titulo_bloque_noticias_submenu', 'o
                     }
                 ?>
           <div class="btn-idiomas">
-            <a href="#" class="btn-idioma">Español</a>
-            <a href="#" class="btn-idioma activo">English</a>
+              <?php
+              // Obtener los idiomas activos
+              $languages = apply_filters('wpml_active_languages', NULL, array('skip_missing' => 0, 'orderby' => 'id'));
+
+              if (!empty($languages)) :
+                  foreach ($languages as $language) :
+                      // Determinar si el idioma es el activo
+                      $is_active = $language['active'] ? 'activo' : '';
+              ?>
+                      <a href="<?php echo esc_url($language['url']); ?>" class="btn-idioma <?php echo $is_active; ?>">
+                          <?php echo esc_html($language['native_name']); ?>
+                      </a>
+              <?php
+                  endforeach;
+              endif;
+              ?>
           </div>
-          <a href="#" class="btn-contacto">Contacto</a>
+
+          <a href="/contacto/" class="btn-contacto"><?php _e('Contacto', 'sagardoy'); ?></a>
           <div class="holder-equipo">
             <div class="container">
               <div class="row">
                 <div class="col-12">
-                  <div class="titulo"><a href="#" class="btn-volver"></a>Equipo</div>
+                  <div class="titulo"><a href="/equipo/" class="btn-volver"></a><?php _e('Equipo', 'sagardoy'); ?></div>
                   <div class="form">
-    <div class="subtitulo">Buscar abogado</div>
+    <div class="subtitulo"><?php _e('Buscar abogado', 'sagardoy'); ?></div>
     <form id="search-form" method="GET" action="https://sagardoy.neuronalcode.io/equipo/">
         <div class="input-email">
             <input 
@@ -359,7 +405,7 @@ $titulo_bloque_noticias_submenu = get_field('titulo_bloque_noticias_submenu', 'o
                 ?>
             </select>
         </div>
-        <button type="submit" class="btn-buscar">Buscar</button>
+        <button type="submit" class="btn-buscar"><?php _e('Buscar', 'sagardoy'); ?></button>
     </form>
 </div>
 
