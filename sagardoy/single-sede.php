@@ -128,7 +128,7 @@ $imagen_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
              <?php
                 // Realiza una consulta personalizada para obtener los posts del custom post type 'sedes'
                 $args = array(
-                    'post_type' => 'sedes', // Nombre del custom post type
+                    'post_type' => 'sede', // Nombre del custom post type
                     'posts_per_page' => -1, // Trae todos los posts
                     'post_status' => 'publish', // Solo los publicados
                 );
