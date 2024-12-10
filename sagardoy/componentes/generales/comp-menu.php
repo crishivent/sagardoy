@@ -10,6 +10,17 @@ $enlace_1_submenu = get_field('enlace_1_submenu', 'option');
 $nombre_enlace_2 = get_field('nombre_enlace_2', 'option');
 $enlace_2_submenu = get_field('enlace_2_submenu', 'option');
 
+
+// Submenu actualidad
+$titulo_actualidad_izquierdo = get_field('titulo_actualidad_izquierdo', 'option');
+$descripcion_izquierda_submenu_actualidad = get_field('descripcion_izquierda_submenu_actualidad', 'option');
+$titulo_enlace_derecho_actualidad = get_field('titulo_enlace_derecho_actualidad', 'option');
+$enlace_actualidad_1 = get_field('enlace_actualidad_1', 'option');
+$titulo_segundo_enlace = get_field('titulo_segundo_enlace', 'option');
+$enlace_actualidad_2 = get_field('enlace_actualidad_2', 'option');
+$titulo_bloque_noticias_submenu = get_field('titulo_bloque_noticias_submenu', 'option');
+
+
  
  ?>
  
@@ -162,18 +173,18 @@ $enlace_2_submenu = get_field('enlace_2_submenu', 'option');
                                <div class="submenu actualidad">
                                   <div class="row">
                                       <div class="col-4">
-                                          <div class="titulo">Actualidad</div>
+                                          <div class="titulo"><?php echo $titulo_actualidad_izquierdo;?></div>
                                           <div class="texto">
-                                              Facilisi vitae suspendisse eget dui donec, a quisque quis in quis integer volutpat. In tellus commodo
+                                              <?php echo $descripcion_izquierda_submenu_actualidad;?>
                                           </div>
                                       </div>
                                       <div class="col-2"></div>
                                       <div class="col-6">
                                           <ul class="btns">
-                                              <li><a href="#">Noticias</a></li>
-                                              <li><a href="#">Publicaciones</a></li>
+                                              <li><a href="<?php echo $enlace_actualidad_1;?>"><?php echo $titulo_enlace_derecho_actualidad;?></a></li>
+                                              <li><a href="<?php echo $enlace_actualidad_2;?>"><?php echo $titulo_segundo_enlace; ?></a></li>
                                           </ul>
-                                          <div class="subtitulo">Últimas noticias y publicaciones</div>
+                                          <div class="subtitulo"><?php echo $titulo_bloque_noticias_submenu;?>/div>
                                           <div class="noticias">
                                               <?php
                                               // Consulta para obtener los últimos dos posts
@@ -322,10 +333,10 @@ $enlace_2_submenu = get_field('enlace_2_submenu', 'option');
                 <div class="col-12">
                   <div class="titulo"><a href="#" class="btn-volver"></a>Actualidad</div>
                   <ul class="btns">
-                    <li><a href="noticias.html">Noticias</a></li>
-                    <li><a href="publicaciones.html">Publicaciones</a></li>
+                    <li><a href="<?php echo $enlace_actualidad_1;?>"><?php echo $titulo_enlace_derecho_actualidad;?></a></li>
+                    <li><a href="<?php echo $enlace_actualidad_2;?>"><?php echo $titulo_segundo_enlace; ?></a></li>
                   </ul>
-                  <div class="subtitulo">Últimas noticias y publicaciones</div>
+                  <div class="subtitulo"><?php echo $titulo_bloque_noticias_submenu;?></div>
                   <div class="noticias">
                     <div class="noticia">
                       <div class="row">
