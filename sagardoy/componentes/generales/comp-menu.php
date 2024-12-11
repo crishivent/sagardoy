@@ -47,6 +47,9 @@ $titulo_bloque_noticias_submenu = get_field('titulo_bloque_noticias_submenu', 'o
                           if ($item->title=='Actualidad') {
                               $btnn='btn-actualidad';
                           }
+                          if ($item->title=='Contacto') {
+                              $btnn='contacto';
+                          }
 
 
 
@@ -308,6 +311,10 @@ $titulo_bloque_noticias_submenu = get_field('titulo_bloque_noticias_submenu', 'o
                           if ($item->title=='Actualidad') {
                               $btnn='btn-actualidad';
                           }
+                          if ($item->title=='Contacto') {
+                              $btnn='contacto';
+                          }
+                          
                             echo '<a href="' . esc_url($item->url) . '" class="btn-link '.$btnn .'">' . esc_html($item->title) . '</a></li>';
 
                         }
