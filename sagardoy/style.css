@@ -8384,6 +8384,11 @@ Extra     extra large	xxl	  ≥1400px
                 height: 2px;
               }*/
 }
+.navbar .navbar-nav .col-right .btns-link .btn-link_.contacto:hover > a {
+  padding-left: 15px;
+  padding-right: 15px;
+  color: white !important;
+}
 .navbar .navbar-nav .col-right .btns-link .btn-link_ span {
   cursor: default;
 }
