@@ -7979,6 +7979,7 @@ Extra     extra large	xxl	  ≥1400px
   display: inline-flex;
   gap: 0px;
   margin-bottom: 0px;
+  margin: 0px;
 }
 .navbar .navbar-nav .col-right .btns-link .submenu {
   position: absolute;
