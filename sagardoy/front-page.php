@@ -4,7 +4,7 @@ get_header();
 // Cabecera
 set_query_var("titulo_home", get_field('titulo_home'));
 set_query_var("subtitulo_home", get_field('subtitulo_home'));
-set_query_var("imagen_fondo_home", get_field('imagen_fondo_home'));
+set_query_var("video_de_cabecera", get_field('video_de_cabecera'));
 
 // Selectores
 set_query_var("titulo_selectores", get_field('titulo_selectores'));

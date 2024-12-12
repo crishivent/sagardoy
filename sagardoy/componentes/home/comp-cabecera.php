@@ -1,5 +1,5 @@
 <?php 
-$fondo=get_query_var("imagen_fondo_home");
+$fondo=get_query_var("video_de_cabecera");
 $titulohome=get_query_var("titulo_home");
 $subtitulohome=get_query_var("subtitulo_home");
 
@@ -10,7 +10,7 @@ $subtitulohome=get_query_var("subtitulo_home");
       <p class="texto"><?php echo $subtitulohome;?></p>
     </div>
     <video class="img-fluid" autoplay muted loop>
-        <source src="https://sagardoy.neuronalcode.io/wp-content/uploads/2024/12/videocabecera.mp4" type="video/mp4">
+        <source src="<?php echo $fondo; ?>" type="video/mp4">
         Tu navegador no soporta la reproducción de videos.
     </video>
   </section>
