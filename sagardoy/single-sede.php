@@ -141,13 +141,21 @@ $imagen_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
                         $activo = (get_the_ID() == $current_i) ? 'activo' : '';
                         ?>
                         <li>
-                            <a href="<?php the_permalink(); ?>" data-id="01" class="btn-link <?php echo $activo; ?>">
+                            <a href="<?php the_permalink(); ?>" data-id="0<?php echo $i; ?>" class="btn-link <?php echo $activo; ?>">
                                 <?php echo esc_html(get_the_title()); // Muestra el título del post ?>
                             </a>
                         </li>
                         <?php
                         $i++; // Incrementa el contador
                     endwhile;
+                    ?>
+                    <li>
+                            <a href="https://sagardoy.neuronalcode.io/contacto/" data-id="0" class="btn-link">
+                                <?php _e('Internacional', 'sagardoy'); ?>
+                            </a>
+                    </li>
+
+                    <?php
                     wp_reset_postdata(); // Resetea la consulta
                 else :
                     echo '<li>No hay sedes disponibles.</li>';
@@ -161,16 +169,57 @@ $imagen_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
 
 
 
+            <?php
+        
+              $args = array(
+                  'post_type'      => 'sede',       // Nombre del custom post type
+                  'posts_per_page' => -1,           // Trae todos los posts
+                  'post_status'    => 'publish',    // Solo los publicados
+              );
 
-             <div class="data show" id="data-01">
-                <div class="titulo"><a href="#" class="btn-volver"></a><?php the_title();?></div>
-                <div class="texto"><?php echo $descripcion;?></div>
-                <div class="info">
-                  <a href="#" class="btn-direccion"><?php echo $direccion;?></a><br><br>
-                  <a href="tel:<?php echo $telefono;?>"><?php echo $telefono;?></a><br>
-                  <a href="mailto:<?php echo $email;?>" class="btn-email"><?php echo $email;?></a>
-                </div>
-              </div>
+              $current_i = get_the_ID();            // ID de la página o post actual
+              $query = new WP_Query($args);
+              $i = 1;                               // Contador para identificar el índice
+
+              if ($query->have_posts()) :
+                  while ($query->have_posts()) : $query->the_post();
+                      $activo = (get_the_ID() == $current_i) ? 'activo' : '';
+
+                      // Variables personalizadas (Asegura que existan antes de usarlas)
+                      $descripcion = get_field('descripcion') ? esc_html(get_field('descripcion')) : ''; // Usando ACF como ejemplo
+                      $direccion   = get_field('direccion') ? esc_html(get_field('direccion')) : '';
+                      $telefono    = get_field('telefono') ? esc_html(get_field('telefono')) : '';
+                      $email       = get_field('email') ? esc_html(get_field('email')) : '';
+                      ?>
+                      <div class="data" id="data-0<?php echo esc_attr($i); ?>">
+                          <div class="titulo">
+                              <a href="#" class="btn-volver"></a><?php the_title(); ?>
+                          </div>
+                          <div class="texto"><?php echo $descripcion; ?></div>
+                          <div class="info">
+                              <a href="#" class="btn-direccion"><?php echo $direccion; ?></a><br><br>
+                              <?php if ($telefono) : ?>
+                                  <a href="tel:<?php echo esc_attr($telefono); ?>"><?php echo $telefono; ?></a><br>
+                              <?php endif; ?>
+                              <?php if ($email) : ?>
+                                  <a href="mailto:<?php echo esc_attr($email); ?>" class="btn-email"><?php echo $email; ?></a>
+                              <?php endif; ?>
+                          </div>
+                      </div>
+                      <li>
+                          <a href="<?php the_permalink(); ?>" data-id="0<?php echo esc_attr($i); ?>" class="btn-link <?php echo esc_attr($activo); ?>">
+                              <?php echo esc_html(get_the_title()); // Muestra el título del post ?>
+                          </a>
+                      </li>
+                      <?php
+                      $i++; // Incrementa el contador
+                  endwhile;
+                  wp_reset_postdata(); // Resetea la consulta
+              else :
+                  echo '<li>No hay sedes disponibles.</li>';
+              endif;
+              ?>
+
             </div>
 
             <?php echo do_shortcode('[contact-form-7 id="55dd754" title="Contacto sedes movil"]');?>
