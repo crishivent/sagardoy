@@ -9,5 +9,8 @@ $subtitulohome=get_query_var("subtitulo_home");
       <h2 class="titulo"><?php echo $titulohome;?></h2>
       <p class="texto"><?php echo $subtitulohome;?></p>
     </div>
-    <img src="<?php echo $fondo; ?>" class="img-fluid" alt="" />
+    <video class="img-fluid" autoplay muted loop>
+        <source src="https://sagardoy.neuronalcode.io/wp-content/uploads/2024/12/videocabecera.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de videos.
+    </video>
   </section>
