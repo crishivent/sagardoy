@@ -206,11 +206,7 @@ $imagen_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
                               <?php endif; ?>
                           </div>
                       </div>
-                      <li>
-                          <a href="<?php the_permalink(); ?>" data-id="0<?php echo esc_attr($i); ?>" class="btn-link <?php echo esc_attr($activo); ?>">
-                              <?php echo esc_html(get_the_title()); // Muestra el título del post ?>
-                          </a>
-                      </li>
+                     
                       <?php
                       $i++; // Incrementa el contador
                   endwhile;
