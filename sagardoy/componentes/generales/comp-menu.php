@@ -24,7 +24,7 @@ $titulo_bloque_noticias_submenu = get_field('titulo_bloque_noticias_submenu', 'o
  
  ?>
  
- <nav class="navbar navbar-expand-lg <?php echo (is_page('contacto') || is_singular('sede')) ? 'texto-gris' : ''; ?>">
+ <nav class="navbar navbar-expand-lg <?php echo (is_page('contacto') || is_singular('sede') || is_singular('equipo')) ? 'texto-gris' : ''; ?>">
     <div class="menu-content">
       <a class="navbar-brand d-block d-lg-none" href="/"><img src="<?php echo $logomenu; ?>" class="logo" alt="" /></a>
       <div id="main-nav" class="collapse navbar-collapse">
