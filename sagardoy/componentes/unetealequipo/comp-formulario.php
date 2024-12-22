@@ -4,7 +4,7 @@ $titulo_formulario_unete=get_query_var("titulo_formulario_unete");
  
  
  
- <section class="modulo-26 pt-130 pb-130">
+ <section class="modulo-26 pt-130 pb-130 sub26">
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-12 col-lg-3"></div>
