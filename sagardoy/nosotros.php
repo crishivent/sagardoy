@@ -93,7 +93,7 @@ set_query_var("descripcion_derecha_donde_estamos", get_field('descripcion_derech
 <?php get_template_part('componentes/nosotros/comp','historia');?>
 
 <!-- Quienes media kit ok-->
-<?php get_template_part('componentes/nosotros/comp','mediakit');?>
+<?php //get_template_part('componentes/nosotros/comp','mediakit');?>
 
 
 

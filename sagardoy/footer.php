@@ -52,7 +52,7 @@
         <div class="row">
           <div class="col-12 col-sm-12 col-lg-4">
             <div class="newletter">
-              <div class="title">Newsletter</div>
+              <div class="title"><?php _e('Suscríbete a nuestra newsletter', 'sagardoy'); ?></div>
               <div class="input-email">
                 <input class="input" value="" placeholder="Email"></input>
                 <a href="#" class="btn-link"></a>

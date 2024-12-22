@@ -2,7 +2,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-4 col-md-4">
-          <div class="subtitulo"><?php _e('Últimas noticias', 'sagardoy'); ?></div>
+         <!-- <div class="subtitulo"><?php //_e('Últimas noticias', 'sagardoy'); ?></div>-->
           <div class="titulo"><?php _e('Lo último, primero en Sagardoy', 'sagardoy'); ?></div>
           <a href="<?php  get_permalink(get_option('page_for_posts')) ?>" class="btn-ver-mas"><?php _e('VER MÁS NOTICIAS', 'sagardoy'); ?></a>
         </div>
