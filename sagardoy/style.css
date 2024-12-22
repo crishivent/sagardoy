@@ -79,11 +79,13 @@ button:focus {
   }
 }
 .pb-130 {
-  padding-bottom: 130px;
+  /*padding-bottom: 130px;*/
+  padding-bottom: 40px;
 }
 @media (max-width: 991px) {
   .pb-130 {
-    padding-bottom: 74px;
+    /*padding-bottom: 74px;*/
+    padding-bottom: 40px;
   }
 }
 .mt-130 {
@@ -95,7 +97,8 @@ button:focus {
   }
 }
 .mb-130 {
-  margin-bottom: 130px;
+  /*margin-bottom: 130px;*/
+  margin-bottom: 40px;
 }
 @media (max-width: 991px) {
   .mb-130 {
@@ -1837,7 +1840,7 @@ button:focus {
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 100%;
+  height: 99%;
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 1;
 }
