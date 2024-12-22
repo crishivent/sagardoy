@@ -28,10 +28,12 @@ set_query_var("servicios", get_field('servicios'));
 <!-- Servicios -->
 <?php get_template_part('componentes/servicios/comp','servicios');?>
 
-
-
 <!-- Quienes opiniones OK -->
-<?php get_template_part('componentes/generales/comp','opiniones');?>
+<?php //get_template_part('componentes/generales/comp','opiniones');?>
+
+
+<!-- Últimas noticias Ok-->
+<?php get_template_part('componentes/home/comp','ultimasnoticias');?>
 
 <!-- Contactanos -->
 <?php get_template_part('componentes/servicios/comp','contactanos');?>
