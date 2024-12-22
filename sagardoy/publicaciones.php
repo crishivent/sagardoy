@@ -59,7 +59,7 @@ $category = get_term_by( 'slug', 'actualidad', 'category' );
         <div class="col-12 col-sm-6 col-md-6"></div>
         <div class="col-12 col-sm-6 col-md-6 text-end">
           <div class="d-inline-flex align-items-center gap-3">
-            <a href="<?php echo get_term_link( $category ) ?>" class="btn-ver-mas"><?php _e('Ver todas', 'sagardoy'); ?> (<?php echo $category->count?>)</a>
+            <a href="<?php echo get_term_link( $category ) ?>" class="btn-ver-mas"><?php _e('Ver todas', 'sagardoy'); ?> <?php //echo $category->count?></a>
             <div id="btns_slider_01" class="btns-slider">
               <a href="#" class="icons ico-flecha-left btn-prev"></a>
               <a href="#" class="icons ico-flecha-right btn-next"></a>
@@ -151,7 +151,7 @@ $category2 = get_term_by( 'slug', 'eventos', 'category' );
         <div class="col-12 col-sm-6 col-md-6"></div>
         <div class="col-12 col-sm-6 col-md-6 text-end">
           <div class="d-inline-flex align-items-center gap-3">
-            <a href="<?php echo get_term_link( $category2 ) ?>" class="btn-ver-mas"><?php _e('Ver todas', 'sagardoy'); ?> (<?php echo $category2->count?>)</a>
+            <a href="<?php echo get_term_link( $category2 ) ?>" class="btn-ver-mas"><?php _e('Ver todas', 'sagardoy'); ?> <?php //echo $category2->count?></a>
             <div id="btns_slider_02" class="btns-slider">
               <a href="#" class="icons ico-flecha-left btn-prev"></a>
               <a href="#" class="icons ico-flecha-right btn-next"></a>
@@ -246,7 +246,7 @@ $category3 = get_term_by( 'slug', 'novedades-normativas', 'category' );
         <div class="col-12 col-sm-6 col-md-6"></div>
         <div class="col-12 col-sm-6 col-md-6 text-end">
           <div class="d-inline-flex align-items-center gap-3">
-            <a href="<?php echo get_term_link( $category3 ) ?>" class="btn-ver-mas"><?php _e('Ver todas', 'sagardoy'); ?> (<?php echo $category3->count?>)</a>
+            <a href="<?php echo get_term_link( $category3 ) ?>" class="btn-ver-mas"><?php _e('Ver todas', 'sagardoy'); ?> <?php //echo $category3->count?></a>
             <div id="btns_slider_03" class="btns-slider">
               <a href="#" class="icons ico-flecha-left btn-prev"></a>
               <a href="#" class="icons ico-flecha-right btn-next"></a>
@@ -351,7 +351,7 @@ $category4 = get_term_by( 'slug', 'sentencias', 'category' );
         <div class="col-12 col-sm-6 col-md-6"></div>
         <div class="col-12 col-sm-6 col-md-6 text-end">
           <div class="d-inline-flex align-items-center gap-3">
-            <a href="<?php echo get_term_link( $category4 ) ?>" class="btn-ver-mas"><?php _e('Ver todas', 'sagardoy'); ?> (<?php echo $category4->count?>)</a>
+            <a href="<?php echo get_term_link( $category4 ) ?>" class="btn-ver-mas"><?php _e('Ver todas', 'sagardoy'); ?> <?php //echo $category4->count?></a>
             <div id="btns_slider_04" class="btns-slider">
               <a href="#" class="icons ico-flecha-left btn-prev"></a>
               <a href="#" class="icons ico-flecha-right btn-next"></a>
