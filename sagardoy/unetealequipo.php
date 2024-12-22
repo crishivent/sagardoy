@@ -28,6 +28,8 @@ set_query_var("cargo_opinion_unete", get_field('cargo_opinion_unete'));
 set_query_var("foto_opinion_unete", get_field('foto_opinion_unete'));
 
 
+//Formulario
+set_query_var("titulo_formulario_unete", get_field('titulo_formulario_unete'));
 
  ?>
 
