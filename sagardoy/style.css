@@ -1890,7 +1890,8 @@ button:focus {
   font-family: "Poppins-Light", sans-serif;
   color: #ffffff;
   font-size: 80px;
-  line-height: 60px;
+  /*line-height: 60px;*/
+  line-height: 10px;
 }
 @media (max-width: 991px) {
   .section.cabecera-home .data .texto {

@@ -695,6 +695,21 @@ function stateScrollTop(){
     $(".navbar .menu-content .navbar-toggler").removeClass("collapsed").addClass("collapsed");
   }
 
+
+
+jQuery(document).ready(function () {
+  const scrollThreshold = 100;
+
+  jQuery(window).on('scroll', function () {
+    if (jQuery(window).scrollTop() >= scrollThreshold) {
+      jQuery('.navbar').addClass("scrolling");
+    } else {
+      jQuery('.navbar').removeClass("scrolling");
+    }
+  });
+});
+
+/*
   if(jQuery(".cabecera").length){
     if (jQuery(this).scrollTop() >= (jQuery(".cabecera").outerHeight()-jQuery(".navbar").outerHeight())) {
       jQuery('.navbar').addClass("scrolling");
@@ -709,7 +724,7 @@ function stateScrollTop(){
     }
   }
 
-
+*/
 
   /*if (jQuery(this).scrollTop() >= distance) {
     var st = $(this).scrollTop();
