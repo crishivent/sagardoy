@@ -21,6 +21,12 @@ set_query_var("boton_unete_bloque_1", get_field('boton_unete_bloque_1'));
 set_query_var("enlace_unete_bloque_1", get_field('enlace_unete_bloque_1'));
 
 
+//Bloque 2 foto
+set_query_var("opinion_unete", get_field('opinion_unete'));
+set_query_var("nombre_opinion_unete", get_field('nombre_opinion_unete'));
+set_query_var("cargo_opinion_unete", get_field('cargo_opinion_unete'));
+set_query_var("foto_opinion_unete", get_field('foto_opinion_unete'));
+
 
 
  ?>
