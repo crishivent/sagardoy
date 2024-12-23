@@ -9208,3 +9208,7 @@ Extra     extra large	xxl	  ≥1400px
 .sub26 .btn-enviar {
   background: #2b2d43;
 }
+
+.logo-footer {
+  display: none;
+}
