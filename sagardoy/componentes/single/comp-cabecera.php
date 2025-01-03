@@ -27,14 +27,7 @@ $fecha=get_query_var("fecha");
           <div class="titulo"><?php echo $titulo;?></div>
         </div>
         <div class="col-12 col-sm-12 col-lg-2 d-lg-flex flex-column justify-content-end align-items-end">
-          <div>
-            <div class="label">Especialistas</div>
-            <ul class="links">
-              <li><a href="#">Ana Godino Reyes</a></li>
-              <li><a href="#">David Isaac Tobía</a></li>
-              <li><a href="#">Montserrat Alonso Paulí</a></li>
-            </ul>
-          </div>
+         
         </div>
       </div>
     </div>
