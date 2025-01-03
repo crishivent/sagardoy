@@ -9214,6 +9214,11 @@ Extra     extra large	xxl	  ≥1400px
 }
 
 /* new */
-.navbar .navbar-nav .col-right .btns-link .submenu.equipo .btns li a:hover {
+.navbar .navbar-nav .col-right .btns-link .submenu.equipo .btns li a:hover,
+.navbar .navbar-nav .col-right .btns-link .submenu.actualidad .btns li a:hover {
   color: #545454;
+}
+
+.facetwp-icon {
+  right: 14px;
 }

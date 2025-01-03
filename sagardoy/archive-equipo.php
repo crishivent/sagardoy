@@ -45,7 +45,7 @@ $enlace_boton_talento = get_field('enlace_boton_talento', 'option');
 
 
 <!-- Contador gris -->
-<?php get_template_part('componentes/nosotros/comp','experiencia'); ?>
+<?php //get_template_part('componentes/nosotros/comp','experiencia'); ?>
 
 
 <!-- Filtros profesionales -->
@@ -58,10 +58,11 @@ $enlace_boton_talento = get_field('enlace_boton_talento', 'option');
           <h2 class="titulo"><?php _e('Buscar abogados y profesionales', 'sagardoy'); ?></h2>
           <div class="form">
             <div class="row">
+              <div class="col-1"></div>
               <div class="col-12 col-sm-4 col-md-4">
                 <div class="input-email">
                   <?php echo do_shortcode('[facetwp facet="buscar"]');?>
-                 <!-- <input class="input" value="" placeholder="Buscar"></input>-->
+                 
                   <a href="#" class="btn-link"></a>
                 </div>
               </div>
@@ -77,9 +78,9 @@ $enlace_boton_talento = get_field('enlace_boton_talento', 'option');
                  
                 </div>
               </div>
-              <div class="col-12 col-sm-2 col-md-2">
-               <!-- <a href="#" class="btn-buscar">Buscar</a>-->
-              </div>
+              <!--<div class="col-12 col-sm-2 col-md-2">
+               <!-- <a href="#" class="btn-buscar">Buscar</a>--
+              </div>-->
             </div>
           </div>
         </div>

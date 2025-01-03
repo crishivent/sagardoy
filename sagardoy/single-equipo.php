@@ -13,7 +13,7 @@ $email= get_field('email');
 $telefono= get_field('telefono');
 $imagen_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
 $sede = get_field('sedes');
-
+$nombre=get_the_title(get_the_ID());
 $post = $sede[0];
     
 
@@ -25,7 +25,7 @@ $post = $sede[0];
       <div class="row">
         <div class="col-12 col-sm-8 col-md-8">
           <div class="datos">
-            <div class="nombre"><?php the_title();?></div>
+            <div class="nombre"><?php echo $nombre;?></div>
             <div class="cargo"><?php echo $cargo;?></div>
             <img src="<?php echo $imagen_url; ?>" class="img-fluid mobile" alt="" />
             <div class="row">
@@ -163,7 +163,7 @@ $post = $sede[0];
                                         name="_buscar" 
                                         class="input" 
                                         value="" 
-                                        placeholder="Buscar" />
+                                        placeholder="Buscar por nombre" />
                                 </div>
                             </div>
 

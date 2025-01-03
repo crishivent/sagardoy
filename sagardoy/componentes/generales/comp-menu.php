@@ -79,7 +79,7 @@ $titulo_bloque_noticias_submenu = get_field('titulo_bloque_noticias_submenu', 'o
                                                                   name="_buscar" 
                                                                   class="input" 
                                                                   value="" 
-                                                                  placeholder="<?php _e('Buscar', 'sagardoy'); ?>" />
+                                                                  placeholder="<?php _e('Buscar por nombre', 'sagardoy'); ?>" />
                                                               <a href="#" class="btn-lupa"></a>
                                                           </div>
                                                       </div>

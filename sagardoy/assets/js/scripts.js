@@ -12,7 +12,6 @@ jQuery(document).ready(function(){
     document.execCommand("copy");
     document.body.removeChild(tempInput);
     
-    // Cambiar el texto del enlace al que se hizo clic
     element.textContent = "Copiado en el portapapeles";
     
     // Volver a cambiar el texto después de unos segundos
@@ -740,7 +739,6 @@ jQuery(document).ready(function () {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Definir la función copyLink para copiar el enlace al portapapeles
     window.copyLink = function(link, element) {
         // Crear un elemento temporal para copiar el texto
         const tempInput = document.createElement("input");
@@ -751,7 +749,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.execCommand("copy");
         document.body.removeChild(tempInput);
         
-        // Cambiar el texto del enlace al que se hizo clic
+       
         if (element) {
             element.textContent = "Copiado en el portapapeles";
             
