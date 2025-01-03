@@ -25,7 +25,7 @@ $enlace_unete_bloque_1=get_query_var("enlace_unete_bloque_1");
         <div class="col-12 col-sm-12 col-lg-1"></div>
         <div class="col-12 col-sm-12 col-lg-7">
           <img src="<?php echo $imagen_unete_bloque_1;?>" class="img-fluid" alt="" />
-          
+          <?php echo $enlaces_unete;?>
           <a href="<?php echo $enlace_unete_bloque_1;?>" class="btn-link"><?php echo $boton_unete_bloque_1;?></a>
         </div>
       </div>
