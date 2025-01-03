@@ -9212,3 +9212,8 @@ Extra     extra large	xxl	  ≥1400px
 .logo-footer {
   display: none;
 }
+
+/* new */
+.navbar .navbar-nav .col-right .btns-link .submenu.equipo .btns li a:hover {
+  color: #545454;
+}

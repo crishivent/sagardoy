@@ -63,7 +63,7 @@ $titulo_bloque_noticias_submenu = get_field('titulo_bloque_noticias_submenu', 'o
                                       <div class="col-4">
                                           <div class="titulo"><?php echo $titulo_izquierda_equipo;?></div>
                                           <div class="texto">
-                                              <?php echo $descripcion_izquierda_equipo;?>
+                                              <?php //echo $descripcion_izquierda_equipo;?>
                                           </div>
                                       </div>
                                       <div class="col-2"></div>
