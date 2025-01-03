@@ -58,7 +58,7 @@ if(!empty(get_query_var('descripcion_equipo'))){
         </div>
         <div class="col-12 col-sm-3 col-md-3 text-center">
           <div class="holder">
-            <div class="numero"><span class="plus">%</span><span class="counter" data-count="<?php echo $contador4;?>">0</span></div>
+            <div class="numero"><span class="counter" data-count="<?php echo $contador4;?>">0</span><span class="plus">%</span></div>
             <div class="texto"><?php echo $titulocontador4;?></div>
           </div>
         </div>
