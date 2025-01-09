@@ -16,7 +16,7 @@
             <div class="label">Enviando este formulario estoy aceptando la <a href="#">política de privacidad</a> </div>
             
           </div>
-          <div class="polimin"><p>Información básica sobre protección de datos:
+          <div class="polimin white"><p>Información básica sobre protección de datos:
 Responsable: Sagardoy Abogados S.L. Finalidad: Recibir comunicaciones comerciales y mantenerte informado de novedades de tu interés. Puedes ejercer los derechos de acceso, oposición, rectificación, supresión, limitación y portabilidad de los datos, tal y como se explica en la información adicional.</p>
             </div>
         </div>

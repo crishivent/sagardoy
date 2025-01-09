@@ -6024,6 +6024,11 @@ button:focus {
 .polimin {
   font-size: 10px;
 }
+
+.white {
+  color: white;
+}
+
 .modulo-35 .desktop .col-right .checkbox-holder {
   cursor: pointer;
   position: relative;
