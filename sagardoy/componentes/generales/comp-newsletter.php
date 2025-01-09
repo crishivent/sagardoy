@@ -13,8 +13,12 @@
               <input type="checkbox" checked="checked">
               <span class="checkmark"></span>
             </label>
-            <div class="label">Enviando este formulario estoy aceptando la <a href="#">política de privacidad</a></div>
+            <div class="label">Enviando este formulario estoy aceptando la <a href="#">política de privacidad</a> </div>
+            
           </div>
+          <div class="polimin"><p>Información básica sobre protección de datos:
+Responsable: Sagardoy Abogados S.L. Finalidad: Recibir comunicaciones comerciales y mantenerte informado de novedades de tu interés. Puedes ejercer los derechos de acceso, oposición, rectificación, supresión, limitación y portabilidad de los datos, tal y como se explica en la información adicional.</p>
+            </div>
         </div>
         <div class="col-12 col-sm-12 col-lg-2"></div>
       </div>

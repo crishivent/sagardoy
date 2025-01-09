@@ -6019,7 +6019,10 @@ button:focus {
   display: inline-flex;
   gap: 0px;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
+}
+.polimin {
+  font-size: 10px;
 }
 .modulo-35 .desktop .col-right .checkbox-holder {
   cursor: pointer;
