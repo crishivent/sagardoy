@@ -41,7 +41,7 @@
               foreach ($historia as $elemento) {
                 $titulo = $elemento['elementos_historia']['titulo_historia'];
                 $imagen = $elemento['elementos_historia']['imagen_historia'];
-                $descripcion = $elemento['elementos_historia']['descripcion_historia'];
+                $descripcion = $elemento['elementos_historia']['descripcion_historia_new'];
                 $enlace = $elemento['elementos_historia']['enlace_leer_mas'];
                 if($c==1){$show='show';}else{$show='';}
                   echo '<div class="contenido '.$show.'" id="c-0'.$c.'">
