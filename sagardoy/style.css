@@ -5001,6 +5001,11 @@ button:focus {
   font-size: 16px;
   line-height: 26px;
 }
+
+.posit {
+  object-position: center;
+}
+
 @media (max-width: 991px) {
   .modulo-28 .titulo {
     font-size: 42px;

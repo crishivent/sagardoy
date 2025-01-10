@@ -3,7 +3,7 @@ $fondo=get_query_var("fondo_de_cabecera");
 $titulonosotros=get_query_var("nosotros_titulo");
 $subtitulonosotros=get_query_var("nosotros_subtitulo");
 ?>
-<section class="section cabecera-interna cabecera">
+<section class="section cabecera-interna cabecera posit">
     <div class="holder">
       <div class="container">
         <div class="row">
