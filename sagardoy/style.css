@@ -5003,7 +5003,7 @@ button:focus {
 }
 
 .posit img {
-  object-position: center;
+  object-position: center !important;
 }
 
 @media (max-width: 991px) {
