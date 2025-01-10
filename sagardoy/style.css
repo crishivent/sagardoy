@@ -4996,8 +4996,10 @@ button:focus {
 .modulo-28 .titulo {
   font-family: "TiemposHeadline-Regular", sans-serif;
   color: #2b2d42;
-  font-size: 80px;
-  line-height: 78px;
+  /*font-size: 80px;
+  line-height: 78px;*/
+  font-size: 16px;
+  line-height: 26px;
 }
 @media (max-width: 991px) {
   .modulo-28 .titulo {
