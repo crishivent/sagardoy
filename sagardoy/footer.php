@@ -4,6 +4,11 @@
    $telefonofooter = get_field('telefono_footer', 'option');
    $mailfooter = get_field('mail_footer', 'option');
    $logopequeño = get_field('logo_pequeno', 'option');
+   $linkedin = get_field('redes_link', 'option');
+   $youtube = get_field('redes_youtube', 'option');
+
+
+
   ?>
   <footer class="footer">
     <div class="container">
@@ -40,8 +45,8 @@
                 </div>
 
                 <div class="btns-redes">
-                  <a href="#" class="btn-linkedin"></a>
-                  <a href="#" class="btn-youtube"></a>
+                  <a href="<?php echo $linkedin; ?>" class="btn-linkedin"></a>
+                  <a href="<?php echo $youtube; ?>" class="btn-youtube"></a>
                 </div>
               </div>
             </div>

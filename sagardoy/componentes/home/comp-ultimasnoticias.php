@@ -48,7 +48,7 @@
               }
             ?>
           </div>
-          <a href="<?php  get_permalink(get_option('page_for_posts')) ?>" class="btn-ver-mas mobile"><?php _e('VER MÁS NOTICIAS', 'sagardoy'); ?></a>
+          <a href="/blog/" class="btn-ver-mas mobile"><?php _e('VER MÁS NOTICIAS', 'sagardoy'); ?></a>
         </div>
       </div>
     </div>
