@@ -262,7 +262,21 @@ $post = $sede[0];
         window.location.href = fullUrl;
     });
 </script>
+    <script>
+        const button = document.querySelector('.toggle-btn');
+        const paragraphs = document.querySelectorAll('.datos p');
+        let isExpanded = false;
 
+        button.addEventListener('click', () => {
+            isExpanded = !isExpanded;
+            paragraphs.forEach((p, index) => {
+                if (index !== 0) { // Saltar el primer párrafo
+                    p.style.display = isExpanded ? 'block' : 'none';
+                }
+            });
+            button.textContent = isExpanded ? '-' : '+'; // Cambiar texto del botón
+        });
+    </script>
 
 
 

@@ -9238,3 +9238,21 @@ Extra     extra large	xxl	  ≥1400px
 .facetwp-icon {
   right: 14px !important;
 }
+
+.single-equipo .datos p {
+  display: none; /* Oculta todos los párrafos por defecto */
+}
+.single-equipo .datos p:first-of-type {
+  display: block; /* Solo muestra el primer párrafo inicialmente */
+}
+.single-equipo .toggle-btn {
+  display: inline-block;
+  margin-top: -8px;
+  padding: 5px 10px;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 45px;
+}
