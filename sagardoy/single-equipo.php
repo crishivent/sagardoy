@@ -68,16 +68,18 @@ $post = $sede[0];
         <div class="col-12 col-sm-4 col-md-4">
           <div class="info">
             <h2 class="titulo"><?php _e('Formación', 'sagardoy'); ?></h2>
-            <div class="datos">
+            <div class="datos duno">
               <?php echo $formacion;?>
             </div>
+            <button class="toggle-btn">+</button>
             <div class="ico-mas"></div>
           </div>
           <div class="info">
             <h2 class="titulo"><?php _e('Menciones', 'sagardoy'); ?></h2>
-            <div class="datos">
+            <div class="datos duos">
               <?php echo $menciones; ?>
             </div>
+            <button class="toggle-btndos">+</button>
             <div class="ico-mas"></div>
           </div>
         </div>
@@ -264,8 +266,11 @@ $post = $sede[0];
 </script>
     <script>
         const button = document.querySelector('.toggle-btn');
-        const paragraphs = document.querySelectorAll('.datos p');
+        const buttondos = document.querySelector('.toggle-btndos');
+        const paragraphs = document.querySelectorAll('.duno p');
+        const paragraphsdos = document.querySelectorAll('.duos p');
         let isExpanded = false;
+        let isExpandedDos = false;
 
         button.addEventListener('click', () => {
             isExpanded = !isExpanded;
@@ -275,6 +280,15 @@ $post = $sede[0];
                 }
             });
             button.textContent = isExpanded ? '-' : '+'; // Cambiar texto del botón
+        });
+        buttondos.addEventListener('click', () => {
+            isExpandedDos = !isExpandedDos;
+            paragraphsdos.forEach((p, index) => {
+                if (index !== 0) { // Saltar el primer párrafo
+                    p.style.display = isExpandedDos ? 'block' : 'none';
+                }
+            });
+            buttondos.textContent = isExpandedDos ? '-' : '+'; // Cambiar texto del botón
         });
     </script>
 

@@ -9239,13 +9239,16 @@ Extra     extra large	xxl	  ≥1400px
   right: 14px !important;
 }
 
-.single-equipo .datos p {
+.single-equipo .duno p,
+.single-equipo .duos p {
   display: none; /* Oculta todos los párrafos por defecto */
 }
-.single-equipo .datos p:first-of-type {
+.single-equipo .duno p:first-of-type,
+.single-equipo .duos p:first-of-type {
   display: block; /* Solo muestra el primer párrafo inicialmente */
 }
-.single-equipo .toggle-btn {
+.single-equipo .toggle-btn,
+.single-equipo .toggle-btndos {
   display: inline-block;
   margin-top: -8px;
   padding: 5px 10px;
