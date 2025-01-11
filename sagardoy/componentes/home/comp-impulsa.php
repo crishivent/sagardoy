@@ -12,7 +12,7 @@
       <div class="row">
         <div class="col-12 col-sm-5 col-md-5">
           <img src="<?php echo $logomenu;  ?>" class="logo" alt="" />
-          <img src="images/img-school.jpg" class="img-fluid" alt="" />
+          <img src="<?php echo $imagen_impulsa; ?>" class="img-fluid" alt="" />
         </div>
         <div class="col-12 col-sm-1 col-md-1"></div>
         <div class="col-12 col-sm-6 col-md-6">
