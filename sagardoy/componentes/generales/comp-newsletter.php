@@ -13,7 +13,7 @@
               <input type="checkbox" checked="checked">
               <span class="checkmark"></span>
             </label>
-            <div class="label">Enviando este formulario estoy aceptando la <a href="#">política de privacidad</a> </div>
+            <div class="label">Enviando este formulario estoy aceptando la <a href="/politica-de-privacidad/">política de privacidad</a> </div>
             
           </div>
           <div class="polimin white"><p>Información básica sobre protección de datos:
