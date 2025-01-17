@@ -8,7 +8,7 @@
             <li><a href="#gdondeestamos" class="btn-link"><?php _e('Dónde estamos', 'sagardoy'); ?> </a></li>
             <li><a href="#gequipo" class="btn-link"><?php _e('Equipo', 'sagardoy'); ?> </a></li>
             <li><a href="#ghistoria" class="btn-link"><?php _e('Historia', 'sagardoy'); ?> </a></li>
-            <li><a href="#gmediakit" class="btn-link"><?php _e('Media kit', 'sagardoy'); ?> </a></li>
+            <!--<li><a href="#gmediakit" class="btn-link"><?php //_e('Media kit', 'sagardoy'); ?> </a></li>-->
           </ul>
         </div>
       </div>
