@@ -23,9 +23,9 @@ $premios=get_query_var("premios");
 
         <?php 
               foreach ($premios as $premio) {
-                $imagen = $premio['premios']['premio'];
-                $texto = $premio['premios']['texto_premio'];
-                $enlacepremios= $premio['premios']['enlace_premios'];
+                $imagen = $premio['premio'];
+                $texto = $premio['texto_premio'];
+                $enlacepremios= $premio['enlace_premios'];
                   echo '<div>
                           <a href="'.$enlacepremios.'">
                             <div class="line-border">
