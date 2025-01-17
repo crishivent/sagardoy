@@ -9248,7 +9248,9 @@ Extra     extra large	xxl	  ≥1400px
   display: block; /* Solo muestra el primer párrafo inicialmente */
 }
 .single-equipo .toggle-btn,
-.single-equipo .toggle-btndos {
+.single-equipo .toggle-btndos,
+.single-equipo .toggle-btntres,
+.single-equipo .toggle-btncuat {
   display: inline-block;
   margin-top: -8px;
   padding: 5px 10px;
