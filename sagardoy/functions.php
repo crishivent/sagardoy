@@ -77,4 +77,8 @@ add_filter( 'template_include', 'custom_blog_template' );
 //Activar imagenes destacadas en páginas
 add_theme_support('post-thumbnails');
 
+//Quitar contadores de los desplegables de facetwp
+add_filter('facetwp_facet_dropdown_show_counts', '__return_false');
+
+
 ?>
