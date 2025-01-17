@@ -8,6 +8,8 @@ get_header();
 $cargo= get_field('cargo');
 $formacion= get_field('formacion');
 $menciones= get_field('menciones');
+$publicaciones= get_field('publicaciones');
+$actividad_docente= get_field('actividad_docente');
 $idiomas= get_field('idiomas');
 $email= get_field('email');
 $telefono= get_field('telefono');
@@ -15,7 +17,7 @@ $imagen_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
 $sede = get_field('sedes');
 $nombre=get_the_title(get_the_ID());
 $post = $sede[0];
-    
+
 
 ?>
 
@@ -82,6 +84,26 @@ $post = $sede[0];
             <button class="toggle-btndos">+</button>
             <div class="ico-mas"></div>
           </div>
+<!-- -->
+          <div class="info">
+            <h2 class="titulo"><?php _e('Publicaciones', 'sagardoy'); ?></h2>
+            <div class="datos tres">
+              <?php echo $publicaciones; ?>
+            </div>
+            <button class="toggle-btntres">+</button>
+            <div class="ico-mas"></div>
+          </div>
+<!-- -->
+          <!-- -->
+          <div class="info">
+            <h2 class="titulo"><?php _e('Actividad Docente', 'sagardoy'); ?></h2>
+            <div class="datos cuatro">
+              <?php echo $actividad_docente; ?>
+            </div>
+            <button class="toggle-btncuat">+</button>
+            <div class="ico-mas"></div>
+          </div>
+<!-- -->
         </div>
         <div class="col-12 col-sm-1 col-md-1"></div>
       </div>
@@ -267,8 +289,12 @@ $post = $sede[0];
     <script>
         const button = document.querySelector('.toggle-btn');
         const buttondos = document.querySelector('.toggle-btndos');
+        const buttontres = document.querySelector('.toggle-btntres');
+        const buttoncuatro = document.querySelector('.toggle-btncuat');
         const paragraphs = document.querySelectorAll('.duno p');
         const paragraphsdos = document.querySelectorAll('.duos p');
+        const paragraphstres = document.querySelectorAll('.tres p');
+        const paragraphscuatro = document.querySelectorAll('.cuatro p');
         let isExpanded = false;
         let isExpandedDos = false;
 
@@ -289,6 +315,24 @@ $post = $sede[0];
                 }
             });
             buttondos.textContent = isExpandedDos ? '-' : '+'; // Cambiar texto del botón
+        });
+        buttontres.addEventListener('click', () => {
+            isExpandedDos = !isExpandedDos;
+            paragraphstres.forEach((p, index) => {
+                if (index !== 0) { // Saltar el primer párrafo
+                    p.style.display = isExpandedDos ? 'block' : 'none';
+                }
+            });
+            buttontres.textContent = isExpandedDos ? '-' : '+'; // Cambiar texto del botón
+        });
+        buttoncuatro.addEventListener('click', () => {
+            isExpandedDos = !isExpandedDos;
+            paragraphscuatro.forEach((p, index) => {
+                if (index !== 0) { // Saltar el primer párrafo
+                    p.style.display = isExpandedDos ? 'block' : 'none';
+                }
+            });
+            buttoncuatro.textContent = isExpandedDos ? '-' : '+'; // Cambiar texto del botón
         });
     </script>
 
