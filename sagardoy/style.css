@@ -9263,22 +9263,25 @@ Extra     extra large	xxl	  ≥1400px
 }
 
 /* Socio responsable */
-.socioencargado{
-      display: flex
-;
-    align-items: center;
-    margin-top: 35px;
+.socioencargado {
+  display: flex;
+  align-items: center;
+  margin-top: 35px;
 }
 
-.socioencargado img{
-      width: 100px;
-    object-fit: cover;
+.socioencargado img {
+  width: 100px;
+  object-fit: cover;
 }
 
-.socioencargado .datosencargado{
-    margin-left: 10px;
+.socioencargado .datosencargado {
+  margin-left: 10px;
 }
 
-.socioencargado .datosencargado p{
+.socioencargado .datosencargado p {
   margin: 0em 0;
+}
+
+.socioencargado .datosencargado p:first-child {
+  font-family: "Poppins-Bold";
 }
