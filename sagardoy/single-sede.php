@@ -204,6 +204,9 @@ $imagen_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
                       $direccion   = get_field('direccion') ? esc_html(get_field('direccion')) : '';
                       $telefono    = get_field('telefono') ? esc_html(get_field('telefono')) : '';
                       $email       = get_field('email') ? esc_html(get_field('email')) : '';
+                      $imsociores       = get_field('imagen_socio') ? esc_html(get_field('imagen_socio')) : '';
+                      $nsoci       = get_field('nombre_responsable') ? esc_html(get_field('nombre_responsable')) : '';
+                      $puesto       = get_field('cargo_del_socio') ? esc_html(get_field('cargo_del_socio')) : '';
                       ?>
                       <div class="data" id="data-0<?php echo esc_attr($i); ?>">
                           <div class="titulo">
@@ -219,15 +222,15 @@ $imagen_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
                                   <a href="mailto:<?php echo esc_attr($email); ?>" class="btn-email"><?php echo $email; ?></a>
                               <?php endif; ?>
                           </div>
-                           <!-- socio -->
-                  <div class="socioencargado">
-                      <img src="<?php echo $imgsocioresp; ?>" alt="">
-                      <div class="datosencargado">
-                          <p><strong><?php echo  $nombre_responsable;?></strong></p>
-                          <p><?php echo  $cargo_del_socio;?></p>
-                      </div>
-                  </div>
-               <!-- /socio -->
+                                    <!-- socio -->
+                            <div class="socioencargado">
+                                <img src="<?php echo $imsociores; ?>" alt="">
+                                <div class="datosencargado">
+                                    <p><strong><?php echo  $nsoci;?></strong></p>
+                                    <p><?php echo  $puesto ;?></p>
+                                </div>
+                            </div>
+                          <!-- /socio -->
                       </div>
                      
                       <?php
