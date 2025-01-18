@@ -219,6 +219,15 @@ $imagen_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
                                   <a href="mailto:<?php echo esc_attr($email); ?>" class="btn-email"><?php echo $email; ?></a>
                               <?php endif; ?>
                           </div>
+                           <!-- socio -->
+                  <div class="socioencargado">
+                      <img src="<?php echo $imgsocioresp; ?>" alt="">
+                      <div class="datosencargado">
+                          <p><strong><?php echo  $nombre_responsable;?></strong></p>
+                          <p><?php echo  $cargo_del_socio;?></p>
+                      </div>
+                  </div>
+               <!-- /socio -->
                       </div>
                      
                       <?php

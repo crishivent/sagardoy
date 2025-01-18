@@ -192,6 +192,15 @@ $imagen_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
                   <a href="mailto:<?php echo $email;?>" class="btn-email"><?php echo $email;?></a>
                 </div>
               </div>
+               <!-- socio -->
+                  <div class="socioencargado">
+                      <img src="<?php echo $imgsocioresp; ?>" alt="">
+                      <div class="datosencargado">
+                          <p><strong><?php echo  $nombre_responsable;?></strong></p>
+                          <p><?php echo  $cargo_del_socio;?></p>
+                      </div>
+                  </div>
+               <!-- /socio -->
             </div>
 
             <?php echo do_shortcode('[contact-form-7 id="55dd754" title="Contacto sedes movil"]');?>
