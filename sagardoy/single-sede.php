@@ -109,7 +109,7 @@ $imagen_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
                   <div class="socioencargado">
                       <img src="<?php echo $imgsocioresp; ?>" alt="">
                       <div class="datosencargado">
-                          <p><?php echo  $nombre_responsable;?></p>
+                          <p><strong><?php echo  $nombre_responsable;?></strong></p>
                           <p><?php echo  $cargo_del_socio;?></p>
                       </div>
                   </div>

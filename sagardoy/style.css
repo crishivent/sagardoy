@@ -9261,3 +9261,24 @@ Extra     extra large	xxl	  ≥1400px
   cursor: pointer;
   font-size: 45px;
 }
+
+/* Socio responsable */
+.socioencargado{
+      display: flex
+;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.socioencargado img{
+      width: 100px;
+    object-fit: cover;
+}
+
+.socioencargado .datosencargado{
+    margin-left: 10px;
+}
+
+.socioencargado .datosencargado p{
+  margin: 0em 0;
+}
