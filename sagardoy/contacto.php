@@ -17,6 +17,10 @@ $descripcion = get_field('descripcion');
 $titulo_derecha = get_field('titulo_derecha');
 $imagen_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
 
+//Socio responsable
+ $imgsocioresp = get_field('imagen_socio');
+ $nombre_responsable = get_field('nombre_responsable');
+ $cargo_del_socio = get_field('cargo_del_socio');
 
 
  ?>
@@ -101,6 +105,15 @@ $imagen_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
                         <a href="mailto:<?php echo $email;?>" class="btn-email"><?php echo $email;?></a>
                         </div>
                     </div>
+              <!-- socio -->
+                  <div class="socioencargado">
+                      <img src="<?php echo $imgsocioresp; ?>" alt="">
+                      <div class="datosencargado">
+                          <p><?php echo  $nombre_responsable;?></p>
+                          <p><?php echo  $cargo_del_socio;?></p>
+                      </div>
+                  </div>
+               <!-- /socio -->
 
                 </div>
               </div>
