@@ -9267,6 +9267,7 @@ Extra     extra large	xxl	  ≥1400px
   display: flex;
   align-items: center;
   margin-top: 35px;
+  margin-bottom: 35px;
 }
 
 .socioencargado img {
