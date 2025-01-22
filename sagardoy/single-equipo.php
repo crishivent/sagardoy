@@ -68,7 +68,7 @@ $post = $sede[0];
         </div>
         <div class="col-12 col-sm-1 col-md-1"></div>
         <div class="col-12 col-sm-4 col-md-4">
-
+<?php if(!empty($formacion)){?>
           <div class="info">
             <h2 class="titulo"><?php _e('Formación', 'sagardoy'); ?></h2>
             <div class="datos duno">
@@ -77,7 +77,9 @@ $post = $sede[0];
             <button class="toggle-btn">+</button>
             <div class="ico-mas"></div>
           </div>
+          <?php }else{}?>
 
+          <?php if(!empty($menciones)){?>
           <div class="info">
             <h2 class="titulo"><?php _e('Menciones', 'sagardoy'); ?></h2>
             <div class="datos duos">
@@ -86,6 +88,7 @@ $post = $sede[0];
             <button class="toggle-btndos">+</button>
             <div class="ico-mas"></div>
           </div>
+          <?php }else{}?>
 <!-- -->
           <?php if(!empty($publicaciones)){?>
           <div class="info">
@@ -99,6 +102,7 @@ $post = $sede[0];
           <?php }else{}?>
 <!-- -->
           <!-- -->
+<?php if(!empty($actividad_docente)){?>
           <div class="info">
             <h2 class="titulo"><?php _e('Actividad Docente', 'sagardoy'); ?></h2>
             <div class="datos cuatro">
@@ -107,6 +111,7 @@ $post = $sede[0];
             <button class="toggle-btncuat">+</button>
             <div class="ico-mas"></div>
           </div>
+          <?php }else{}?>
 <!-- -->
         </div>
         <div class="col-12 col-sm-1 col-md-1"></div>
