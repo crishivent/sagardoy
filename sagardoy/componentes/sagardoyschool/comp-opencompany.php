@@ -10,7 +10,7 @@ $in_company=get_query_var("in_company");
           <img src="<?php echo $open_company['imagen_open'];?>" class="img-fluid" alt="" />
           <div class="holder">
             <p class="texto"><?php echo $open_company['descripcion_open'];?></p>
-            <a href="<?php echo $open_company['link_open'];?>" class="btn-link"><?php _e('Saber más', 'sagardoy'); ?></a>
+            <a href="<?php echo $open_company['link_open'];?>" class="btn-link"><?php _e('Descubre más', 'sagardoy'); ?></a>
          
           </div>
         </div>
@@ -19,7 +19,7 @@ $in_company=get_query_var("in_company");
           <img src="<?php echo $in_company['imagen_open'];?>" class="img-fluid" alt="" />
           <div class="holder">
             <p class="texto"><?php echo $in_company['descripcion_open'];?></p>
-            <a href="<?php echo $in_company['link_open'];?>" class="btn-link"><?php _e('Saber más', 'sagardoy'); ?></a>
+            <a href="<?php echo $in_company['link_open'];?>" class="btn-link"><?php _e('Descubre más', 'sagardoy'); ?></a>
            
           </div>
         </div>
