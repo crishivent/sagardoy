@@ -46,7 +46,7 @@ $descripciondondeestamos=get_query_var("descripcion_donde_estamos");
                     endwhile;
                     ?>
                     <li>
-                            <a href="https://sagardoy.neuronalcode.io/contacto/" data-id="02" class="btn-link">
+                            <a href="https://sagardoy.neuronalcode.io/contacto/" data-id="02" >
                                 <?php _e('Internacional', 'sagardoy'); ?>
                             </a>
                     </li>

@@ -12,6 +12,9 @@ set_query_var("fondo_school", get_field('fondo_school'));
 set_query_var("titulo_school", get_field('titulo_school'));
 set_query_var("link_school", get_field('link_school'));
 
+//Opiniones
+set_query_var("opiniones", get_field('opiniones'));
+
 
 // Futuro
 set_query_var("titulo_futuro", get_field('titulo_futuro'));
@@ -56,7 +59,7 @@ set_query_var("enlace_maps_alturas", get_field('enlace_maps_alturas'));
 <?php get_template_part('componentes/sagardoyschool/comp','futuro');?>
 
 <!-- Quienes opiniones OK -->
-<?php get_template_part('componentes/generales/comp','opiniones');?>
+<?php get_template_part('componentes/sagardoyschool/comp','opiniones');?>
 
 <!-- Quienes Alturas -->
 <?php get_template_part('componentes/sagardoyschool/comp','alturas');?>
