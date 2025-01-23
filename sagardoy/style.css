@@ -6836,7 +6836,7 @@ footer.footer .container-middle .border-top {
 }
 @media (max-width: 991px) {
   footer.footer .container-middle .menu {
-    display: none;
+    /*display: none;*/
   }
 }
 footer.footer .container-middle .menu .title {
