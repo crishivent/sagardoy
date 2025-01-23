@@ -326,22 +326,22 @@ $post = $sede[0];
             buttondos.textContent = isExpandedDos ? '-' : '+'; // Cambiar texto del botón
         });
         buttontres.addEventListener('click', () => {
-            isExpandedDos = !isExpandedDos;
+            isExpandedtres = !isExpandedtres;
             paragraphstres.forEach((p, index) => {
                 if (index !== 0) { // Saltar el primer párrafo
-                    p.style.display = isExpandedDos ? 'block' : 'none';
+                    p.style.display = isExpandedtres ? 'block' : 'none';
                 }
             });
-            buttontres.textContent = isExpandedDos ? '-' : '+'; // Cambiar texto del botón
+            buttontres.textContent = isExpandedtres ? '-' : '+'; // Cambiar texto del botón
         });
         buttoncuatro.addEventListener('click', () => {
-            isExpandedDos = !isExpandedDos;
+            isExpandedcuatro = !isExpandedcuatro;
             paragraphscuatro.forEach((p, index) => {
                 if (index !== 0) { // Saltar el primer párrafo
-                    p.style.display = isExpandedDos ? 'block' : 'none';
+                    p.style.display = isExpandedcuatro ? 'block' : 'none';
                 }
             });
-            buttoncuatro.textContent = isExpandedDos ? '-' : '+'; // Cambiar texto del botón
+            buttoncuatro.textContent = isExpandedcuatro ? '-' : '+'; // Cambiar texto del botón
         });
     </script>
 
