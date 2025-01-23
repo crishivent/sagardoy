@@ -2,7 +2,7 @@
 $fondo=get_query_var("fondo_school");
 $titulo=get_query_var("titulo_school");
 $link=get_query_var("link_school");
-$logomenu = get_field('logo_menu', 'option');
+$logomenu = get_field('logo_escuela', 'option');
 
 ?>
 
