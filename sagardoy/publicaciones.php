@@ -20,7 +20,7 @@ get_header();
         </div>
       </div>
     </div>
-    <img src="https://sagardoy.neuronalcode.io/wp-content/uploads/2024/12/img-cabecera-actualidad.jpg" class="img-fluid" alt="" />
+    <img src="/wp-content/uploads/2024/12/img-cabecera-actualidad.jpg" class="img-fluid" alt="" />
   </section>
 
 
@@ -29,7 +29,7 @@ get_header();
     <div class="container">
       <div class="row">
         <div class="col-12 d-flex justify-content-center">
-          <a href="https://sagardoy.neuronalcode.io/blog/" class="btn-link"><?php _e('Noticias', 'sagardoy'); ?></a> <a href="https://sagardoy.neuronalcode.io/publicaciones/" class="btn-link activo"><?php _e('Publicaciones', 'sagardoy'); ?></a>
+          <a href="/blog/" class="btn-link"><?php _e('Noticias', 'sagardoy'); ?></a> <a href="/publicaciones/" class="btn-link activo"><?php _e('Publicaciones', 'sagardoy'); ?></a>
         </div>
       </div>
     </div>
@@ -38,7 +38,7 @@ get_header();
   <!-- categoria 1 -->
 
 <?php 
-$category = get_term_by( 'slug', 'actualidad', 'category' );
+$category = get_term_by( 'slug', 'sagardoy-legal-news', 'category' );
 ?>
 
 <section class="modulo-23 pb-130">
@@ -77,7 +77,7 @@ $category = get_term_by( 'slug', 'actualidad', 'category' );
                     array(
                         'taxonomy' => 'category',  // Tipo de taxonomía (en este caso, categorías)
                         'field'    => 'slug',      // Filtrar por slug
-                        'terms'    => 'actualidad',   // Slug de la categoría
+                        'terms'    => 'sagardoy-legal-news',   // Slug de la categoría
                         'operator' => 'IN',        // Operador para asegurar que se traigan los posts de esta categoría
                     ),
                 ),
@@ -131,7 +131,7 @@ $category = get_term_by( 'slug', 'actualidad', 'category' );
 
   <!-- Categoria 2 -->
 <?php 
-$category2 = get_term_by( 'slug', 'eventos', 'category' );
+$category2 = get_term_by( 'slug', 'human-capital-outlook', 'category' );
 ?>
   <section class="modulo-23 pb-130">
     <div class="container d-flex flex-column">
@@ -169,7 +169,7 @@ $category2 = get_term_by( 'slug', 'eventos', 'category' );
                     array(
                         'taxonomy' => 'category',  // Tipo de taxonomía (en este caso, categorías)
                         'field'    => 'slug',      // Filtrar por slug
-                        'terms'    => 'eventos',   // Slug de la categoría
+                        'terms'    => 'human-capital-outlook',   // Slug de la categoría
                         'operator' => 'IN',        // Operador para asegurar que se traigan los posts de esta categoría
                     ),
                 ),
@@ -226,7 +226,7 @@ $category2 = get_term_by( 'slug', 'eventos', 'category' );
 
   <!-- Categoria 3 -->
    <?php 
-$category3 = get_term_by( 'slug', 'novedades-normativas', 'category' );
+$category3 = get_term_by( 'slug', 'revista-derecho-social-y-empresa', 'category' );
 ?>
 <section class="modulo-23 pb-130">
     <div class="container d-flex flex-column">
@@ -266,7 +266,7 @@ $category3 = get_term_by( 'slug', 'novedades-normativas', 'category' );
                     array(
                         'taxonomy' => 'category',  // Tipo de taxonomía (en este caso, categorías)
                         'field'    => 'slug',      // Filtrar por slug
-                        'terms'    => 'novedades-normativas',   // Slug de la categoría
+                        'terms'    => 'revista-derecho-social-y-empresa',   // Slug de la categoría
                         'operator' => 'IN',        // Operador para asegurar que se traigan los posts de esta categoría
                     ),
                 ),
@@ -329,7 +329,7 @@ $category3 = get_term_by( 'slug', 'novedades-normativas', 'category' );
 <!-- Categoria 4 -->
 
   <?php 
-$category4 = get_term_by( 'slug', 'sentencias', 'category' );
+$category4 = get_term_by( 'slug', 'tribunas', 'category' );
 ?>
 
 
@@ -371,7 +371,7 @@ $category4 = get_term_by( 'slug', 'sentencias', 'category' );
                     array(
                         'taxonomy' => 'category',  // Tipo de taxonomía (en este caso, categorías)
                         'field'    => 'slug',      // Filtrar por slug
-                        'terms'    => 'sentencias',   // Slug de la categoría
+                        'terms'    => 'tribunas',   // Slug de la categoría
                         'operator' => 'IN',        // Operador para asegurar que se traigan los posts de esta categoría
                     ),
                 ),
